@@ -1,0 +1,17 @@
+{
+  "id": "S0044",
+  "v2_human_g2_ac": [
+    {
+      "ac_1": "Given no events on a Friday, when the meeting duration is 30 mins, then the last suggested slot is 15:00.",
+      "ac_3": "Given no events, when the meeting duration is 90 mins, then the last suggested start is 15:30 on Thursday but 13:30 on Friday."
+    }
+  ],
+  "v2_human_g2_constraints": [
+    {
+      "c_1": "On Fridays no meeting may start v2_human 15:00"
+    }
+  ],
+  "v2_human_g2_goal": "the system suggests valid meeting slots having on a 15-minute grid with working hours that avoid overlapping existing calendar events and respect Friday's 15:00 cutoff.",
+  "v2_human_g2_input": "Same as v1_human (requirement change)",
+  "v2_human_g2_output": "Output similar to v1_human requirement change except on Fridays the returned list excludes slots starting v2_human 15:00."
+}

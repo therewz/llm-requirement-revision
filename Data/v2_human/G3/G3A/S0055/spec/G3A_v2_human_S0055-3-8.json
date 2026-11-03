@@ -1,0 +1,36 @@
+{
+  "id": "S0055",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "Meetings outside work hours not accepted: 9:00 - 17:00",
+      "c_2": "Meetings v2_human 15:00 on a Friday, not allowed.",
+      "c_6": "Many other constraints similar and already specified in previous specification worksheet."
+    }
+  ],
+  "v2_human_g3_exception": "No meetings on Saturday and Sunday. Mostly specified in previous specification sheet",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "System must not return any times for Friday v2_human 15:00 for a meeting.",
+      "fr_2": "System must not return any times for the meeting 8 during lunch: 12:00 - 13:00.",
+      "fr_3": "The system shall only return time slots that are within work hours: 9:00 - 17:00.",
+      "fr_4": "The system shall only return time slots by which meeting ends a when working hours end and should not extend."
+    }
+  ],
+  "v2_human_g3_goal": "The objective of the system is to return time slots to the user, when inputted with Events list, meeting duration and date so that it outputs a list of available time slots for meeting.",
+  "v2_human_g3_input": "events: List of dicts with keys. meeting_duration: int meeting length. day: String three letters to identify day.",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "Meetings cannot be held outside work hours: 9:00 - 17:00",
+      "neg_req_2": "Meetings cannot be held during lunch hours: 12:00 - 13:00"
+    }
+  ],
+  "v2_human_g3_output": "The function returns a list of available time slots for the meeting on that day.",
+  "v2_human_g3_tb": "If two scenarios specify the same conditions/constraints then system must choose the earlier (first) time slot and output it.",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "All returned times must be in 'HH:MM' format.",
+      "inv_2": "Function should return start time only.",
+      "inv_3": "Meeting on Friday must not be held v2_human 15:00."
+    }
+  ]
+}

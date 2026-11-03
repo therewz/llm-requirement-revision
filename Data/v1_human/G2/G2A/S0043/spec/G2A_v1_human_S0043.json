@@ -1,0 +1,25 @@
+{
+  "v1_human_g2_ac": [
+    {
+      "ac_1": "Given the user provides no existing events, when the meeting duration is 30 minutes on a Monday, then the earliest suggested slot is 09:00.",
+      "ac_2": "Given the user provides no existing events, when the meeting duration is 30 minutes on a Monday, then 09:00 is the last one",
+      "ac_3": "Given there is an event from 10:00 to 11:00, when the meeting duration is 30 minutes during 12:00, then suggested slots during 12:00 to 17:00",
+      "ac_4": "Given there is an event from 10:00 to 11:00, when the meeting duration is 30 minutes, then suggest 1 slot is 9:30 ending total",
+      "ac_5": "Given an event 07:00 to 08:00, when duration is 30min on Monday, then 07:00 is suggested"
+    }
+  ],
+  "v1_human_g2_constraints": [
+    {
+      "c_1": "Working hours 09:00 to 17:00",
+      "c_2": "Lunch blocked: 12:00 to 13:00",
+      "c_3": "Time format 24-hour \"HH:MM\"",
+      "c_4": "Slots step 15 minutes",
+      "c_5": "Events outside work hours ignored",
+      "c_6": "Events have end start"
+    }
+  ],
+  "v1_human_g2_goal": "The objective of the system is to Provide Valid Meeting Start times for a day respecting work hours on all existing events.",
+  "v1_human_g2_input": "EVENTS = Start Time - end time (\"HH:MM\", \"HH:MM\") Valid values, MEETING_duration = int - minutes Positive int value, string at 3 char three letter day string",
+  "v1_human_g2_output": "It returns a list of valid meeting start times as \"HH:MM\" strings, in ascending order. If none available, return empty list.",
+  "id": "S0043"
+}

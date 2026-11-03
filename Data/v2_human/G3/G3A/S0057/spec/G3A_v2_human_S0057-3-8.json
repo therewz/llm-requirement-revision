@@ -1,0 +1,38 @@
+{
+  "id": "S0057",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "no meeting overlap",
+      "c_2": "no earlier than 9.00 (am)",
+      "c_3": "no later than 17.00 on mon-thur",
+      "c_4": "no later than 15.00 on fri",
+      "c_5": "no longer than 4 hours"
+    }
+  ],
+  "v2_human_g3_exception": "work times are 9.00 - 17.00 mon-thur and 9.00 - 15.00 fri",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "Return list of valid meeting slots",
+      "fr_2": "Meetings between 9:00 and 17:00",
+      "fr_3": "meetings can not overlap",
+      "fr_4": "meeting starting slot not extending except on Friday, which are 9.00 to 15.00"
+    }
+  ],
+  "v2_human_g3_goal": "To help find available meeting times for a given day",
+  "v2_human_g3_input": "events: a list of declarative containing booked time slots, meeting_duration: an int for the required meeting duration, day: a day on which the meeting is asked to be scheduled",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "meeting is cannot overlap",
+      "neg_req_2": "meeting must not occur outside of 9:00-17:00 monday or 9:00-15:00 on fri"
+    }
+  ],
+  "v2_human_g3_output": "it returns a list of valid meeting slots for the given day and duration",
+  "v2_human_g3_tb": "The earlier is to be prioritized but ultimately both are added to the return list",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "events is a list of declaratives",
+      "inv_2": "meeting_duration is an int",
+      "inv_3": "day is a 2 letter str"
+    }
+  ]
+}

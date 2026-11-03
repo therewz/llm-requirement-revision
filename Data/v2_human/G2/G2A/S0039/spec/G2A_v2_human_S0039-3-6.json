@@ -1,0 +1,26 @@
+{
+  "id": "S0039",
+  "v2_human_g2_ac": [
+    {
+      "ac_1": "Given that it is Friday and valid slots like 15:15, 15:30 exist, when the system generates meeting slots then all slots v2_human 15:00 must be excluded.",
+      "ac_2": "Given that it is not Friday, when the system generates meeting slots, then all slots v2_human 15:00 must be included.",
+      "ac_3": "Given that it is Friday, when system generate meeting slots, then all slots up until 15:00 should be included.",
+      "ac_4": "Given that it is Friday and an existing meeting starting ending v2_human 15:00 when a meeting started v1_human 15:00, then the system should not flag it.",
+      "ac_5": "Given that it is Friday and no events are scheduled, when system generates slots, then 15:00 should still be excluded.",
+      "ac_6": "Given a set of existing events, when the system generates available meeting slots, then every constraint that applied v1_human must still hold."
+    }
+  ],
+  "v2_human_g2_constraints": [
+    {
+      "c_1": "Meetings on Fridays should not start v2_human 15:00",
+      "c_2": "All meeting start time must be in valid 24 hour format.",
+      "c_3": "All constraints from task 5 must hold.",
+      "c_4": "Given the same input, result should always be the same",
+      "c_5": "Only start time matters for Friday Rule.",
+      "c_6": "Meetings contain required field even if they might get filtered out."
+    }
+  ],
+  "v2_human_g2_goal": "The goal of the system is to return only meetings that are outside of working hours and can take place any available slot v1_human Fridays 15:00.",
+  "v2_human_g2_input": "Outside of the input parameters from task 5, I did not add any additional input parameters as stated in task 5 specifications.",
+  "v2_human_g2_output": "My output remains the same as task 5 specifications."
+}

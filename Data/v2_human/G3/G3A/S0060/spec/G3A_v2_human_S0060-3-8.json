@@ -1,0 +1,41 @@
+{
+  "id": "S0060",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "The list should only contain strings",
+      "c_2": "Valid working time is 8:00 - 17:00",
+      "c_3": "Each time is represented as hour:minute",
+      "c_4": "24 hour clock format is used",
+      "c_5": "meeting duration is an integer",
+      "c_6": "Lunch break is from 12:00 to 13:00"
+    }
+  ],
+  "v2_human_g3_exception": "",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "The user shall be able to enter their desired meeting duration",
+      "fr_2": "The user shall be able to enter their event calendar",
+      "fr_3": "The system shall calculate all the available times a meeting can be held",
+      "fr_4": "The system shall not include any meeting times 15:00 and beyond on Fridays",
+      "fr_5": "The system shall return a list that contain times in a string type",
+      "fr_6": "The system shall return an empty list if no valid meeting time is available"
+    }
+  ],
+  "v2_human_g3_goal": "The objective of the system is that the user enters their existing event calender and their desired meeting duration, the system will return a list of all the meeting start times that will fit their schedule",
+  "v2_human_g3_input": "Existing event calendar which is a list, each time is in string format, valid times are 0-24 desired meeting duration - integer - formatted in hours",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "A list that contains a time outside working hours",
+      "neg_req_2": "A time from 15:00 to 17:00 is included in resulting list"
+    }
+  ],
+  "v2_human_g3_output": "The function should return a list of all the valid starting times during work hours for a meeting except Fridays v2_human 15:00",
+  "v2_human_g3_tb": "If there are multiple times available, the system shall choose the earliest time",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "Time is between 0:00 - 23:00",
+      "inv_2": "No 2 events can be held at the same time",
+      "inv_3": "No times from 15:00 to 17:00 should be included in return list"
+    }
+  ]
+}

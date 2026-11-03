@@ -1,0 +1,26 @@
+{
+  "v1_human_g2_ac": [
+    {
+      "ac_1": "Given a list of resource requests whose total does not exceed the available capacity when is_allocation_feasible executes, then the function returns true.",
+      "ac_2": "Given an empty list of requests, when is_allocation_feasible executes, then the function returns true.",
+      "ac_3": "Given a list of resource requests whose total exceeds the available capacity, when is_allocation_feasible executes, then function returns false.",
+      "ac_4": "Given a list that contains a single request that exceeds the available capacity, when is_allocation_feasible executes, then function returns false.",
+      "ac_5": "Given a list of requests where total matches the available capacity, when is_allocation_feasible executes, then function returns true.",
+      "ac_6": "Given requests and available resources for multiple resource types where at least one exceeds its capacity, when is_allocation_feasible executes, then function returns false."
+    }
+  ],
+  "v1_human_g2_constraints": [
+    {
+      "c_1": "Resources are finite.",
+      "c_2": "Requests are non-negative.",
+      "c_3": "Order of requests does not affect feasibility.",
+      "c_4": "Resource types must align between capacity and requests.",
+      "c_5": "No state changes.",
+      "c_6": "Requests must be fully satisfied."
+    }
+  ],
+  "v1_human_g2_goal": "The objective of this system is to determine if it can allocate enough resources so that everyone's needs are met.",
+  "v1_human_g2_input": "The functions have two input parameters, requests and resources. The requests input is type list and holds resources. The resources is type dictionary that holds a string-type key and an integer value. The integer value must be non-negative. For requests, it must hold dictionary-type objects",
+  "v1_human_g2_output": "Function should return a Boolean value. True if allocation is feasible, false otherwise.",
+  "id": "S0028"
+}

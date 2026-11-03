@@ -1,0 +1,26 @@
+{
+  "v1_human_g2_ac": [
+    {
+      "ac_1": "Given there is existing event during work hours, when user requests meeting slots, then no slot overlapping that event are suggested",
+      "ac_2": "Given there is event outside work hours, when user requests meeting slots, then the event is ignored and all slots remain available",
+      "ac_3": "Given no existing events, when meeting slot is requested, no slot during lunch break (12:00-13:00) is suggested",
+      "ac_4": "Given entire working day is booked, when meeting slot is requested, an empty list is returned",
+      "ac_5": "Given an event ends exactly at the start of work hours, when meeting slot is requested, then event is ignored and all slots remain available",
+      "ac_6": "Given no existing event, when meeting slot is longer than available gap, empty list is returned"
+    }
+  ],
+  "v1_human_g2_constraints": [
+    {
+      "c_1": "Working hours fixed between 09:00 and 17:00 so no slots outside that period",
+      "c_2": "Lunch break from 12:00 to 13:00 is always blocked for meetings",
+      "c_3": "Meeting slots generated in 15-minute increments",
+      "c_4": "Event times provided in \"HH:MM\" format",
+      "c_5": "Meeting duration provided as the integer",
+      "c_6": "Suggested slot should not overlap with existing event"
+    }
+  ],
+  "v1_human_g2_goal": "The system takes list of existing events and meeting duration and returns all available slots for that stay. It takes into account the working hours, avoids conflicts with events and lunch break.",
+  "v1_human_g2_input": "events -> List of dictionaries. Format: each list item is dictionary with keys \"start\" and \"end\" in \"HH:MM\" format. Any valid time between \"00:00\" and \"23:59\" is valid value.\nmeeting_duration -> int. Format: no. of minutes for the meeting. Any positive integer is valid value.\ndays -> string. Format: 3 letter day abbreviation. Any valid day string in the format is valid value.",
+  "v1_human_g2_output": "returns list of valid meeting times where each time is in \"HH:MM\" format. Returns empty list if no valid slot available.",
+  "id": "S0038"
+}

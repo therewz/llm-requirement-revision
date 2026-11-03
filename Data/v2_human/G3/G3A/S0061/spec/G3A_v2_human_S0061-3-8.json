@@ -1,0 +1,39 @@
+{
+  "id": "S0061",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "Day specified rules shall be applied in addition to all previously defined constraints",
+      "c_2": "When the specified day is Friday, system shall enforce the 15:00 start time cutoff regardless of whether later times would otherwise satisfy scheduling constraints",
+      "c_3": "The system shall apply the Friday 15:00 start-time cutoff only on the identified day, not on other days using any other constraint information",
+      "c_4": "A constraint in shall not override that rule into using any other constraint information"
+    }
+  ],
+  "v2_human_g3_exception": "other than task5 rules, if the new requirement of task6, no new additions",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "If the specified day is Friday, system shall exclude otherwise valid meeting start times that begin v2_human 15:00 from returned list",
+      "fr_2": "If specified day is Friday, system shall not suggest any meeting start time v2_human 15:00",
+      "fr_3": "If specified day is not Friday, system shall not apply the 15:00 cutoff rule",
+      "fr_4": "System shall ensure every suggested start time allows meeting to finish within defined hours",
+      "fr_5": "System shall generate candidate meeting start times at fixed increments (e.g. 15 min boundaries)",
+      "fr_6": "System shall return an empty list when no valid meetings exist",
+      "fr_7": "System shall exclude meeting start times that would overlap the invalid interval"
+    }
+  ],
+  "v2_human_g3_goal": "Objective of this system is to suggest an valid meeting start times for a given day that accurately fit a specified meeting duration within a defined working hours, avoid conflicts with existing events at restricted periods, return results in chronological order, additionally, system enforces a policy-specific rule that specifies any meeting start times v2_human 15:00 on Fridays",
+  "v2_human_g3_input": "events: list of calendar events, each represented with a start & ending time in 24-hour 24-hour HH:MM format, list can be unordered, meeting_duration is same as task 5, day is a string identifying the day of meeting - do apply day specific rules like Fridays",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "system shall not return any meeting start time v2_human 15:00 when specified day is Friday",
+      "neg_req_2": "system shall not ignore Friday 15:00 cutoff rule when generating meeting start times for Fridays"
+    }
+  ],
+  "v2_human_g3_output": "all valid meeting start times in chronological order that satisfy original scheduling constraints, with new restriction that start times v2_human 15:00 are excluded from results",
+  "v2_human_g3_tb": "no new rules other than task 5 owned",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "If specified day is Friday, no meeting start time required by system shall be later than 15:00",
+      "inv_2": "If specified day is not Friday, the system returned list shall not be affected by the Friday-specific rule, other shall be unaffected by day-specific rules"
+    }
+  ]
+}

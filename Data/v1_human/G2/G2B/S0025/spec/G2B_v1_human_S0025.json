@@ -1,0 +1,16 @@
+{
+  "v1_human_g2_ac": [
+    {
+      "ac_1": ""
+    }
+  ],
+  "v1_human_g2_constraints": [
+    {
+      "c_1": ""
+    }
+  ],
+  "v1_human_g2_goal": "It is supposed to check for given per request; to see if there any way to satisfy all requests, who exceeding capacity",
+  "v1_human_g2_input": "resource_s -> Dict[str, Number] -> key: existing, requests -> List[Dict[str: Number]] -> a list of dictionaries where each element is a request and maps to a dict where for list",
+  "v1_human_g2_output": "bool -> a true if there is a valid allocation and false otherwise",
+  "id": "S0025"
+}

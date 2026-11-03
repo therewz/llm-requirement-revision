@@ -1,0 +1,44 @@
+{
+  "id": "S0049",
+  "v1_human_g3_constraints": [
+    {
+      "c_1": "Time format is HH:MM",
+      "c_2": "event is a list of dictionaries with keys \"start\" & \"end\"",
+      "c_3": "meeting duration is within fixed work hours (9-19)",
+      "c_4": "Lunch break is always unavailable (12-13)",
+      "c_5": "Events can be unsorted",
+      "c_6": "Candidate start times are on a 15-minute grid (00,15,30,45)"
+    }
+  ],
+  "v1_human_g3_exception": "- day is accepted but ignored\n- Some scheduling rules for all days/holidays.\n- lunch is always blocked\n- Work hours fixed to 9-15\n- Events outside of work hours are clipped or ignored\n- Invalid events (end <= start) are ignored.\n- 15 minutes buffer v2_human each event\n- start times only on 15-minute grid.\n- If no valid slot (or meeting duration KO), return [].\n- Assumes valid HH:MM event times (\"start\"/\"end\" key).",
+  "v1_human_g3_frs": [
+    {
+      "fr_1": "Accept a day's calendar events, a meeting duration, of a day value",
+      "fr_10": "Handle unsorted events; ignore overlaps as blocked period. (ignore events outside working hours, clipped or ignored)",
+      "fr_2": "Compute possible meeting start times P for that day",
+      "fr_3": "Return only valid start times for the requested duration",
+      "fr_4": "Reject slots that overlaps existing events",
+      "fr_5": "Respect working hours when suggested slots",
+      "fr_6": "exclude lunch time",
+      "fr_7": "Return all valid slots",
+      "fr_8": "Return slots in ascending order",
+      "fr_9": "Return [] on empty list if no valid slot exists"
+    }
+  ],
+  "v1_human_g3_goal": "The objective is to generate all valid meeting start times P for a given day using suggest_slots, based on the existing calendar event and a requested duration. A slot is valid only if it fits within work hours, avoids lunch, and doesn't conflict with events.",
+  "v1_human_g3_input": "events (List [Dict [str, str]]): A list of calendar events, each with \"start\" and \"end\" time strings in HH:MM format. Unsorted events are allowed; invalid events (end <= start) are ignored; events outside work hours are ignored or clipped. Meeting_duration: Valid is 70 integer / day (str): a day/date string (accepted but not used)",
+  "v1_human_g3_invariants": [
+    {
+      "inv_1": "Output is sorted in ascending order (no duplicates)",
+      "inv_2": "No returned slot overlaps any blocked interval (existing events, lunch, ...)"
+    }
+  ],
+  "v1_human_g3_neg_req": [
+    {
+      "neg_req_1": "The system must not return a slot that overlaps an existing event",
+      "neg_req_2": "The system must not return times outside working hours"
+    }
+  ],
+  "v1_human_g3_output": "The function returns a List [str] of valid meeting start times in HH:MM format, sorted from earliest to latest. It returns [] if no valid slot exists.",
+  "v1_human_g3_tie_breaking": "This system doesn't pick one best slot; it returns all feasible slots. If multiple slots are feasible, they're prioritized by earliest first. If equivalent event arrangements exist, the output should be the same."
+}

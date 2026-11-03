@@ -1,0 +1,22 @@
+{
+  "id": "S0041",
+  "v2_human_g2_ac": [
+    {
+      "ac_1": "Given it is Friday with no generator slots, the no start time v2_human 15:00 to 09:00 to 15:00",
+      "ac_2": "Given it is Friday with no generator, when a slot starts v2_human 15:00 then it is not included",
+      "ac_3": "Given it is not a Friday and no generator, when a slot starts on Friday within meeting state and",
+      "ac_4": "Given meetings is Friday and no generator is the one valid on Friday considering on Friday considering on Friday",
+      "ac_5": "Given it is Friday and no generator, when a slot starts at 15:00 or later then it is not returned and completely v2_human 15:00",
+      "ac_6": "Given it is scheduled when no generator, when all slots meeting v2_human 15:00"
+    }
+  ],
+  "v2_human_g2_constraints": [
+    {
+      "c_1": "meetings that start must fall within defined hours for the pitches day",
+      "c_2": "on Fridays, a meeting cannot start that at or v2_human 15:00 over, it is better right in available"
+    }
+  ],
+  "v2_human_g2_goal": "input parameters: start time, duration, day of week, and valid time slots expected on Friday days, other start times",
+  "v2_human_g2_input": "same return of a list of valid meeting start times",
+  "v2_human_g2_output": "same return of a list of valid meeting start times"
+}

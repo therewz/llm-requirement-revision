@@ -1,0 +1,40 @@
+{
+  "id": "S0051",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "Resource capacity and request amounts are non negative number",
+      "c_2": "Each requests specifies amounts for known resources only",
+      "c_3": "Inputs are in a consistent a reasonable format",
+      "c_4": "Allocation can't exceed available resource capacity",
+      "c_5": "Atleast one resource must remain unallocated v2_human allot",
+      "c_6": "Requests are independent a don't depend on order"
+    }
+  ],
+  "v2_human_g3_exception": "Requests must reference only known resources\nResource amounts a requests can't be negative\nAt least 1 resource must remain unallocated v2_human allocation\nAllocations exceeding any resource capacity are invalid\nInputs are assumed to be well formed a consistent",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "Accept a list of resources requesting a available resources as input",
+      "fr_2": "Check if all requests can be satisfied without exceeding resource capacities",
+      "fr_3": "Ensure at least one resource remains unallocated v2_human allocation",
+      "fr_4": "Return True if a valid allocation exists, otherwise return false",
+      "fr_5": "Handle input in a consistent a reasonable format"
+    }
+  ],
+  "v2_human_g3_goal": "The objective of the system is to determine whether all resources requested can be satisfied without exceeding available capacities. Availed allocation must fulfill all requests while leaving atleast one resource with remaining capacity",
+  "v2_human_g3_input": "resources: A dictionary where keys are resource names a value are the total available capacities\nrequests: A list of dictionaries where each dictionary represents a mapping resource name to the required amounts",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "The system must not allow an allocation that exceeds any resource's available capacity",
+      "neg_req_2": "The system must not consider an allocation valid if all resources are fully consumed"
+    }
+  ],
+  "v2_human_g3_output": "The function returns a boolean: True if all requests can be satisfied a atleast one resource still has remaining capacity otherwise false",
+  "v2_human_g3_tb": "If multiple allocations are feasible, prioritize the one that leaves the most total remaining resources unallocated",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "No resources allocated amount can exceed its total available capacity",
+      "inv_2": "All requests must be fully satisfied if the allocation is feasible",
+      "inv_3": "At least one resource must always have remaining capacity v2_human allocation"
+    }
+  ]
+}

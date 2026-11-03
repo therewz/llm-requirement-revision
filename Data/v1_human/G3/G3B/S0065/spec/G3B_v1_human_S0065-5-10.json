@@ -1,0 +1,37 @@
+{
+  "v1_human_g3_constraints": [
+    {
+      "c_1": "the request cannot exceed the resource inventory",
+      "c_2": "Requested amount must be positive"
+    }
+  ],
+  "v1_human_g3_exception": "",
+  "v1_human_g3_frs": [
+    {
+      "fr_1": "The input for resources must be a dictionary",
+      "fr_2": "For requests, must be a list where each element is a dictionary",
+      "fr_3": "Every resource requested must exist in resources",
+      "fr_4": "The amount requested must not be negative",
+      "fr_5": "resource must be a string",
+      "fr_6": "The amount must be an integer"
+    }
+  ],
+  "v1_human_g3_goal": "Determines whether a list of resource requests can be satisfied given limited capacity. For example, if one is assigned at 10, the system checks if the request is greater than 10.",
+  "v1_human_g3_input": "Input 1 is a dictionary that contains the name of the resource and its associated minimum capacity. Ex. resources: {'cpu': 10}\n\nInput 2 is the requests for resource allocation. It is a list which contains dictionaries. Each dictionary is a request for the associated resource. Ex. [{'cpu': 2}, {'mem': 8}, {'cpu': 3}, {'mem': 10}]",
+  "v1_human_g3_invariants": [
+    {
+      "inv_1": "resource amount must not exceed available capacity",
+      "inv_2": "all resource requests must be positive",
+      "inv_3": "every resource requested must exist in resources"
+    }
+  ],
+  "v1_human_g3_neg_req": [
+    {
+      "neg_req_1": "The system must not allocate resources above available capacity",
+      "neg_req_2": "The system must not request for resources that have not been declared"
+    }
+  ],
+  "v1_human_g3_output": "The function returns a boolean value (true or false) which indicates if the request has been fulfilled.",
+  "v1_human_g3_tie_breaking": "",
+  "id": "S0065"
+}

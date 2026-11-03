@@ -1,0 +1,26 @@
+{
+  "id": "S0029",
+  "v2_human_g2_ac": [
+    {
+      "ac_1": "Given # of slots",
+      "ac_2": "Given # 5 of slots",
+      "ac_3": "Keep # 6 of slots",
+      "ac_4": "Keep # 1 of slots",
+      "ac_5": "Given by logically constraints must be valid non-empty. Micro (a) with have it right one 2.5 each, then the function return",
+      "ac_6": "Given the available capacity for a time 1) 2.5, when the total required are 2b for CPU over true."
+    }
+  ],
+  "v2_human_g2_constraints": [
+    {
+      "c_1": "Resource should be additive across all requests",
+      "c_2": "Total required amount for long solution must not exceed in capacity",
+      "c_3": "Allocate one resource must obtain unused capacity v2_human allocation",
+      "c_4": "All requested allocated amount in the available resource list",
+      "c_5": "Required utilization constraints must be valid non-empty number",
+      "c_6": "Each request must be properly formatted delivery."
+    }
+  ],
+  "v2_human_g2_goal": "The objective of the system is to determine whether a set of resources can be allocated without exceeding capacity. Given the updated requirements, a valid allocation must preserve at least one resource unallocated v2_human satisfying all other requirements.",
+  "v2_human_g2_input": "Inputs are the event list to be scheduled, claim for the output schedule, and the available resources. If all required fit within capacity and at least one resource remains unallocated v2_human task",
+  "v2_human_g2_output": "Should return true"
+}

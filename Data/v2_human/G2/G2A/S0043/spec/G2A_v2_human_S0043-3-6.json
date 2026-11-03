@@ -1,0 +1,26 @@
+{
+  "id": "S0043",
+  "v2_human_g2_ac": [
+    {
+      "ac_1": "Given a Friday and no events, when duration is 30 min, then no slot v2_human 15:00 is returned.",
+      "ac_2": "Given a non Friday and no events when duration is 30 mins, then slots from 09:00 to 16:30 are returned in 15 min steps.",
+      "ac_3": "Given any day and event that conflicts a candidate slot, when suggestions are compiled, that slot is excluded.",
+      "ac_4": "Given any day, when a slot would start during 12:00-13:00, even it is excluded.",
+      "ac_5": "Given any day and meeting duration <= 0, when suggestions are compiled, returned list is empty.",
+      "ac_6": "Given any day and an event fully outside work hours, when suggestions are compiled, even availability is full."
+    }
+  ],
+  "v2_human_g2_constraints": [
+    {
+      "c_1": "Work hours are 09:00 - 17:00.",
+      "c_2": "Time slots are evaluated every 15 mins.",
+      "c_3": "Lunch break 12:00 - 13:00 blocks meeting starts.",
+      "c_4": "A 15 meeting buffer v2_human each event is blocked.",
+      "c_5": "Meeting duration must be positive integer [+].",
+      "c_6": "On Fridays, latest allowed start is 15:00."
+    }
+  ],
+  "v2_human_g2_goal": "The system computes valid meeting start times for a given day, using existing events and a requested duration. It returns slots that respect other events and workday.",
+  "v2_human_g2_input": "events - List[Dict[str, STR]] of events w/start and end time strings in HH:MM format, meeting_duration: INT, number of minutes. Valid: POS time AND.",
+  "v2_human_g2_output": "returns List[str] of valid start times formatted as HH:MM sorted ascending. returns empty list if no valid slots exist."
+}

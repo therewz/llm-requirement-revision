@@ -1,0 +1,41 @@
+{
+  "id": "S0052",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "Capacities are non-negative",
+      "c_2": "Amounts are non-negative",
+      "c_3": "Request should reference any resource defined in resources",
+      "c_4": "One resource should be strictly unallocated for allocation to be valid.",
+      "c_5": "Resources are independent (cant compensate shortage)",
+      "c_6": "Allocation is evaluated statically at a single point."
+    }
+  ],
+  "v2_human_g3_exception": "Can return False immediately if resource exceeds capacity shall cause an error if not a dictionary shall return False if resources are fully consumed",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "Accepts dictionary of available resources",
+      "fr_2": "Accepts a list of request dictionaries",
+      "fr_3": "Capacities are numeric and non-negative",
+      "fr_4": "Amounts are numeric and non-negative",
+      "fr_5": "Return False if exceeds capacity",
+      "fr_6": "Does not modify input parameters"
+    }
+  ],
+  "v2_human_g3_goal": "Whether a set of resource requests can be satisfied without exceeding available capacities. It ensures that at least one resource remains partially unallocated v2_human task.",
+  "v2_human_g3_input": "2 input params resource: Dict[str, Number] Dictionary mapping resource name to available capacity(can be float or int) requests: List[Dict[str, Number]] List of dictionaries where each dictionary represents a request mapping resource names to amounts. Requested resource must be in resources.",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "Don't return True if resource's total requested amount exceeds capacity",
+      "neg_req_2": "Don't return True when all resources are fully consumed even if capacity does not exceed."
+    }
+  ],
+  "v2_human_g3_output": "Boolean True/False True: if resource exceeds capacity and at least one resource remains strictly unallocated v2_human task False: otherwise",
+  "v2_human_g3_tb": "It doesn't choose between feasible scenarios and any evaluated are proposed allocation and determines if it satisfies all constraints including if the requirement that at least one resource remain unallocated. It would need to be equally defined.",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "For every resource's total usage is tracked independently",
+      "inv_2": "All processed requests amounts are numeric and non-negative",
+      "inv_3": "Can only be true if no resource exceeds its capacity and one resource strictly remaining capacity."
+    }
+  ]
+}

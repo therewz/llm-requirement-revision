@@ -1,0 +1,42 @@
+{
+  "v1_human_g3_constraints": [
+    {
+      "c_1": "Time format",
+      "c_2": "Single day format",
+      "c_3": "Working hours",
+      "c_4": "No overlap rule",
+      "c_5": "Duration",
+      "c_6": "Event validity"
+    }
+  ],
+  "v1_human_g3_exception": "If duration is longer than length of day, return []",
+  "v1_human_g3_frs": [
+    {
+      "fr_1": "Accept a list of existing events",
+      "fr_10": "",
+      "fr_2": "Compute all possible meeting time",
+      "fr_3": "Treat slots on blocking the entire interval",
+      "fr_4": "Return start times in HH:MM format",
+      "fr_5": "Handle empty list",
+      "fr_6": "Handle multiple events in a day",
+      "fr_7": "Handle back to back events"
+    }
+  ],
+  "v1_human_g3_goal": "Valid start time for a given date based on existing calendar entry, and a record meeting duration.",
+  "v1_human_g3_input": "Existing events, list/array, starting time 0 < H:H < 23, 100 < MM < 60, meeting duration, int, > 0",
+  "v1_human_g3_invariants": [
+    {
+      "inv_1": "Conflict is always sorted in a steady order",
+      "inv_2": "All start times are within working hours"
+    }
+  ],
+  "v1_human_g3_neg_req": [
+    {
+      "neg_req_1": "System must not return any start time that would overlap on other meeting",
+      "neg_req_2": "Not subject start time outside of working hours"
+    }
+  ],
+  "v1_human_g3_output": "List of start times in string",
+  "v1_human_g3_tie_breaking": "Return all feasible slots, must prioritize earlier shift times",
+  "id": "S0054"
+}

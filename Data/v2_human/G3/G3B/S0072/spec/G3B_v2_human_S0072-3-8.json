@@ -1,0 +1,38 @@
+{
+  "id": "S0072",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "The system must be a single function implemented in python",
+      "c_2": "The system must determine feasibility only using the provided inputs",
+      "c_3": "The system assumes inputs are in a reasonable and consistent format",
+      "c_4": "The system shall not exceed any resources available capacity to determine feasibility",
+      "c_5": "An allocation is not valid if all resources are fully used",
+      "c_6": "The same inputs should always give the same output"
+    }
+  ],
+  "v2_human_g3_exception": "",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "The system shall provide a function that evaluates the feasibility of resource allocation",
+      "fr_2": "The system shall accept an input of a set of available resources and resource requests",
+      "fr_3": "The system shall return True if all requests are satisfied, no capacity is exceeded and at least one resource remains partially unallocated, and false otherwise"
+    }
+  ],
+  "v2_human_g3_goal": "The goal of the system is to determine whether a set of resource requests on is feasible without exceeding available capacity although while still having one resource with some available space",
+  "v2_human_g3_input": "- a dictionary mapping resource names to numeric capacities\n- a list of dictionaries mapping resource names to numeric request amounts",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "The system shall not report an allocation as feasible if all resources are fully consumed",
+      "neg_req_2": "The system shall not attempt to partially satisfy request when determining feasibility"
+    }
+  ],
+  "v2_human_g3_output": "- boolean value whether the allocation is feasible or not",
+  "v2_human_g3_tb": "The system does not currently prioritize or choose between scenarios, it just determines feasibility. If it had to it should be outlined on whether it should be determined. One possible way is prioritizing the allocation with most unused resources",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "For every resource, the amount allocated shall never exceed that resource's capacity",
+      "inv_2": "Given the same set of available resources and requests, the function shall always return the same result",
+      "inv_3": "A feasible allocation must always have at least one resource with some remaining capacity"
+    }
+  ]
+}

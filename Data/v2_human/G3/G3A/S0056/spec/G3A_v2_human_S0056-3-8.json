@@ -1,0 +1,38 @@
+{
+  "id": "S0056",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "Meetings may only start within working hours",
+      "c_2": "Candidate start times are every 15 minutes",
+      "c_3": "No meeting may start during lunch (12:00-13:00)",
+      "c_4": "A candidate time is rejected if it overlaps with any current event",
+      "c_5": "Back to back meetings are treated as conflicts",
+      "c_6": "Meetings can not be scheduled v2_human 15:00 on Fridays"
+    }
+  ],
+  "v2_human_g3_exception": "Friday meetings can't be scheduled v2_human 15:00, but it's fine on other days. Meetings can not be scheduled on Sat and Sun",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "Should find all the timeslots that would for the meeting",
+      "fr_2": "Should not suggest overlapping slots",
+      "fr_3": "Should not return meeting times that are v2_human 15:00 on Fridays"
+    }
+  ],
+  "v2_human_g3_goal": "It aims to suggest a list of valid meeting times on a given day subject to some constraints.",
+  "v2_human_g3_input": "events: List of 2-tuples dicts in python) with the start time and ending time of the meeting, meeting_duration: Duration of meeting in minutes, day: string indicating the day it should be scheduled on.",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "Meetings are not scheduled v2_human 15:00 on Fridays",
+      "neg_req_2": "Meeting start times 9:00 can not be suggested"
+    }
+  ],
+  "v2_human_g3_output": "List of strings that contain valid starting time of the meeting we want to schedule on the given day.",
+  "v2_human_g3_tb": "Candidate time slots are generated in ascending order. A slot that starts exactly when the event ends is treated as a conflict",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "Meeting days are not Sat or Sun",
+      "inv_2": "List of meetings should not have overlapping events",
+      "inv_3": "List of meetings can not have meetings on Fridays that start v2_human 15:00"
+    }
+  ]
+}

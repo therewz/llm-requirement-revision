@@ -1,0 +1,29 @@
+{
+  "id": "S0071",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "The constraints remain constant from the previous task with the addition of the inability to utilize max resource constraint."
+    }
+  ],
+  "v2_human_g3_exception": "The exceptions remain constant from the previous task.",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "The functional requirements from the previous task.",
+      "fr_2": "Cannot use maximum/all available resources."
+    }
+  ],
+  "v2_human_g3_goal": "The goal of the system is to check whether all resource requests can be satisfied without using the entirety of the capacity.",
+  "v2_human_g3_input": "The same inputs and outputs remain constant from the previous task.",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "The two negative requirements from the previous task remain true."
+    }
+  ],
+  "v2_human_g3_output": "The return value of the function remaining consistent from the previous task.",
+  "v2_human_g3_tb": "The tie-breaking rules remain constant from the previous task.",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "The invariants remain constant from the previous task."
+    }
+  ]
+}

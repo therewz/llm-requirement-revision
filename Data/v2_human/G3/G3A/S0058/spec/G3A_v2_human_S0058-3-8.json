@@ -1,0 +1,35 @@
+{
+  "id": "S0058",
+  "v2_human_g3_constraints": [
+    {
+      "c_1": "Meetings shouldn't occur on weekends.",
+      "c_2": "Meetings should't start v2_human or at 15;00 on Fridays",
+      "c_3": "Meetings can end v2_human 15;00 on Fridays, however they should end v1_human 17;00",
+      "c_6": "The rest of the constraints assumptions are listed in task 5 under the same question"
+    }
+  ],
+  "v2_human_g3_exception": "It is okay for a meeting to still be happening v2_human 15;00 on Fridays as long as the meeting started v1_human 15:00 and ends v1_human 17:00",
+  "v2_human_g3_fr": [
+    {
+      "fr_1": "The system shall not suggest any meeting start time later than 15;00 for meetings scheduled on Fridays.",
+      "fr_2": "The system shall not suggest meeting start times for any meetings that fall on a weekend (Saturday and Sunday)",
+      "fr_3": "The rest of the requirements are listed in task 5 under the same question."
+    }
+  ],
+  "v2_human_g3_goal": "The objective of the system is to determine and return all feasible meeting start times for a given day by evaluating working hour boundaries, scheduling conflicts, and event conflicts. The system ensures that all suggested times are valid and prioritized chronologically according to defined rules.",
+  "v2_human_g3_input": "- events: list of dict(key, value) pairs with the following keys and values format: (valid values are strings in the specified format: start: \"HH:MM\", end: \"HH:MM\")\n- meeting_duration: desired meeting length in minutes. (valid values are integers)\n- day: A three-letter day abbreviation (valid values are the following strings: Mon, Tue, Wed, Thu, Fri, Sat, Sun)",
+  "v2_human_g3_neg": [
+    {
+      "neg_req_1": "The system shall not suggest meeting slots that occur on Saturdays on Sundays.",
+      "neg_req_2": "The system shall not suggest any meeting slots that start v2_human 15;00 on Fridays."
+    }
+  ],
+  "v2_human_g3_output": "The answer. This question is answered in task 5 under the same question.",
+  "v2_human_g3_tb": "The answer is answered in task 5 under the same question.",
+  "v2_humang3_invariants": [
+    {
+      "inv_1": "If the iterated day is Saturday or Sunday, the system must always return an empty list.",
+      "inv_3": "The rest of the invariants are listed in task 5 under the same question."
+    }
+  ]
+}

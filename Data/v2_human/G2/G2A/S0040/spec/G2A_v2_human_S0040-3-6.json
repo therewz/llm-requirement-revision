@@ -1,0 +1,25 @@
+{
+  "id": "S0040",
+  "v2_human_g2_ac": [
+    {
+      "ac_1": "Given a calendar with events \"9:00-10:00\", \"13:00-14:00\" on a Friday when searching for a 60-min meeting on Fri then the system returns [\"10:00\", \"10:30\", \"11:00\", \"11:30\", \"12:00\", \"12:30\", \"14:00\"]",
+      "ac_2": "Given a calendar with events \"9:00-11:00\", \"11:50-12:50\", \"16:15-17:00\" on a Friday when searching for a 45 min meeting on Mon then return a [\"10:00-12:00\", \"12:50-15:00\"]",
+      "ac_3": "Given events [\"10:00-12:00\", \"12:00-15:00\"] when requesting a 60-minute meeting then return [\"9:00\", \"15:00\"]",
+      "ac_4": "Given events [\"9:00-15:00\"] when requesting 120-minute meeting then return [\"15:00\"]",
+      "ac_5": "Given events [\"9:00-10:00\", \"15:00-16:00\"] when requesting 15-min meeting then return [\"10:00\", \"10:30\", \"11:00\", ..., \"16:30\"] at 30 min intervals"
+    }
+  ],
+  "v2_human_g2_constraints": [
+    {
+      "c_1": "The day parameter must be a three letter abbreviation",
+      "c_2": "Only weekdays are supported",
+      "c_3": "Input events may be provided in order",
+      "c_4": "The system must internally sort events by start time v1_human processing to correctly identify gaps",
+      "c_5": "All times are treated as local",
+      "c_6": "Meeting duration must be positive"
+    }
+  ],
+  "v2_human_g2_goal": "To return valid meeting times",
+  "v2_human_g2_input": "events: List[Dict[str, str]], meeting_duration: int, day: str",
+  "v2_human_g2_output": "Return a list of strings"
+}
