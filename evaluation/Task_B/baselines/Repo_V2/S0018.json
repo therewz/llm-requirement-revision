@@ -1,0 +1,323 @@
+{
+  "core28": {
+    "complete": true,
+    "expected_case_count": 28,
+    "metadata": {
+      "collected_case_ids": [
+        "test_TC1_negative_resource_value",
+        "test_TC2_negative_request_value",
+        "test_TC3_nan_value",
+        "test_TC4_infinite_value",
+        "test_TC5_resources_not_dict",
+        "test_TC6_requests_not_list",
+        "test_TC7_request_item_not_dict",
+        "test_TC8_resource_value_not_number",
+        "test_TC9_request_value_not_number",
+        "test_TC10_resource_key_not_string",
+        "test_TC11_request_key_not_string",
+        "test_TC12_missing_resource_type",
+        "test_TC13_empty_resource_dict_invalid",
+        "test_TC14_none_resources",
+        "test_TC15_none_requests",
+        "test_TC16_nested_invalid_request",
+        "test_TC17_list_inside_request_value",
+        "test_TC18_tuple_inside_request_value",
+        "test_TC19_valid_simple_case",
+        "test_TC20_valid_multi_resource",
+        "test_TC21_zero_and_negative_mix",
+        "test_TC23_request_with_extra_invalid_key",
+        "test_TC24_string_number",
+        "test_TC25_string_number_in_request",
+        "test_TC26_empty_requests_valid",
+        "test_TC27_empty_requests_invalid_resources",
+        "test_TC28_valid_float",
+        "test_TC29_invalid_float_nan_request"
+      ],
+      "collection_error": null,
+      "complete": true,
+      "elapsed_seconds": 0.181318,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 7647,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 34045952,
+      "pytest_exitcode": 1,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "\\\": 5}])\\n\\ntest_target.py:147: \\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \\n\\nresources = {'cpu': '10'}, requests = [{'cpu': 5}]\\n\\n    def is\"], \"test_TC25_string_number_in_request\": [\"failed\", \"def test_TC25_string_number_in_request():\\n        with pytest.raises(TypeError):\\n>           is_allocation_feasible({\\\"cpu\\\": 10}, [{\\\"cpu\\\": \\\"5\\\"}])\\n\\ntest_target.py:151: \\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \\n\\nresources = {'cpu': 10}, requests = [{'cpu': '5'}]\\n\"], \"test_TC26_empty_requests_valid\": [\"passed\", \"\"], \"test_TC27_empty_requests_invalid_resources\": [\"failed\", \"def test_TC27_empty_requests_invalid_resources():\\n>       with pytest.raises(ValueError):\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\\nE       Failed: DID NOT RAISE <class 'ValueError'>\\n\\ntest_target.py:162: Failed\"], \"test_TC28_valid_float\": [\"passed\", \"\"], \"test_TC29_invalid_float_nan_request\": [\"passed\", \"\"]}, \"collected\": [\"test_TC1_negative_resource_value\", \"test_TC2_negative_request_value\", \"test_TC3_nan_value\", \"test_TC4_infinite_value\", \"test_TC5_resources_not_dict\", \"test_TC6_requests_not_list\", \"test_TC7_request_item_not_dict\", \"test_TC8_resource_value_not_number\", \"test_TC9_request_value_not_number\", \"test_TC10_resource_key_not_string\", \"test_TC11_request_key_not_string\", \"test_TC12_missing_resource_type\", \"test_TC13_empty_resource_dict_invalid\", \"test_TC14_none_resources\", \"test_TC15_none_requests\", \"test_TC16_nested_invalid_request\", \"test_TC17_list_inside_request_value\", \"test_TC18_tuple_inside_request_value\", \"test_TC19_valid_simple_case\", \"test_TC20_valid_multi_resource\", \"test_TC21_zero_and_negative_mix\", \"test_TC23_request_with_extra_invalid_key\", \"test_TC24_string_number\", \"test_TC25_string_number_in_request\", \"test_TC26_empty_requests_valid\", \"test_TC27_empty_requests_invalid_resources\", \"test_TC28_valid_float\", \"test_TC29_invalid_float_nan_request\"], \"collection_error\": null, \"pytest_exitcode\": 1}\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_resource_key_not_string": [
+        "failed",
+        "def test_TC10_resource_key_not_string():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({1: 10}, [{\"cpu\": 5}])\n\ntest_target.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {1: 10}, requests = [{'cpu': 5}]\n\n    def is_al"
+      ],
+      "test_TC11_request_key_not_string": [
+        "failed",
+        "def test_TC11_request_key_not_string():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, [{1: 5}])\n\ntest_target.py:58: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = [{1: 5}]\n\n    def is_all"
+      ],
+      "test_TC12_missing_resource_type": [
+        "failed",
+        "def test_TC12_missing_resource_type():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:66: Failed"
+      ],
+      "test_TC13_empty_resource_dict_invalid": [
+        "failed",
+        "def test_TC13_empty_resource_dict_invalid():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:70: Failed"
+      ],
+      "test_TC14_none_resources": [
+        "failed",
+        "def test_TC14_none_resources():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible(None, [{\"cpu\": 1}])\n\ntest_target.py:75: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = None, requests = [{'cpu': 1}]\n\n    def is_allocation_feasib"
+      ],
+      "test_TC15_none_requests": [
+        "failed",
+        "def test_TC15_none_requests():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, None)\n\ntest_target.py:79: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = None\n\n    def is_allocation_feasible("
+      ],
+      "test_TC16_nested_invalid_request": [
+        "failed",
+        "def test_TC16_nested_invalid_request():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, [{\"cpu\": {\"nested\": 5}}])\n\ntest_target.py:88: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = [{'cpu':"
+      ],
+      "test_TC17_list_inside_request_value": [
+        "failed",
+        "def test_TC17_list_inside_request_value():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, [{\"cpu\": [5]}])\n\ntest_target.py:93: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = [{'cpu': [5]}]\n"
+      ],
+      "test_TC18_tuple_inside_request_value": [
+        "failed",
+        "def test_TC18_tuple_inside_request_value():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, [{\"cpu\": (5,)}])\n\ntest_target.py:97: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = [{'cpu': (5,)"
+      ],
+      "test_TC19_valid_simple_case": [
+        "passed",
+        ""
+      ],
+      "test_TC1_negative_resource_value": [
+        "passed",
+        ""
+      ],
+      "test_TC20_valid_multi_resource": [
+        "passed",
+        ""
+      ],
+      "test_TC21_zero_and_negative_mix": [
+        "passed",
+        ""
+      ],
+      "test_TC23_request_with_extra_invalid_key": [
+        "failed",
+        "def test_TC23_request_with_extra_invalid_key():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:136: Failed"
+      ],
+      "test_TC24_string_number": [
+        "failed",
+        "def test_TC24_string_number():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": \"10\"}, [{\"cpu\": 5}])\n\ntest_target.py:147: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': '10'}, requests = [{'cpu': 5}]\n\n    def is"
+      ],
+      "test_TC25_string_number_in_request": [
+        "failed",
+        "def test_TC25_string_number_in_request():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, [{\"cpu\": \"5\"}])\n\ntest_target.py:151: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = [{'cpu': '5'}]\n"
+      ],
+      "test_TC26_empty_requests_valid": [
+        "passed",
+        ""
+      ],
+      "test_TC27_empty_requests_invalid_resources": [
+        "failed",
+        "def test_TC27_empty_requests_invalid_resources():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:162: Failed"
+      ],
+      "test_TC28_valid_float": [
+        "passed",
+        ""
+      ],
+      "test_TC29_invalid_float_nan_request": [
+        "passed",
+        ""
+      ],
+      "test_TC2_negative_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC3_nan_value": [
+        "passed",
+        ""
+      ],
+      "test_TC4_infinite_value": [
+        "passed",
+        ""
+      ],
+      "test_TC5_resources_not_dict": [
+        "failed",
+        "def test_TC5_resources_not_dict():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible(10, [{\"cpu\": 1}])\n\ntest_target.py:34: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = 10, requests = [{'cpu': 1}]\n\n    def is_allocation_feasibl"
+      ],
+      "test_TC6_requests_not_list": [
+        "failed",
+        "def test_TC6_requests_not_list():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, \"invalid\")\n\ntest_target.py:38: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = 'invalid'\n\n    def is_allocat"
+      ],
+      "test_TC7_request_item_not_dict": [
+        "failed",
+        "def test_TC7_request_item_not_dict():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, [5])\n\ntest_target.py:42: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = [5]\n\n    def is_allocation_feas"
+      ],
+      "test_TC8_resource_value_not_number": [
+        "failed",
+        "def test_TC8_resource_value_not_number():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": \"ten\"}, [{\"cpu\": 5}])\n\ntest_target.py:46: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 'ten'}, requests = [{'cpu': 5}]"
+      ],
+      "test_TC9_request_value_not_number": [
+        "failed",
+        "def test_TC9_request_value_not_number():\n        with pytest.raises(TypeError):\n>           is_allocation_feasible({\"cpu\": 10}, [{\"cpu\": \"five\"}])\n\ntest_target.py:50: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10}, requests = [{'cpu': 'five"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_B_test.py",
+    "suite_sha256": "d776ae5df8190eb8a58cf7d8b71886b2189f88d0c7b3a2f68f0192ab18e35af3"
+  },
+  "effective_timezone": "UTC",
+  "evaluation_complete": true,
+  "evidence_class": "FRESH_ISOLATED_CLEANED_START_NOT_MODEL_OUTPUT",
+  "finished_at_utc": "2026-11-05T18:51:52.869863+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G1",
+  "no_feedback_to_agent": true,
+  "participant_id": "S0018",
+  "source_sha256": "ccc7ef1a31c224659513d20a7a9afa974ff7e7e81617d1ddbc66ac381d6362ef",
+  "started_at_utc": "2026-11-05T18:51:52.520603+00:00",
+  "supplied5": {
+    "complete": true,
+    "expected_case_count": 5,
+    "metadata": {
+      "collected_case_ids": [
+        "test_TC22_valid_zero_values",
+        "test_TC30_one_resource_must_remain_false",
+        "test_TC31_one_resource_must_remain_true",
+        "test_TC32_multi_resource_exact_cpu",
+        "test_TC33_multi_resource_exact_cpu"
+      ],
+      "collection_error": null,
+      "complete": true,
+      "elapsed_seconds": 0.128285,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 545,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 33275904,
+      "pytest_exitcode": 0,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "{\"results\": {\"test_TC22_valid_zero_values\": [\"passed\", \"\"], \"test_TC30_one_resource_must_remain_false\": [\"passed\", \"\"], \"test_TC31_one_resource_must_remain_true\": [\"passed\", \"\"], \"test_TC32_multi_resource_exact_cpu\": [\"passed\", \"\"], \"test_TC33_multi_resource_exact_cpu\": [\"passed\", \"\"]}, \"collected\": [\"test_TC22_valid_zero_values\", \"test_TC30_one_resource_must_remain_false\", \"test_TC31_one_resource_must_remain_true\", \"test_TC32_multi_resource_exact_cpu\", \"test_TC33_multi_resource_exact_cpu\"], \"collection_error\": null, \"pytest_exitcode\": 0}\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC22_valid_zero_values": [
+        "passed",
+        ""
+      ],
+      "test_TC30_one_resource_must_remain_false": [
+        "passed",
+        ""
+      ],
+      "test_TC31_one_resource_must_remain_true": [
+        "passed",
+        ""
+      ],
+      "test_TC32_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ],
+      "test_TC33_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_B_test.py",
+    "suite_sha256": "0d75ec77772ecf520b655670999ec617887d0b6de77561c8402c48c1d0535710"
+  },
+  "targets": {
+    "answer_key_sha256": "466a0d5008742bbfa3acbdc6c391c73dd698ee688ca7bfb2dfe0a0960bc9ab00",
+    "cases": {
+      "B-C1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-O1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC22": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC31": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-TC32": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      }
+    },
+    "complete": true,
+    "execution_metadata": {
+      "elapsed_seconds": 0.028894,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 889,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 15892480,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "{\"import_error\": null, \"cases\": {\"B-X1\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-X2\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-X3\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-X4\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-TC31\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-C1\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-C2\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-C3\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-O1\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-O2\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-O3\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-C4\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-O4\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-TC32\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-TC22\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}}}\n",
+      "timed_out_file": false
+    },
+    "expected_case_count": 15,
+    "import_error": null
+  },
+  "task": "B"
+}

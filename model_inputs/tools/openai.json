@@ -1,0 +1,60 @@
+[
+  {
+    "description": "Read a Python file in this workspace.",
+    "name": "read_file",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "type": "object"
+    },
+    "strict": true,
+    "type": "function"
+  },
+  {
+    "description": "Replace src/solution.py or create/replace a Python check under checks/.",
+    "name": "write_file",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "content"
+      ],
+      "type": "object"
+    },
+    "strict": true,
+    "type": "function"
+  },
+  {
+    "description": "Run a Python file in this workspace with bounded output/time, no network or subprocesses, and read-only files.",
+    "name": "run_python",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "type": "object"
+    },
+    "strict": true,
+    "type": "function"
+  }
+]

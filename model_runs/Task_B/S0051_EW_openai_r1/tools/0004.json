@@ -1,0 +1,1 @@
+{"elapsed_seconds":0.029633,"isolation":"macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS","observed_output_bytes":42,"output_truncated":false,"peak_observed_rss_bytes":16285696,"returncode":0,"status":"ok","stderr":"","stdout":"All allocation feasibility checks passed.\n"}

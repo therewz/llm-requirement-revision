@@ -1,0 +1,20 @@
+--- S0004/original/solution.py
++++ S0004/cleaned/solution.py
+@@ -17,6 +17,17 @@
+     - Meetings on Friday must start І 15:00
+     - Slots every 15 minutes
+     """
++
++    # Translate canonical dates to the weekday names used below.
++    if isinstance(day, str) and len(day) == 10:
++        from datetime import date as _calendar_input_date
++        try:
++            _parsed_calendar_input = _calendar_input_date.fromisoformat(day)
++        except ValueError:
++            pass
++        else:
++            if _parsed_calendar_input.isoformat() == day:
++                day = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')[_parsed_calendar_input.weekday()]
+     WORK_START = 9 * 60  # 540 minutes
+     WORK_END = 17 * 60   # 1020 minutes
+     FRIDAY_CUTOFF = 15 * 60  # 900 minutes

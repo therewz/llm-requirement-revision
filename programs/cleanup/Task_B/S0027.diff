@@ -1,0 +1,49 @@
+--- S0027/original/solution.py
++++ S0027/cleaned/solution.py
+@@ -1,11 +1,11 @@
+-from typing import Dict, List, Union, Tuple
++from typing import Dict, List, Union
+ 
+ Number = Union[int, float]
+ 
+ def is_allocation_feasible(
+     resources: Dict[str, Number],
+     requests: List[Dict[str, Number]]
+-) -> Tuple[bool, Dict[str, Number]]:
++) -> bool:
+     """
+     Determine whether a set of resource requests can be satisfied given limited capacities,
+     ensuring at least one resource remains unallocated for emergency or burst usage.
+@@ -15,10 +15,8 @@
+         requests: List[Dict[str, Number]] - Each request is a mapping from resource name to the amount required.
+ 
+     Returns:
+-        Tuple[bool, Dict[str, Number]] - 
+-            - True if the allocation is feasible and at least one resource remains.
+-            - False otherwise.
+-            - Dictionary of remaining resources after allocation attempt.
++        True if the allocation is feasible and at least one resource remains.
++        False otherwise.
+     """
+     # Step 1: Validate requests
+     for request in requests:
+@@ -37,13 +35,13 @@
+     remaining_resources = resources.copy()
+     for resource_name, demand in total_demand.items():
+         if resource_name not in resources:
+-            return False, resources  # requested resource doesn't exist
++            return False  # requested resource doesn't exist
+         if demand > resources[resource_name]:
+-            return False, resources  # demand exceeds capacity
++            return False  # demand exceeds capacity
+         remaining_resources[resource_name] -= demand
+ 
+     # Step 4: Enforce new requirement - at least one resource must remain
+     if all(amount <= 0 for amount in remaining_resources.values()):
+-        return False, remaining_resources
++        return False
+ 
+-    return True, remaining_resources
+\ No newline at end of file
++    return True
+\ No newline at end of file

@@ -1,0 +1,19 @@
+{
+  "original_source_commit": "d6beb6ba31e5fc38e140df154ad3de5eec3bd88f",
+  "archive_sha256": "18032f548fd2bf7ac9407e8fc7f68e467f02f422e7011dd45978a557bf48fbef",
+  "comparison_manifest_sha256": "12675ce70fe0e6ceab6e9f72f6a3cffc63ef3735499bcc3a54053bba754eaab5",
+  "verified_original_files": 388,
+  "archive_name": "pilot_taska_v4_private_package.tar.gz",
+  "scope": "The recovery check covered388 originalDatafiles. This focused artifact includes only sources, specifications and hidden suites needed for the withdrawal study, not every recovered participant test/cache.",
+  "original_code_concordance": {
+    "target_repository": "https://github.com/therewz/llm-requirement-revision",
+    "commit": "d6beb6ba31e5fc38e140df154ad3de5eec3bd88f",
+    "original_solution_files": 144,
+    "matching_git_blob_hashes": 144
+  },
+  "earlier_public_supporting_snapshot": {
+    "repository": "https://github.com/SecretActionDev/ICSE2027-How-Specification-Explicitness-Shapes-Failure-in-LLM-Generated-Code",
+    "commit": "39e2b18e8f6cb3edc86b0ca4848af677e64e8479",
+    "note": "Earlier supporting snapshot; not the source of the recovered participant implementations."
+  }
+}

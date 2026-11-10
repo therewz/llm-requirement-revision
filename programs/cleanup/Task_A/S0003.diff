@@ -1,0 +1,20 @@
+--- S0003/original/solution.py
++++ S0003/cleaned/solution.py
+@@ -14,6 +14,17 @@
+     - Respects working hours (09:00-17:00), lunch break (12:00-13:00), existing events,
+       15:00 limit for meetings on Fridays, and 15-minute increments.
+     """
++
++    # Translate canonical dates to the weekday names used below.
++    if isinstance(day, str) and len(day) == 10:
++        from datetime import date as _calendar_input_date
++        try:
++            _parsed_calendar_input = _calendar_input_date.fromisoformat(day)
++        except ValueError:
++            pass
++        else:
++            if _parsed_calendar_input.isoformat() == day:
++                day = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')[_parsed_calendar_input.weekday()]
+     WORK_START = 9 * 60   # 09:00
+     WORK_END = 17 * 60    # 17:00
+     STEP_MINUTES = 15

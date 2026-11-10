@@ -1,0 +1,257 @@
+{
+  "core28": {
+    "expected_case_count": 28,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "set of resource requests can be satisfied given limited capacities.\n    \n        Args:\n            resources : Dict[str, Number], Mapping from resource name to total available capacity.\n            requests : List[Dict[str, Number]], List of requests. Each request is a mapping from resource name to the amount required.\n    \n        Returns:\n            True if the allocation is feasible, False otherwise.\n    \n        \"\"\"\n>       raise NotImplementedError(\"suggest_slots function has not been implemented yet\")\nE       NotImplementedError: suggest_slots function has not been implemented yet\n\nsolution.py:30: NotImplementedError\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC1_negative_resource_value - NotImplementedError...\nFAILED test_target.py::test_TC2_negative_request_value - NotImplementedError:...\nFAILED test_target.py::test_TC3_nan_value - NotImplementedError: suggest_slot...\nFAILED test_target.py::test_TC4_infinite_value - NotImplementedError: suggest...\nFAILED test_target.py::test_TC5_resources_not_dict - NotImplementedError: sug...\nFAILED test_target.py::test_TC6_requests_not_list - NotImplementedError: sugg...\nFAILED test_target.py::test_TC7_request_item_not_dict - NotImplementedError: ...\nFAILED test_target.py::test_TC8_resource_value_not_number - NotImplementedErr...\nFAILED test_target.py::test_TC9_request_value_not_number - NotImplementedErro...\nFAILED test_target.py::test_TC10_resource_key_not_string - NotImplementedErro...\nFAILED test_target.py::test_TC11_request_key_not_string - NotImplementedError...\nFAILED test_target.py::test_TC12_missing_resource_type - NotImplementedError:...\nFAILED test_target.py::test_TC13_empty_resource_dict_invalid - NotImplemented...\nFAILED test_target.py::test_TC14_none_resources - NotImplementedError: sugges...\nFAILED test_target.py::test_TC15_none_requests - NotImplementedError: suggest...\nFAILED test_target.py::test_TC16_nested_invalid_request - NotImplementedError...\nFAILED test_target.py::test_TC17_list_inside_request_value - NotImplementedEr...\nFAILED test_target.py::test_TC18_tuple_inside_request_value - NotImplementedE...\nFAILED test_target.py::test_TC19_valid_simple_case - NotImplementedError: sug...\nFAILED test_target.py::test_TC20_valid_multi_resource - NotImplementedError: ...\nFAILED test_target.py::test_TC21_zero_and_negative_mix - NotImplementedError:...\nFAILED test_target.py::test_TC23_request_with_extra_invalid_key - NotImplemen...\nFAILED test_target.py::test_TC24_string_number - NotImplementedError: suggest...\nFAILED test_target.py::test_TC25_string_number_in_request - NotImplementedErr...\nFAILED test_target.py::test_TC26_empty_requests_valid - NotImplementedError: ...\nFAILED test_target.py::test_TC27_empty_requests_invalid_resources - NotImplem...\nFAILED test_target.py::test_TC28_valid_float - NotImplementedError: suggest_s...\nFAILED test_target.py::test_TC29_invalid_float_nan_request - NotImplementedEr...\n28 failed in 0.07s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_resource_key_not_string": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC11_request_key_not_string": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC12_missing_resource_type": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC13_empty_resource_dict_invalid": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC14_none_resources": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC15_none_requests": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC16_nested_invalid_request": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC17_list_inside_request_value": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC18_tuple_inside_request_value": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC19_valid_simple_case": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC1_negative_resource_value": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC20_valid_multi_resource": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC21_zero_and_negative_mix": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC23_request_with_extra_invalid_key": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC24_string_number": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC25_string_number_in_request": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC26_empty_requests_valid": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC27_empty_requests_invalid_resources": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC28_valid_float": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC29_invalid_float_nan_request": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC2_negative_request_value": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC3_nan_value": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC4_infinite_value": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC5_resources_not_dict": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC6_requests_not_list": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC7_request_item_not_dict": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC8_resource_value_not_number": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC9_request_value_not_number": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_B_test.py",
+    "suite_sha256": "d776ae5df8190eb8a58cf7d8b71886b2189f88d0c7b3a2f68f0192ab18e35af3"
+  },
+  "evidence_class": "FRESH_ISOLATED_ORIGINAL_PROGRAM_EXECUTION",
+  "finished_utc": "2026-11-05T06:02:36.173215+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G3",
+  "participant_id": "S0050",
+  "phase": "P1",
+  "source_path": "runs/withdrawal_keys_v1/input_snapshot/Data/v1_human/G3/G3B/S0050/src/solution.py",
+  "source_sha256": "7c4d14a869dc68b1f1fb9f755d13a8465a6e80579fe588e9b3a62ac62f6c6ddf",
+  "started_utc": "2026-11-05T06:02:35.703297+00:00",
+  "supplied5": {
+    "expected_case_count": 5,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "olution.py:30: NotImplementedError\n______________________ test_TC32_multi_resource_exact_cpu ______________________\n\n    def test_TC32_multi_resource_exact_cpu():\n>       assert is_allocation_feasible(\n            {\"cpu\": 10, \"ram\": 8},\n            [{\"cpu\": 10, \"ram\": 5}]\n        ) is True\n\ntest_target.py:181: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10, 'ram': 8}, requests = [{'cpu': 10, 'ram': 5}]\n\n    def is_allocation_feasible(\n        resources: Dict[str, Number],\n        requests: List[Dict[str, Number]]\n    ) -> bool:\n        \"\"\"\n        Determine whether a set of resource requests can be satisfied given limited capacities.\n    \n        Args:\n            resources : Dict[str, Number], Mapping from resource name to total available capacity.\n            requests : List[Dict[str, Number]], List of requests. Each request is a mapping from resource name to the amount required.\n    \n        Returns:\n            True if the allocation is feasible, False otherwise.\n    \n        \"\"\"\n>       raise NotImplementedError(\"suggest_slots function has not been implemented yet\")\nE       NotImplementedError: suggest_slots function has not been implemented yet\n\nsolution.py:30: NotImplementedError\n______________________ test_TC33_multi_resource_exact_cpu ______________________\n\n    def test_TC33_multi_resource_exact_cpu():\n>       assert is_allocation_feasible(\n            {\"cpu\": 10, \"ram\": 8},\n            [{\"cpu\": 10, \"ram\": 8}]\n        ) is False\n\ntest_target.py:188: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresources = {'cpu': 10, 'ram': 8}, requests = [{'cpu': 10, 'ram': 8}]\n\n    def is_allocation_feasible(\n        resources: Dict[str, Number],\n        requests: List[Dict[str, Number]]\n    ) -> bool:\n        \"\"\"\n        Determine whether a set of resource requests can be satisfied given limited capacities.\n    \n        Args:\n            resources : Dict[str, Number], Mapping from resource name to total available capacity.\n            requests : List[Dict[str, Number]], List of requests. Each request is a mapping from resource name to the amount required.\n    \n        Returns:\n            True if the allocation is feasible, False otherwise.\n    \n        \"\"\"\n>       raise NotImplementedError(\"suggest_slots function has not been implemented yet\")\nE       NotImplementedError: suggest_slots function has not been implemented yet\n\nsolution.py:30: NotImplementedError\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC22_valid_zero_values - NotImplementedError: sug...\nFAILED test_target.py::test_TC30_one_resource_must_remain_false - NotImplemen...\nFAILED test_target.py::test_TC31_one_resource_must_remain_true - NotImplement...\nFAILED test_target.py::test_TC32_multi_resource_exact_cpu - NotImplementedErr...\nFAILED test_target.py::test_TC33_multi_resource_exact_cpu - NotImplementedErr...\n5 failed in 0.02s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC22_valid_zero_values": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC30_one_resource_must_remain_false": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC31_one_resource_must_remain_true": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC32_multi_resource_exact_cpu": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ],
+      "test_TC33_multi_resource_exact_cpu": [
+        "failed",
+        "NotImplementedError: suggest_slots function has not been implemented yet"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_B_test.py",
+    "suite_sha256": "0d75ec77772ecf520b655670999ec617887d0b6de77561c8402c48c1d0535710"
+  },
+  "targets": {
+    "cases": {
+      "B-C1": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-C2": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-C3": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-C4": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-O1": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-O2": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-O3": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-O4": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-TC22": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-TC31": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-TC32": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-X1": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-X2": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-X3": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      },
+      "B-X4": {
+        "exc": "NotImplementedError",
+        "kind": "exc",
+        "msg": "suggest_slots function has not been implemented yet"
+      }
+    },
+    "execution_metadata": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "import_error": null
+  },
+  "task": "B"
+}

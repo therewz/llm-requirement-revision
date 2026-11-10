@@ -1,0 +1,1 @@
+{"elapsed_seconds":0.026791,"isolation":"macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS","observed_output_bytes":91,"output_truncated":false,"peak_observed_rss_bytes":16433152,"returncode":0,"status":"ok","stderr":"","stdout":"Passed 14 feasibility cases, repeatability/immutability checks, and negative-value checks.\n"}

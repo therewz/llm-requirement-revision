@@ -1,0 +1,104 @@
+
+"""
+Stub file for the meeting slot suggestion exercise.
+
+Implement the function `suggest_slots` to return a list of valid meeting start times
+on a given day, taking into account working hours, and possible specific constraints. See the task description
+for full requirements.
+"""
+
+
+from typing import List, Dict
+
+def suggest_slots(events: List[Dict[str, str]], meeting_duration: int, day: str) -> List[str]:
+
+    # Translate canonical dates to the weekday names used below.
+    if isinstance(day, str) and len(day) == 10:
+        from datetime import date as _calendar_input_date
+        try:
+            _parsed_calendar_input = _calendar_input_date.fromisoformat(day)
+        except ValueError:
+            pass
+        else:
+            if _parsed_calendar_input.isoformat() == day:
+                day = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')[_parsed_calendar_input.weekday()]
+    if meeting_duration <= 0:
+        return []
+
+    def to_minutes(hhmm: str) -> int:
+        hhmm = hhmm.strip()
+        h, m = hhmm.split(":")
+        return int(h) * 60 + int(m)
+
+    def to_hhmm(x: int) -> str:
+        return f"{x//60:02d}:{x%60:02d}"
+
+    WORK_START = to_minutes("09:00")
+    WORK_END   = to_minutes("17:00")
+
+    LUNCH_START = to_minutes("12:00")
+    LUNCH_END   = to_minutes("13:00")
+
+    STEP = 15
+
+    # Parse + CLIP events to working hours; ignore events fully outside.
+    busy = []
+    for e in events:
+        if "start" not in e or "end" not in e:
+            continue
+        s = to_minutes(e["start"])
+        t = to_minutes(e["end"])
+        if t <= s:
+            continue
+
+        if t <= WORK_START or s >= WORK_END:
+            continue
+
+        s = max(s, WORK_START)
+        t = min(t, WORK_END)
+        if t > s:
+            busy.append((s, t))
+
+    # Merge overlapping/touching busy intervals
+    busy.sort()
+    merged = []
+    for s, t in busy:
+        if not merged or s > merged[-1][1]:
+            merged.append([s, t])
+        else:
+            merged[-1][1] = max(merged[-1][1], t)
+
+    # Latest possible start time given duration
+    latest_start = WORK_END - meeting_duration
+    if latest_start < WORK_START:
+        return []
+
+    res: List[str] = []
+    start = WORK_START
+    if start % STEP != 0:
+        start += (STEP - start % STEP)
+
+    i = 0
+    while start <= latest_start:
+        end = start + meeting_duration
+
+        # lunch: cannot START during 12:00–13:00
+        if LUNCH_START <= start < LUNCH_END:
+            start += STEP
+            continue
+
+        while i < len(merged) and merged[i][1] <= start:
+            i += 1
+
+        overlaps = False
+        if i < len(merged):
+            bs, bt = merged[i]
+            if start < bt and bs < end:
+                overlaps = True
+
+        if not overlaps:
+            res.append(to_hhmm(start))
+
+        start += STEP
+
+    return res

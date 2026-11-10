@@ -1,0 +1,257 @@
+{
+  "core28": {
+    "expected_case_count": 28,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "m resource name to the amount required.\n    \n        Returns:\n            True if the allocation is feasible, False otherwise.\n    \n        \"\"\"\n        resources_copy = {k: v for k, v in resources.items()}\n        for request in requests:\n            if not isinstance(request, dict):\n                raise ValueError(\"Each request must be a dictionary\")\n            for resource, amount in request.items():\n                if resource not in resources:\n                    return False\n                if not isinstance(amount, (int, float)) or amount < 0:\n>                   raise ValueError(\"Resource amounts must be non-negative numbers\")\nE                   ValueError: Resource amounts must be non-negative numbers\n\nsolution.py:38: ValueError\n__________________ test_TC27_empty_requests_invalid_resources __________________\n\n    def test_TC27_empty_requests_invalid_resources():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:162: Failed\n_____________________ test_TC29_invalid_float_nan_request ______________________\n\n    def test_TC29_invalid_float_nan_request():\n        import math\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:170: Failed\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC1_negative_resource_value - Failed: DID NOT RAI...\nFAILED test_target.py::test_TC3_nan_value - Failed: DID NOT RAISE <class 'Val...\nFAILED test_target.py::test_TC4_infinite_value - Failed: DID NOT RAISE <class...\nFAILED test_target.py::test_TC5_resources_not_dict - AttributeError: 'int' ob...\nFAILED test_target.py::test_TC6_requests_not_list - ValueError: Each request ...\nFAILED test_target.py::test_TC7_request_item_not_dict - ValueError: Each requ...\nFAILED test_target.py::test_TC9_request_value_not_number - ValueError: Resour...\nFAILED test_target.py::test_TC10_resource_key_not_string - Failed: DID NOT RA...\nFAILED test_target.py::test_TC11_request_key_not_string - Failed: DID NOT RAI...\nFAILED test_target.py::test_TC12_missing_resource_type - Failed: DID NOT RAIS...\nFAILED test_target.py::test_TC13_empty_resource_dict_invalid - Failed: DID NO...\nFAILED test_target.py::test_TC14_none_resources - AttributeError: 'NoneType' ...\nFAILED test_target.py::test_TC16_nested_invalid_request - ValueError: Resourc...\nFAILED test_target.py::test_TC17_list_inside_request_value - ValueError: Reso...\nFAILED test_target.py::test_TC18_tuple_inside_request_value - ValueError: Res...\nFAILED test_target.py::test_TC23_request_with_extra_invalid_key - Failed: DID...\nFAILED test_target.py::test_TC25_string_number_in_request - ValueError: Resou...\nFAILED test_target.py::test_TC27_empty_requests_invalid_resources - Failed: D...\nFAILED test_target.py::test_TC29_invalid_float_nan_request - Failed: DID NOT ...\n19 failed, 9 passed in 0.06s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_resource_key_not_string": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'TypeError'>"
+      ],
+      "test_TC11_request_key_not_string": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'TypeError'>"
+      ],
+      "test_TC12_missing_resource_type": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC13_empty_resource_dict_invalid": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC14_none_resources": [
+        "failed",
+        "AttributeError: 'NoneType' object has no attribute 'items'"
+      ],
+      "test_TC15_none_requests": [
+        "passed",
+        ""
+      ],
+      "test_TC16_nested_invalid_request": [
+        "failed",
+        "ValueError: Resource amounts must be non-negative numbers"
+      ],
+      "test_TC17_list_inside_request_value": [
+        "failed",
+        "ValueError: Resource amounts must be non-negative numbers"
+      ],
+      "test_TC18_tuple_inside_request_value": [
+        "failed",
+        "ValueError: Resource amounts must be non-negative numbers"
+      ],
+      "test_TC19_valid_simple_case": [
+        "passed",
+        ""
+      ],
+      "test_TC1_negative_resource_value": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC20_valid_multi_resource": [
+        "passed",
+        ""
+      ],
+      "test_TC21_zero_and_negative_mix": [
+        "passed",
+        ""
+      ],
+      "test_TC23_request_with_extra_invalid_key": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC24_string_number": [
+        "passed",
+        ""
+      ],
+      "test_TC25_string_number_in_request": [
+        "failed",
+        "ValueError: Resource amounts must be non-negative numbers"
+      ],
+      "test_TC26_empty_requests_valid": [
+        "passed",
+        ""
+      ],
+      "test_TC27_empty_requests_invalid_resources": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC28_valid_float": [
+        "passed",
+        ""
+      ],
+      "test_TC29_invalid_float_nan_request": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC2_negative_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC3_nan_value": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC4_infinite_value": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC5_resources_not_dict": [
+        "failed",
+        "AttributeError: 'int' object has no attribute 'items'"
+      ],
+      "test_TC6_requests_not_list": [
+        "failed",
+        "ValueError: Each request must be a dictionary"
+      ],
+      "test_TC7_request_item_not_dict": [
+        "failed",
+        "ValueError: Each request must be a dictionary"
+      ],
+      "test_TC8_resource_value_not_number": [
+        "passed",
+        ""
+      ],
+      "test_TC9_request_value_not_number": [
+        "failed",
+        "ValueError: Resource amounts must be non-negative numbers"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_B_test.py",
+    "suite_sha256": "d776ae5df8190eb8a58cf7d8b71886b2189f88d0c7b3a2f68f0192ab18e35af3"
+  },
+  "evidence_class": "FRESH_ISOLATED_ORIGINAL_PROGRAM_EXECUTION",
+  "finished_utc": "2026-11-05T06:02:26.782468+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G1",
+  "participant_id": "S0024",
+  "phase": "P1",
+  "source_path": "runs/withdrawal_keys_v1/input_snapshot/Data/v1_human/G1/G1B/S0024/src/solution.py",
+  "source_sha256": "1acfa6c8d95393c9af1915a064f9a6f45b5a97b31de8c085f18c2ceb122d4f5b",
+  "started_utc": "2026-11-05T06:02:26.249383+00:00",
+  "supplied5": {
+    "expected_case_count": 5,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "FF..F                                                                    [100%]\n=================================== FAILURES ===================================\n_________________________ test_TC22_valid_zero_values __________________________\n\n    def test_TC22_valid_zero_values():\n        # Not feasible because resource=0, must leave 1 unit unallocated\n>       assert is_allocation_feasible({\"cpu\": 0}, [{\"cpu\": 0}]) is False\nE       AssertionError: assert True is False\nE        +  where True = is_allocation_feasible({'cpu': 0}, [{'cpu': 0}])\n\ntest_target.py:125: AssertionError\n___________________ test_TC30_one_resource_must_remain_false ___________________\n\n    def test_TC30_one_resource_must_remain_false():\n        # exact allocation fails CO\n>       assert is_allocation_feasible({\"cpu\": 10}, [{\"cpu\": 10}]) is False\nE       AssertionError: assert True is False\nE        +  where True = is_allocation_feasible({'cpu': 10}, [{'cpu': 10}])\n\ntest_target.py:172: AssertionError\n______________________ test_TC33_multi_resource_exact_cpu ______________________\n\n    def test_TC33_multi_resource_exact_cpu():\n>       assert is_allocation_feasible(\n            {\"cpu\": 10, \"ram\": 8},\n            [{\"cpu\": 10, \"ram\": 8}]\n        ) is False\nE       AssertionError: assert True is False\nE        +  where True = is_allocation_feasible({'cpu': 10, 'ram': 8}, [{'cpu': 10, 'ram': 8}])\n\ntest_target.py:188: AssertionError\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC22_valid_zero_values - AssertionError: assert T...\nFAILED test_target.py::test_TC30_one_resource_must_remain_false - AssertionEr...\nFAILED test_target.py::test_TC33_multi_resource_exact_cpu - AssertionError: a...\n3 failed, 2 passed in 0.02s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC22_valid_zero_values": [
+        "failed",
+        "AssertionError: assert True is False"
+      ],
+      "test_TC30_one_resource_must_remain_false": [
+        "failed",
+        "AssertionError: assert True is False"
+      ],
+      "test_TC31_one_resource_must_remain_true": [
+        "passed",
+        ""
+      ],
+      "test_TC32_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ],
+      "test_TC33_multi_resource_exact_cpu": [
+        "failed",
+        "AssertionError: assert True is False"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_B_test.py",
+    "suite_sha256": "0d75ec77772ecf520b655670999ec617887d0b6de77561c8402c48c1d0535710"
+  },
+  "targets": {
+    "cases": {
+      "B-C1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-O1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC22": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-TC31": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-TC32": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      }
+    },
+    "execution_metadata": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "import_error": null
+  },
+  "task": "B"
+}

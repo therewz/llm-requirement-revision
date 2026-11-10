@@ -1,0 +1,20 @@
+--- S0008/original/solution.py
++++ S0008/cleaned/solution.py
+@@ -22,6 +22,17 @@
+         - Meetings on Fridays must not start after 15:00.
+         - Existing events are respected (no overlap allowed).
+     """
++
++    # Translate canonical dates to the weekday names used below.
++    if isinstance(day, str) and len(day) == 10:
++        from datetime import date as _calendar_input_date
++        try:
++            _parsed_calendar_input = _calendar_input_date.fromisoformat(day)
++        except ValueError:
++            pass
++        else:
++            if _parsed_calendar_input.isoformat() == day:
++                day = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')[_parsed_calendar_input.weekday()]
+     if meeting_duration <= 0:
+         return []
+ 

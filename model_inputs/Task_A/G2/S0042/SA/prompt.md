@@ -1,0 +1,40 @@
+Revise the existing Python implementation to satisfy the current requirements below. Treat these requirements as authoritative. Remove restrictions they do not require, preserve all specified functionality, and avoid unrelated changes. If no changes are needed, leave the implementation unchanged.
+
+**Current requirements**
+
+### Task description
+
+You are asked to implement a Python function that suggests possible meeting time slots for a given day. The function takes as input a list of existing calendar events for that day and a desired meeting duration. Its goal is to return a list of valid start times at which the meeting could be scheduled. A valid time slot should respect typical working hours and should not conflict with existing events. If no suitable time slots are available, the function should return an empty list. You may assume that time values are provided in a standard string format (e.g., “09:30”), and you are free to choose an appropriate internal representation. You may use ChatGPT to assist with reasoning about the problem, generating code, or writing tests.
+
+### Specification
+
+```json
+{
+  "v1_human_g2_ac": [
+    {
+      "ac_1": "given overlapping event times, when meeting is available to be booked during time of other event, then block and that exclude",
+      "ac_2": "given list of pesole event shes, when being returned to user, then list must be in ascending order",
+      "ac_3": "given an event during lunch, when trying to schedule, then lunch break hours that",
+      "ac_4": "given a meeting, when a meeting would just be adding, then 15 min buffer for breaks that",
+      "ac_5": "given a start time, when is 4m /Pm, then reject and only time 2-hour time",
+      "ac_6": "given a meeting, when trying to start it's v2_human 17:00, then block; too late."
+    }
+  ],
+  "v1_human_g2_constraints": [
+    {
+      "c_1": "meeting must be booked between 9:00 - 17:00",
+      "c_2": "v2_human a meeting, mandatory 15 min break",
+      "c_3": "no meeting to besdeduled during lunch - (12:00 -13:00",
+      "c_4": "the returned list of meetings must be sorted in ascending order",
+      "c_5": "meetings must not overlap",
+      "c_6": "inputs must match expected"
+    }
+  ],
+  "v1_human_g2_goal": "The objective of the system is to return a list of valid times a meeting could be scheduled at. It makes this decision v2_human considering conflicts of that day.",
+  "v1_human_g2_input": "input: list of calendar events for that day, begin & end valid values: Dict of key-value pairs, both string type\ninput: desired meeting duration\nvalid values: Integer (MIN)\ninput: day it occurs\nvalid values: 2 letter abr. string",
+  "v1_human_g2_output": "output: list of valid start times as HH:MM, sorted ascending.",
+  "id": "S0042"
+}
+```
+
+Briefly summarize any changes.

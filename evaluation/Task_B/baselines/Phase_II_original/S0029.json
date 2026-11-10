@@ -1,0 +1,257 @@
+{
+  "core28": {
+    "expected_case_count": 28,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "f resource requests can be satisfied given limited capacities,\n        and at least one resource remains unallocated after task.\n    \n        Raises:\n            TypeError: If inputs or resource/request keys/values are of incorrect type.\n            ValueError: If numbers are negative, NaN, or infinite, or requests reference unknown resources.\n        \"\"\"\n        # ------------------------\n        # TYPE CHECKS\n        # ------------------------\n        if not isinstance(resources, dict):\n            raise TypeError(\"resources must be a dict mapping resource name to capacity\")\n        if not isinstance(requests, list):\n            raise TypeError(\"requests must be a list of request dicts\")\n        if not resources:\n            raise ValueError(\"resources dictionary must not be empty\")\n    \n        # ------------------------\n        # VALIDATE RESOURCES\n        # ------------------------\n        capacities: Dict[str, float] = {}\n        for name, cap in resources.items():\n            if not isinstance(name, str):\n                raise TypeError(\"resource names must be strings\")\n            if not _is_finite_number(cap):\n                raise ValueError(f\"capacity for resource '{name}' must be a finite number\")\n            cap_f = float(cap)\n            if cap_f < 0:\n                raise ValueError(f\"capacity for resource '{name}' must be non-negative\")\n            capacities[name] = cap_f\n    \n        totals: Dict[str, float] = {name: 0.0 for name in capacities}\n    \n        # ------------------------\n        # VALIDATE REQUESTS\n        # ------------------------\n        for req in requests:\n            if not isinstance(req, dict):\n                raise TypeError(\"each request must be a dict mapping resource name to amount required\")\n            for name, amount in req.items():\n                if not isinstance(name, str):\n                    raise TypeError(\"request keys must be strings\")\n                if name not in capacities:\n                    raise ValueError(f\"request references unknown resource '{name}'\")\n                if not _is_finite_number(amount):\n>                   raise ValueError(f\"request amount for resource '{name}' must be a finite number\")\nE                   ValueError: request amount for resource 'cpu' must be a finite number\n\nsolution.py:59: ValueError\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC8_resource_value_not_number - ValueError: capac...\nFAILED test_target.py::test_TC9_request_value_not_number - ValueError: reques...\nFAILED test_target.py::test_TC16_nested_invalid_request - ValueError: request...\nFAILED test_target.py::test_TC17_list_inside_request_value - ValueError: requ...\nFAILED test_target.py::test_TC18_tuple_inside_request_value - ValueError: req...\nFAILED test_target.py::test_TC24_string_number - ValueError: capacity for res...\nFAILED test_target.py::test_TC25_string_number_in_request - ValueError: reque...\n7 failed, 21 passed in 0.04s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_resource_key_not_string": [
+        "passed",
+        ""
+      ],
+      "test_TC11_request_key_not_string": [
+        "passed",
+        ""
+      ],
+      "test_TC12_missing_resource_type": [
+        "passed",
+        ""
+      ],
+      "test_TC13_empty_resource_dict_invalid": [
+        "passed",
+        ""
+      ],
+      "test_TC14_none_resources": [
+        "passed",
+        ""
+      ],
+      "test_TC15_none_requests": [
+        "passed",
+        ""
+      ],
+      "test_TC16_nested_invalid_request": [
+        "failed",
+        "ValueError: request amount for resource 'cpu' must be a finite number"
+      ],
+      "test_TC17_list_inside_request_value": [
+        "failed",
+        "ValueError: request amount for resource 'cpu' must be a finite number"
+      ],
+      "test_TC18_tuple_inside_request_value": [
+        "failed",
+        "ValueError: request amount for resource 'cpu' must be a finite number"
+      ],
+      "test_TC19_valid_simple_case": [
+        "passed",
+        ""
+      ],
+      "test_TC1_negative_resource_value": [
+        "passed",
+        ""
+      ],
+      "test_TC20_valid_multi_resource": [
+        "passed",
+        ""
+      ],
+      "test_TC21_zero_and_negative_mix": [
+        "passed",
+        ""
+      ],
+      "test_TC23_request_with_extra_invalid_key": [
+        "passed",
+        ""
+      ],
+      "test_TC24_string_number": [
+        "failed",
+        "ValueError: capacity for resource 'cpu' must be a finite number"
+      ],
+      "test_TC25_string_number_in_request": [
+        "failed",
+        "ValueError: request amount for resource 'cpu' must be a finite number"
+      ],
+      "test_TC26_empty_requests_valid": [
+        "passed",
+        ""
+      ],
+      "test_TC27_empty_requests_invalid_resources": [
+        "passed",
+        ""
+      ],
+      "test_TC28_valid_float": [
+        "passed",
+        ""
+      ],
+      "test_TC29_invalid_float_nan_request": [
+        "passed",
+        ""
+      ],
+      "test_TC2_negative_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC3_nan_value": [
+        "passed",
+        ""
+      ],
+      "test_TC4_infinite_value": [
+        "passed",
+        ""
+      ],
+      "test_TC5_resources_not_dict": [
+        "passed",
+        ""
+      ],
+      "test_TC6_requests_not_list": [
+        "passed",
+        ""
+      ],
+      "test_TC7_request_item_not_dict": [
+        "passed",
+        ""
+      ],
+      "test_TC8_resource_value_not_number": [
+        "failed",
+        "ValueError: capacity for resource 'cpu' must be a finite number"
+      ],
+      "test_TC9_request_value_not_number": [
+        "failed",
+        "ValueError: request amount for resource 'cpu' must be a finite number"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_B_test.py",
+    "suite_sha256": "d776ae5df8190eb8a58cf7d8b71886b2189f88d0c7b3a2f68f0192ab18e35af3"
+  },
+  "evidence_class": "FRESH_ISOLATED_ORIGINAL_PROGRAM_EXECUTION",
+  "finished_utc": "2026-11-05T06:02:31.352686+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G2",
+  "participant_id": "S0029",
+  "phase": "P2",
+  "source_path": "runs/withdrawal_keys_v1/input_snapshot/Data/v2_human/G2/G2B/S0029/src/solution.py",
+  "source_sha256": "1e39fd4a6268cb1d2ab82a6f66d3714a229c5e04cac1a2ddf05483285ff710bb",
+  "started_utc": "2026-11-05T06:02:30.891314+00:00",
+  "supplied5": {
+    "expected_case_count": 5,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ".....                                                                    [100%]\n5 passed in 0.01s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC22_valid_zero_values": [
+        "passed",
+        ""
+      ],
+      "test_TC30_one_resource_must_remain_false": [
+        "passed",
+        ""
+      ],
+      "test_TC31_one_resource_must_remain_true": [
+        "passed",
+        ""
+      ],
+      "test_TC32_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ],
+      "test_TC33_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_B_test.py",
+    "suite_sha256": "0d75ec77772ecf520b655670999ec617887d0b6de77561c8402c48c1d0535710"
+  },
+  "targets": {
+    "cases": {
+      "B-C1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-O1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC22": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC31": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-TC32": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      }
+    },
+    "execution_metadata": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "import_error": null
+  },
+  "task": "B"
+}

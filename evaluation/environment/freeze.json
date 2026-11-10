@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-11-05T06:02:00.479785+00:00",
+  "evidence_class": "OFFLINE_ORIGINAL_PROGRAM_BASELINES_NOT_MODEL_OUTPUT",
+  "hashes": {
+    "code/withdrawal_keys_v1/assess.py": "6ded6847d29a070346a3efdc8b2b4724c0867e01c47c4d457b9b5eaccdb70963",
+    "code/withdrawal_keys_v1/restore_inputs.py": "7a67b3e49a6e47a0c1fc53d7e6b12cde81ca76996e284c5d4a429fcac4ecc314",
+    "code/withdrawal_keys_v1/task_a.py": "ef001865708801adbfbe20ba98c2e25ce1fbe6d940bd9a48a8ce84b075131a4f",
+    "code/withdrawal_keys_v1/task_b.py": "c7fc66d3a8c833cd445fa1fccea73952732cc70574dde6de2a840e58f6c342df",
+    "code/withdrawal_keys_v1/worker.py": "c4c305cd24b51f3a32fbfafc882ed8288906a338de62e560ad6f1e5484d6fcb3",
+    "repositories/followup-offline-local-v2/analysis/scripts/runner.py": "00928654c2a117761d08907086c1f766bd6830e2c3a4c3502d5098e11b60d471",
+    "repositories/followup-offline-local-v2/withdrawal_preparation/scripts/isolated_exec_v3.py": "a8c10c8630756ceae9f8364eb8cad36708dc99ab0a3db0b579642ef810fe7c05",
+    "runs/withdrawal_keys_v1/answer_key_A.json": "9d47ccad65384e86f009b080c572fc43b19eeb46fee625dfd9ab2bda6ebc0684",
+    "runs/withdrawal_keys_v1/answer_key_B.json": "466a0d5008742bbfa3acbdc6c391c73dd698ee688ca7bfb2dfe0a0960bc9ab00",
+    "runs/withdrawal_keys_v1/input_recovery.json": "78405e3de285ca24caee948ac80b7ab64536d4c09bd8941fa23fac06b331ff96",
+    "runs/withdrawal_keys_v1/inventory.json": "19298b28644d9da6d1305d4f305799818e6da27c86e08a38d3517b2bd14167b5",
+    "runs/withdrawal_keys_v1/source_hashes.json": "276e4f1273f1623d886220de8171e5d05186e3670ed607f21337a1adb1b6cef1",
+    "runs/withdrawal_keys_v1/suite_case_ids.json": "20334315bdd5f78b83ed370ee3011194a18765cf7f4e532142f5870dbe765c7e"
+  },
+  "policy": "P2 restriction plus controls; P1 flags retained; ISO and native views separate; no output repairs",
+  "runtime": {
+    "interpreter_sha256": "db0899d91d9bbf0635a168d274d3301b74a408ec93b10c33aa6117e44e039b70",
+    "python": "/Users/rezatehrani/.pyenv/versions/3.12.6/bin/python3.12",
+    "runtime": {
+      "numpy": "2.3.5",
+      "pytest": "9.0.2",
+      "python": "3.12.6 (main, Sep  9 2025, 22:02:53) [Clang 17.0.0 (clang-1700.0.13.5)]"
+    }
+  }
+}

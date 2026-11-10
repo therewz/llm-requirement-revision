@@ -1,0 +1,1 @@
+{"elapsed_seconds":0.059709,"isolation":"macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS","observed_output_bytes":32,"output_truncated":false,"peak_observed_rss_bytes":17186816,"returncode":0,"status":"ok","stderr":"","stdout":"All meeting-slot checks passed.\n"}

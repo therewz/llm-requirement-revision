@@ -1,0 +1,20 @@
+--- S0002/original/solution.py
++++ S0002/cleaned/solution.py
+@@ -16,6 +16,17 @@
+     Returns:
+         List of valid start times as "HH:MM" sorted ascending
+     """
++
++    # Translate canonical dates to the weekday names used below.
++    if isinstance(day, str) and len(day) == 10:
++        from datetime import date as _calendar_input_date
++        try:
++            _parsed_calendar_input = _calendar_input_date.fromisoformat(day)
++        except ValueError:
++            pass
++        else:
++            if _parsed_calendar_input.isoformat() == day:
++                day = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')[_parsed_calendar_input.weekday()]
+     # Working hours: 9:00 AM to 5:00 PM (17:00)
+     WORK_START_HOUR = 9
+     WORK_END_HOUR = 17

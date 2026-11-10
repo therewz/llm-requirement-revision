@@ -1,0 +1,1 @@
+{"elapsed_seconds":0.055588,"isolation":"macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS","observed_output_bytes":69,"output_truncated":false,"peak_observed_rss_bytes":15581184,"returncode":0,"status":"ok","stderr":"","stdout":"Passed 24 cases, request-order checks, and input immutability check.\n"}

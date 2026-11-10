@@ -1,0 +1,59 @@
+Revise the existing Python implementation to satisfy the current requirements below. Treat these requirements as authoritative. Remove restrictions they do not require, preserve all specified functionality, and avoid unrelated changes. If no changes are needed, leave the implementation unchanged.
+
+**Current requirements**
+
+### Task description
+
+You are asked to implement a Python function that determines whether a set of resource requests can be satisfied given limited capacity. The function takes as input a list of requests and available resources and returns whether a valid allocation exists. The goal is to determine feasibility of allocation based on the provided information. You may assume inputs are provided in a reasonable and consistent format. You may use ChatGPT to assist with reasoning about the problem, generating code, or writing tests.
+
+### Specification
+
+```json
+{
+  "v1_human_g3_constraints": [
+    {
+      "c_1": "must be written in python",
+      "c_2": "allocation feasibility in one function",
+      "c_3": "must operate only with provided inputs, no external data",
+      "c_4": "must return boolean indicating feasibility",
+      "c_5": "all inputs assumed to be reasonable and consistent",
+      "c_6": "must conform to starter code"
+    }
+  ],
+  "v1_human_g3_exception": "",
+  "v1_human_g3_frs": [
+    {
+      "fr_1": "The system shall provide an algorithm function that evaluates resource allocation feasibility",
+      "fr_2": "The function shall accept input a set of available resources with limited capacities",
+      "fr_4": "each request shall specify the amount of resources required",
+      "fr_5": "the function shall determine whether the available resources are sufficient to satisfy all requests"
+    }
+  ],
+  "v1_human_g3_goal": "The system checks whether a set of resource requests can be satisfied.",
+  "v1_human_g3_input": "resources: Dict[str, Number], a dictionary mapping each resource name (cpu, mem) to its total available capacity where capacities are int or float (numeric)\nrequests: List[Dict[str, Number]]\nA list of resource requests of the above",
+  "v1_human_g3_invariants": [
+    {
+      "inv_1": "at all times the total amount of resources allocated must not exceed the available capacity of that resource",
+      "inv_2": "given the same set of available resources and requests, the function shall always return same feasibility result",
+      "inv_3": "the function shall always return a boolean"
+    }
+  ],
+  "v1_human_g3_neg_req": [
+    {
+      "neg_req_1": "The system shall not modify input data",
+      "neg_req_2": "The system shall not attempt to partially satisfy requests"
+    }
+  ],
+  "v1_human_g3_output": "bool is returned\nTrue if all requests can be satisfied\nfalse otherwise",
+  "v1_human_g3_tie_breaking": "The one with more resources",
+  "id": "S0072"
+}
+```
+
+**Requirement withdrawal**
+
+The following requirement has been withdrawn. Remove the restriction it introduced; it is not part of the current requirements:
+
+At least one resource must remain unallocated after assignment. This requirement applies in addition to all previously described behavior. An allocation that satisfies all other conditions but consumes all available resources is no longer valid.
+
+Briefly summarize any changes.

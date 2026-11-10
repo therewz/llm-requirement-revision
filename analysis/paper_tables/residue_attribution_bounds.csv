@@ -1,0 +1,17 @@
+view,task,provider,condition,programs,clear_residue_mean,possible_residue_upper_bound,interpretation
+alternative62__main,A,anthropic,SA,30,0.0,0.1,pessimistic_attribution_bound_not_reclassification
+alternative62__main,A,anthropic,EW,30,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+alternative62__main,A,openai,SA,30,0.0,0.2,pessimistic_attribution_bound_not_reclassification
+alternative62__main,A,openai,EW,30,0.0,0.13333333333333333,pessimistic_attribution_bound_not_reclassification
+alternative62__main,B,anthropic,SA,32,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+alternative62__main,B,anthropic,EW,32,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+alternative62__main,B,openai,SA,32,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+alternative62__main,B,openai,EW,32,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+primary69__main,A,anthropic,SA,35,0.0,0.17142857142857143,pessimistic_attribution_bound_not_reclassification
+primary69__main,A,anthropic,EW,35,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+primary69__main,A,openai,SA,35,0.0,0.2571428571428571,pessimistic_attribution_bound_not_reclassification
+primary69__main,A,openai,EW,35,0.0,0.2,pessimistic_attribution_bound_not_reclassification
+primary69__main,B,anthropic,SA,34,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+primary69__main,B,anthropic,EW,34,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+primary69__main,B,openai,SA,34,0.0,0.0,pessimistic_attribution_bound_not_reclassification
+primary69__main,B,openai,EW,34,0.0,0.0,pessimistic_attribution_bound_not_reclassification

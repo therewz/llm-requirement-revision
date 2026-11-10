@@ -1,0 +1,82 @@
+from typing import List, Dict
+from datetime import datetime
+
+# -------------------------
+# Helper functions
+# -------------------------
+def time_to_minutes(t: str) -> int:
+    try:
+        h, m = map(int, t.split(":"))
+    except Exception:
+        raise ValueError(f"Invalid time format: {t}")
+    if not (0 <= h < 24 and 0 <= m < 60):
+        raise ValueError(f"Invalid time value: {t}")
+    return h * 60 + m
+
+def minutes_to_time(m: int) -> str:
+    h = m // 60
+    m = m % 60
+    return f"{h:02d}:{m:02d}"
+
+def merge_intervals(intervals: List[List[int]]) -> List[List[int]]:
+    if not intervals:
+        return []
+    intervals.sort()
+    merged = [intervals[0]]
+    for start, end in intervals[1:]:
+        if start <= merged[-1][1]:
+            merged[-1][1] = max(end, merged[-1][1])
+        else:
+            merged.append([start, end])
+    return merged
+
+def validate_date(day: str):
+    try:
+        datetime.strptime(day, "%Y-%m-%d")
+    except (ValueError, TypeError):
+        raise ValueError(f"Invalid date: {day}")
+
+# -------------------------
+# Main function
+# -------------------------
+def suggest_slots(events: List[Dict[str, str]], meeting_duration: int, day: str) -> List[str]:
+    # Input validation
+    validate_date(day)
+    if isinstance(meeting_duration, bool) or not isinstance(meeting_duration, int):
+        raise ValueError("Meeting duration must be an integer")
+    if meeting_duration <= 0:
+        raise ValueError("Meeting duration must be positive")
+
+    WORK_START, WORK_END = 9 * 60, 17 * 60
+    LUNCH_START, LUNCH_END = 12 * 60, 13 * 60
+    SLOT_INTERVAL = 15
+
+    # Parse events (clamped to working hours; events outside are ignored)
+    busy_intervals = []
+    for e in events or []:
+        if 'start' not in e or 'end' not in e:
+            continue
+        start = time_to_minutes(e['start'])
+        end = time_to_minutes(e['end'])
+        if start >= end:
+            raise ValueError(f"Event start must be before end: {e}")
+        start = max(start, WORK_START)
+        end = min(end, WORK_END)
+        if start < end:
+            busy_intervals.append([start, end])
+
+    busy_intervals = merge_intervals(busy_intervals)
+
+    # Generate valid slots
+    valid_slots = []
+    candidate_start = WORK_START
+    while candidate_start + meeting_duration <= WORK_END:
+        candidate_end = candidate_start + meeting_duration
+        in_lunch = LUNCH_START <= candidate_start < LUNCH_END
+        overlap = any(candidate_start < b_end and candidate_end > b_start
+                      for b_start, b_end in busy_intervals)
+        if not in_lunch and not overlap:
+            valid_slots.append(minutes_to_time(candidate_start))
+        candidate_start += SLOT_INTERVAL
+
+    return valid_slots

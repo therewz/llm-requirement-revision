@@ -1,0 +1,54 @@
+{
+  "additional_conflict_id": "S0069",
+  "historical_policy_sha256": "d6154cc325418590b5af94be1efdbfcbfd4f0e9f7051492eda9ebb8c2e0d3cf4",
+  "measurement_policy": "Reuse original integer counts and fixed selected_case_ids; exact Fraction rates. RR full retention stays distinct from SA/EW restoration/residue; target/control composite stays distinct; missingness/undefined denominators are never zero.",
+  "new_conflict_ids": [
+    "S0034",
+    "S0041",
+    "S0049",
+    "S0053",
+    "S0058",
+    "S0060",
+    "S0046",
+    "S0069"
+  ],
+  "new_view_naming": "cohort + __expanded_ + variant",
+  "not_preregistered": true,
+  "original_conflict_ids": [
+    "S0034",
+    "S0041",
+    "S0049",
+    "S0053",
+    "S0058",
+    "S0060",
+    "S0046"
+  ],
+  "populations": [
+    "primary69",
+    "alternative62"
+  ],
+  "post_hoc": true,
+  "prior_results_known": true,
+  "recorded_utc": "2026-11-07T04:16:32.340345+00:00",
+  "selection_policy": "Build exclude_conflicts and conflicts_only from canonical cohort main session rows and main membership, excluding/including the expanded registry respectively. For phase_i_no_conflict, use saved alternative62 main per-case selections and eligible membership, then exclude the expanded registry, while retaining the requested cohort label. These are subset sensitivities, never cohort replacements. Verify every retained original-view row equals its canonical row; conflicts_only must add S0069. Select the same-code ninth-turn evaluation once as already present in complete-grade main tables.",
+  "source_sha256": {
+    "code/full_analysis_v2_prelim/analyze.py": "198e806175c8621947fe3d3c3609cdc945f206368e87143ee62358beaf14a1eb",
+    "code/statistical_analysis_v3_groups/analyze.py": "361be8454e203042f996b35058a182ff7c311540f26901eb03aac9e9d7b180ca",
+    "code/statistical_analysis_v3_independent/outcome_checks.py": "09ff3e33de3c47cd0f509f9740d79d984c5f839a65fe433797c10d85d337c980",
+    "code/statistical_analysis_v3_paired/analyze.py": "1343a80501f0e95fa98fae11bab0b2e75de1fa7b4afa66658ec71cac5cf867b5",
+    "code/statistical_audit_round2_numeric/oracles.py": "10ae238c1ac703b4d2bfa792fc0311e7c1eaae26e20fa218159ae14b91e745ac",
+    "reports/full_analysis_v2_prelim/analysis_manifest.json": "5c3c8e018597fe740b95b8476dba961d4a7573cc4635e3cc9b8a64755b06edda",
+    "reports/full_analysis_v2_prelim/tables/baseline_test_outcomes.csv": "44c2675e8d36e60c5aff989e6c1142703883cb173f9109e1769cd5a469c2ae7c",
+    "reports/full_analysis_v2_prelim/tables/membership.csv": "1ddb0bcd520090b6a9a88bd55a4a224cf7bf5994d55f057d726957a135031b1c",
+    "reports/full_analysis_v2_prelim/tables/programs.csv": "75d41321a19d4c1c23c5f7d79435d42093ea2b9da4fcad704595a5f88674f602",
+    "reports/full_analysis_v2_prelim/tables/raw_target_outcomes.csv": "f6d2dfb5016cc4aeb6e55012b4383e5f8903cbf625ff9a48ab460cc861926d2a",
+    "reports/full_analysis_v2_prelim/tables/raw_test_outcomes.csv": "7fdab8a3a4e95c3e950c23d1427e407b72ee48dd980f499452eedfbb69f60cea",
+    "reports/full_analysis_v2_prelim/tables/session_metrics.csv": "13fba22fae9b1728878a7033800dcd3de5c782c7fafb86f3036ddd39492e706a",
+    "reports/statistical_analysis_v3/groups/group_tests.csv": "1fb6057ec39413d1c3fc81adfc7adc17a3eedf8c05d7e933c6466ce3a830aa4c",
+    "reports/statistical_analysis_v3/paired/paired_wilcoxon.csv": "4971747b7b9a43452470ab07d470ffd9755008b83bfff14feb0256fb466c91f1",
+    "reports/statistical_analysis_v3/verification/all_views_exact_v1/friedman_all_views_exact.csv": "d6c66dfcd4c1bd120c2831209d1fce6537cd19d1776ea11cd4dbfe1bc8dfc1d4",
+    "reports/statistical_analysis_v3/verification/all_views_exact_v1/group_all_views_exact.csv": "b16b15f533d23062278348c6a2b6aa89855df47734a5f2a42b42f8bb0743a235",
+    "reports/statistical_analysis_v3/verification/all_views_exact_v1/paired_all_views_exact.csv": "cdd074a997fc5871b0496b26cf3312db78afd723ad01c2fdcba48326f5ac6738"
+  },
+  "status": "FROZEN BEFORE NEW SUBSET CALCULATION"
+}

@@ -1,0 +1,323 @@
+{
+  "core28": {
+    "complete": true,
+    "expected_case_count": 28,
+    "metadata": {
+      "collected_case_ids": [
+        "test_TC1_negative_resource_value",
+        "test_TC2_negative_request_value",
+        "test_TC3_nan_value",
+        "test_TC4_infinite_value",
+        "test_TC5_resources_not_dict",
+        "test_TC6_requests_not_list",
+        "test_TC7_request_item_not_dict",
+        "test_TC8_resource_value_not_number",
+        "test_TC9_request_value_not_number",
+        "test_TC10_resource_key_not_string",
+        "test_TC11_request_key_not_string",
+        "test_TC12_missing_resource_type",
+        "test_TC13_empty_resource_dict_invalid",
+        "test_TC14_none_resources",
+        "test_TC15_none_requests",
+        "test_TC16_nested_invalid_request",
+        "test_TC17_list_inside_request_value",
+        "test_TC18_tuple_inside_request_value",
+        "test_TC19_valid_simple_case",
+        "test_TC20_valid_multi_resource",
+        "test_TC21_zero_and_negative_mix",
+        "test_TC23_request_with_extra_invalid_key",
+        "test_TC24_string_number",
+        "test_TC25_string_number_in_request",
+        "test_TC26_empty_requests_valid",
+        "test_TC27_empty_requests_invalid_resources",
+        "test_TC28_valid_float",
+        "test_TC29_invalid_float_nan_request"
+      ],
+      "collection_error": null,
+      "complete": true,
+      "elapsed_seconds": 0.130696,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 2449,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 33947648,
+      "pytest_exitcode": 0,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "est_TC10_resource_key_not_string\": [\"passed\", \"\"], \"test_TC11_request_key_not_string\": [\"passed\", \"\"], \"test_TC12_missing_resource_type\": [\"passed\", \"\"], \"test_TC13_empty_resource_dict_invalid\": [\"passed\", \"\"], \"test_TC14_none_resources\": [\"passed\", \"\"], \"test_TC15_none_requests\": [\"passed\", \"\"], \"test_TC16_nested_invalid_request\": [\"passed\", \"\"], \"test_TC17_list_inside_request_value\": [\"passed\", \"\"], \"test_TC18_tuple_inside_request_value\": [\"passed\", \"\"], \"test_TC19_valid_simple_case\": [\"passed\", \"\"], \"test_TC20_valid_multi_resource\": [\"passed\", \"\"], \"test_TC21_zero_and_negative_mix\": [\"passed\", \"\"], \"test_TC23_request_with_extra_invalid_key\": [\"passed\", \"\"], \"test_TC24_string_number\": [\"passed\", \"\"], \"test_TC25_string_number_in_request\": [\"passed\", \"\"], \"test_TC26_empty_requests_valid\": [\"passed\", \"\"], \"test_TC27_empty_requests_invalid_resources\": [\"passed\", \"\"], \"test_TC28_valid_float\": [\"passed\", \"\"], \"test_TC29_invalid_float_nan_request\": [\"passed\", \"\"]}, \"collected\": [\"test_TC1_negative_resource_value\", \"test_TC2_negative_request_value\", \"test_TC3_nan_value\", \"test_TC4_infinite_value\", \"test_TC5_resources_not_dict\", \"test_TC6_requests_not_list\", \"test_TC7_request_item_not_dict\", \"test_TC8_resource_value_not_number\", \"test_TC9_request_value_not_number\", \"test_TC10_resource_key_not_string\", \"test_TC11_request_key_not_string\", \"test_TC12_missing_resource_type\", \"test_TC13_empty_resource_dict_invalid\", \"test_TC14_none_resources\", \"test_TC15_none_requests\", \"test_TC16_nested_invalid_request\", \"test_TC17_list_inside_request_value\", \"test_TC18_tuple_inside_request_value\", \"test_TC19_valid_simple_case\", \"test_TC20_valid_multi_resource\", \"test_TC21_zero_and_negative_mix\", \"test_TC23_request_with_extra_invalid_key\", \"test_TC24_string_number\", \"test_TC25_string_number_in_request\", \"test_TC26_empty_requests_valid\", \"test_TC27_empty_requests_invalid_resources\", \"test_TC28_valid_float\", \"test_TC29_invalid_float_nan_request\"], \"collection_error\": null, \"pytest_exitcode\": 0}\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_resource_key_not_string": [
+        "passed",
+        ""
+      ],
+      "test_TC11_request_key_not_string": [
+        "passed",
+        ""
+      ],
+      "test_TC12_missing_resource_type": [
+        "passed",
+        ""
+      ],
+      "test_TC13_empty_resource_dict_invalid": [
+        "passed",
+        ""
+      ],
+      "test_TC14_none_resources": [
+        "passed",
+        ""
+      ],
+      "test_TC15_none_requests": [
+        "passed",
+        ""
+      ],
+      "test_TC16_nested_invalid_request": [
+        "passed",
+        ""
+      ],
+      "test_TC17_list_inside_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC18_tuple_inside_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC19_valid_simple_case": [
+        "passed",
+        ""
+      ],
+      "test_TC1_negative_resource_value": [
+        "passed",
+        ""
+      ],
+      "test_TC20_valid_multi_resource": [
+        "passed",
+        ""
+      ],
+      "test_TC21_zero_and_negative_mix": [
+        "passed",
+        ""
+      ],
+      "test_TC23_request_with_extra_invalid_key": [
+        "passed",
+        ""
+      ],
+      "test_TC24_string_number": [
+        "passed",
+        ""
+      ],
+      "test_TC25_string_number_in_request": [
+        "passed",
+        ""
+      ],
+      "test_TC26_empty_requests_valid": [
+        "passed",
+        ""
+      ],
+      "test_TC27_empty_requests_invalid_resources": [
+        "passed",
+        ""
+      ],
+      "test_TC28_valid_float": [
+        "passed",
+        ""
+      ],
+      "test_TC29_invalid_float_nan_request": [
+        "passed",
+        ""
+      ],
+      "test_TC2_negative_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC3_nan_value": [
+        "passed",
+        ""
+      ],
+      "test_TC4_infinite_value": [
+        "passed",
+        ""
+      ],
+      "test_TC5_resources_not_dict": [
+        "passed",
+        ""
+      ],
+      "test_TC6_requests_not_list": [
+        "passed",
+        ""
+      ],
+      "test_TC7_request_item_not_dict": [
+        "passed",
+        ""
+      ],
+      "test_TC8_resource_value_not_number": [
+        "passed",
+        ""
+      ],
+      "test_TC9_request_value_not_number": [
+        "passed",
+        ""
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_B_test.py",
+    "suite_sha256": "d776ae5df8190eb8a58cf7d8b71886b2189f88d0c7b3a2f68f0192ab18e35af3"
+  },
+  "effective_timezone": "UTC",
+  "evaluation_complete": true,
+  "evidence_class": "FRESH_ISOLATED_CLEANED_START_NOT_MODEL_OUTPUT",
+  "finished_at_utc": "2026-11-05T18:51:57.013203+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G3",
+  "no_feedback_to_agent": true,
+  "participant_id": "S0065",
+  "source_sha256": "1efdfc92076219207ad891a7dcf3335b1103208e1d2191c6746994fee38b2492",
+  "started_at_utc": "2026-11-05T18:51:56.715916+00:00",
+  "supplied5": {
+    "complete": true,
+    "expected_case_count": 5,
+    "metadata": {
+      "collected_case_ids": [
+        "test_TC22_valid_zero_values",
+        "test_TC30_one_resource_must_remain_false",
+        "test_TC31_one_resource_must_remain_true",
+        "test_TC32_multi_resource_exact_cpu",
+        "test_TC33_multi_resource_exact_cpu"
+      ],
+      "collection_error": null,
+      "complete": true,
+      "elapsed_seconds": 0.127592,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 545,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 33390592,
+      "pytest_exitcode": 0,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "{\"results\": {\"test_TC22_valid_zero_values\": [\"passed\", \"\"], \"test_TC30_one_resource_must_remain_false\": [\"passed\", \"\"], \"test_TC31_one_resource_must_remain_true\": [\"passed\", \"\"], \"test_TC32_multi_resource_exact_cpu\": [\"passed\", \"\"], \"test_TC33_multi_resource_exact_cpu\": [\"passed\", \"\"]}, \"collected\": [\"test_TC22_valid_zero_values\", \"test_TC30_one_resource_must_remain_false\", \"test_TC31_one_resource_must_remain_true\", \"test_TC32_multi_resource_exact_cpu\", \"test_TC33_multi_resource_exact_cpu\"], \"collection_error\": null, \"pytest_exitcode\": 0}\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC22_valid_zero_values": [
+        "passed",
+        ""
+      ],
+      "test_TC30_one_resource_must_remain_false": [
+        "passed",
+        ""
+      ],
+      "test_TC31_one_resource_must_remain_true": [
+        "passed",
+        ""
+      ],
+      "test_TC32_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ],
+      "test_TC33_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_B_test.py",
+    "suite_sha256": "0d75ec77772ecf520b655670999ec617887d0b6de77561c8402c48c1d0535710"
+  },
+  "targets": {
+    "answer_key_sha256": "466a0d5008742bbfa3acbdc6c391c73dd698ee688ca7bfb2dfe0a0960bc9ab00",
+    "cases": {
+      "B-C1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-O1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC22": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC31": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-TC32": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      }
+    },
+    "complete": true,
+    "execution_metadata": {
+      "elapsed_seconds": 0.03128,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 889,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 16056320,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "{\"import_error\": null, \"cases\": {\"B-X1\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-X2\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-X3\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-X4\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-TC31\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-C1\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-C2\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-C3\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-O1\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-O2\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-O3\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-C4\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-O4\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}, \"B-TC32\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": true}, \"B-TC22\": {\"kind\": \"ret\", \"type\": \"bool\", \"value\": false}}}\n",
+      "timed_out_file": false
+    },
+    "expected_case_count": 15,
+    "import_error": null
+  },
+  "task": "B"
+}

@@ -1,0 +1,20 @@
+--- S0010/original/solution.py
++++ S0010/cleaned/solution.py
+@@ -13,6 +13,17 @@
+         List of available start times in "HH:MM" format.
+         Fridays: meetings cannot start after 15:00.
+     """
++
++    # Translate canonical dates to the weekday names used below.
++    if isinstance(day, str) and len(day) == 10:
++        from datetime import date as _calendar_input_date
++        try:
++            _parsed_calendar_input = _calendar_input_date.fromisoformat(day)
++        except ValueError:
++            pass
++        else:
++            if _parsed_calendar_input.isoformat() == day:
++                day = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')[_parsed_calendar_input.weekday()]
+     if meeting_duration <= 0:
+         return []
+ 

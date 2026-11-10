@@ -1,0 +1,20 @@
+--- S0011/original/solution.py
++++ S0011/cleaned/solution.py
+@@ -11,6 +11,17 @@
+ from typing import List, Dict
+ 
+ def suggest_slots(events: List[Dict[str, str]], meeting_duration: int, day: str) -> List[str]:
++
++    # Translate canonical dates to the weekday names used below.
++    if isinstance(day, str) and len(day) == 10:
++        from datetime import date as _calendar_input_date
++        try:
++            _parsed_calendar_input = _calendar_input_date.fromisoformat(day)
++        except ValueError:
++            pass
++        else:
++            if _parsed_calendar_input.isoformat() == day:
++                day = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')[_parsed_calendar_input.weekday()]
+     if meeting_duration <= 0:
+         return []
+ 

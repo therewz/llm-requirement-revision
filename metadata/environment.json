@@ -1,0 +1,19 @@
+{
+  "saved_data_reproduction": {
+    "python": "3.12.6 (main, Sep  9 2025, 22:02:53) [Clang 17.0.0 (clang-1700.0.13.5)]",
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.7",
+    "pytest": "9.0.2"
+  },
+  "historical_evaluation_runtime": {
+    "interpreter_sha256": "db0899d91d9bbf0635a168d274d3301b74a408ec93b10c33aa6117e44e039b70",
+    "python": "/Users/rezatehrani/.pyenv/versions/3.12.6/bin/python3.12",
+    "runtime": {
+      "numpy": "2.3.5",
+      "pytest": "9.0.2",
+      "python": "3.12.6 (main, Sep  9 2025, 22:02:53) [Clang 17.0.0 (clang-1700.0.13.5)]"
+    }
+  },
+  "regrading": "The original evaluator is source-bound to the recorded Mac sandbox/interpreter and uses literal dates with a real runtime clock. Re-execution on another date/host is not guaranteed to reproduce date-dependent decisions. No candidate execution is needed for saved-data analyses."
+}

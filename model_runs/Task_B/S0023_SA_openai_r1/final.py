@@ -1,0 +1,38 @@
+"""Determine whether resource requests fit within available capacities."""
+
+from typing import Dict, List, Union
+
+Number = Union[int, float]
+
+
+def is_allocation_feasible(
+    resources: Dict[str, Number],
+    requests: List[Dict[str, Number]]
+) -> bool:
+    """
+    Determine whether all resource requests fit within the available capacities.
+
+    Args:
+        resources: Mapping from resource name to total available capacity.
+        requests: List of mappings from resource name to the amount required.
+
+    Returns:
+        True if every requested resource has sufficient capacity, False otherwise.
+        Resources may be fully consumed; no unused capacity is required.
+    """
+    total_requested: Dict[str, Number] = {}
+
+    for request in requests:
+        if not isinstance(request, dict):
+            raise ValueError("Request is not a dictionary.")
+
+        for name, amount in request.items():
+            if amount > 0:
+                total_requested[name] = total_requested.get(name, 0) + amount
+
+    # Requests for missing resources or amounts exceeding capacity are infeasible.
+    for name, total_amount in total_requested.items():
+        if name not in resources or total_amount > resources[name]:
+            return False
+
+    return True

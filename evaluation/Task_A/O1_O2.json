@@ -1,0 +1,4029 @@
+{
+  "cases": [
+    {
+      "args": [
+        [],
+        30,
+        "2026-03-13"
+      ],
+      "case_id": "A-F1",
+      "control_ids": [
+        "A-F1-C1",
+        "A-F1-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "2026-03-11"
+      ],
+      "case_id": "A-F1-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "2026-03-12"
+      ],
+      "case_id": "A-F1-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "2026-03-13"
+      ],
+      "case_id": "A-F2",
+      "control_ids": [
+        "A-F2-C1",
+        "A-F2-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "2026-03-11"
+      ],
+      "case_id": "A-F2-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "2026-03-12"
+      ],
+      "case_id": "A-F2-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "2026-03-13"
+      ],
+      "case_id": "A-F3",
+      "control_ids": [
+        "A-F3-C1",
+        "A-F3-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "2026-03-11"
+      ],
+      "case_id": "A-F3-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "2026-03-12"
+      ],
+      "case_id": "A-F3-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "2026-03-20"
+      ],
+      "case_id": "A-F4",
+      "control_ids": [
+        "A-F4-C1",
+        "A-F4-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F4"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "2026-03-18"
+      ],
+      "case_id": "A-F4-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F4"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "2026-03-19"
+      ],
+      "case_id": "A-F4-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F4"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "2026-03-13"
+      ],
+      "case_id": "A-TC10",
+      "control_ids": [
+        "A-TC10-C1",
+        "A-TC10-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "2026-03-11"
+      ],
+      "case_id": "A-TC10-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "2026-03-12"
+      ],
+      "case_id": "A-TC10-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "2026-03-13"
+      ],
+      "case_id": "A-TC22",
+      "control_ids": [
+        "A-TC22-C1",
+        "A-TC22-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:45"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "2026-03-11"
+      ],
+      "case_id": "A-TC22-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "2026-03-12"
+      ],
+      "case_id": "A-TC22-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "2026-03-13"
+      ],
+      "case_id": "A-TC24",
+      "control_ids": [
+        "A-TC24-C1",
+        "A-TC24-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "2026-03-11"
+      ],
+      "case_id": "A-TC24-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "2026-03-12"
+      ],
+      "case_id": "A-TC24-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_primary",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        120,
+        "2026-03-13"
+      ],
+      "case_id": "A-TC11",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained_intended_finish_by_15": {
+          "absent": [
+            "14:00",
+            "14:15",
+            "14:30"
+          ],
+          "present": []
+        },
+        "retained_printed_start_by_15": {
+          "absent": [],
+          "present": [
+            "14:00",
+            "14:15",
+            "14:30"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "14:00",
+            "14:15",
+            "14:30"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "iso_diagnostic",
+      "reason": "A 120-minute meeting starting after 15:00 exceeds 17:00. Every affected feasible afternoon start depends on the finish-by versus start-by interpretation.",
+      "role": "boundary_diagnostic",
+      "source_case_ids": [
+        "supplied:TC11"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "14:00",
+        "14:15",
+        "14:30"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "Fri"
+      ],
+      "case_id": "weekday_abbrev:A-F1",
+      "control_ids": [
+        "weekday_abbrev:A-F1-C1",
+        "weekday_abbrev:A-F1-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "Wed"
+      ],
+      "case_id": "weekday_abbrev:A-F1-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "Thu"
+      ],
+      "case_id": "weekday_abbrev:A-F1-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "Fri"
+      ],
+      "case_id": "weekday_abbrev:A-F2",
+      "control_ids": [
+        "weekday_abbrev:A-F2-C1",
+        "weekday_abbrev:A-F2-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "Wed"
+      ],
+      "case_id": "weekday_abbrev:A-F2-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "Thu"
+      ],
+      "case_id": "weekday_abbrev:A-F2-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "Fri"
+      ],
+      "case_id": "weekday_abbrev:A-F3",
+      "control_ids": [
+        "weekday_abbrev:A-F3-C1",
+        "weekday_abbrev:A-F3-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "Wed"
+      ],
+      "case_id": "weekday_abbrev:A-F3-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "Thu"
+      ],
+      "case_id": "weekday_abbrev:A-F3-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "Fri"
+      ],
+      "case_id": "weekday_abbrev:A-TC10",
+      "control_ids": [
+        "weekday_abbrev:A-TC10-C1",
+        "weekday_abbrev:A-TC10-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "Wed"
+      ],
+      "case_id": "weekday_abbrev:A-TC10-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "Thu"
+      ],
+      "case_id": "weekday_abbrev:A-TC10-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "Fri"
+      ],
+      "case_id": "weekday_abbrev:A-TC22",
+      "control_ids": [
+        "weekday_abbrev:A-TC22-C1",
+        "weekday_abbrev:A-TC22-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:45"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "Wed"
+      ],
+      "case_id": "weekday_abbrev:A-TC22-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "Thu"
+      ],
+      "case_id": "weekday_abbrev:A-TC22-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "Fri"
+      ],
+      "case_id": "weekday_abbrev:A-TC24",
+      "control_ids": [
+        "weekday_abbrev:A-TC24-C1",
+        "weekday_abbrev:A-TC24-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "Wed"
+      ],
+      "case_id": "weekday_abbrev:A-TC24-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "Thu"
+      ],
+      "case_id": "weekday_abbrev:A-TC24-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_abbrev",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "Friday"
+      ],
+      "case_id": "weekday_full:A-F1",
+      "control_ids": [
+        "weekday_full:A-F1-C1",
+        "weekday_full:A-F1-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "Wednesday"
+      ],
+      "case_id": "weekday_full:A-F1-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "Thursday"
+      ],
+      "case_id": "weekday_full:A-F1-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "Friday"
+      ],
+      "case_id": "weekday_full:A-F2",
+      "control_ids": [
+        "weekday_full:A-F2-C1",
+        "weekday_full:A-F2-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "Wednesday"
+      ],
+      "case_id": "weekday_full:A-F2-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "Thursday"
+      ],
+      "case_id": "weekday_full:A-F2-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "Friday"
+      ],
+      "case_id": "weekday_full:A-F3",
+      "control_ids": [
+        "weekday_full:A-F3-C1",
+        "weekday_full:A-F3-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "Wednesday"
+      ],
+      "case_id": "weekday_full:A-F3-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "Thursday"
+      ],
+      "case_id": "weekday_full:A-F3-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "Friday"
+      ],
+      "case_id": "weekday_full:A-TC10",
+      "control_ids": [
+        "weekday_full:A-TC10-C1",
+        "weekday_full:A-TC10-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "Wednesday"
+      ],
+      "case_id": "weekday_full:A-TC10-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "Thursday"
+      ],
+      "case_id": "weekday_full:A-TC10-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "Friday"
+      ],
+      "case_id": "weekday_full:A-TC22",
+      "control_ids": [
+        "weekday_full:A-TC22-C1",
+        "weekday_full:A-TC22-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:45"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "Wednesday"
+      ],
+      "case_id": "weekday_full:A-TC22-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "Thursday"
+      ],
+      "case_id": "weekday_full:A-TC22-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "Friday"
+      ],
+      "case_id": "weekday_full:A-TC24",
+      "control_ids": [
+        "weekday_full:A-TC24-C1",
+        "weekday_full:A-TC24-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "Wednesday"
+      ],
+      "case_id": "weekday_full:A-TC24-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "Thursday"
+      ],
+      "case_id": "weekday_full:A-TC24-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_full",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "friday"
+      ],
+      "case_id": "weekday_lower:A-F1",
+      "control_ids": [
+        "weekday_lower:A-F1-C1",
+        "weekday_lower:A-F1-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "wednesday"
+      ],
+      "case_id": "weekday_lower:A-F1-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        30,
+        "thursday"
+      ],
+      "case_id": "weekday_lower:A-F1-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC9",
+        "pilot:A-F1",
+        "pilot:A-F4:date_collapsed"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "friday"
+      ],
+      "case_id": "weekday_lower:A-F2",
+      "control_ids": [
+        "weekday_lower:A-F2-C1",
+        "weekday_lower:A-F2-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "wednesday"
+      ],
+      "case_id": "weekday_lower:A-F2-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [],
+        60,
+        "thursday"
+      ],
+      "case_id": "weekday_lower:A-F2-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F2"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "friday"
+      ],
+      "case_id": "weekday_lower:A-F3",
+      "control_ids": [
+        "weekday_lower:A-F3-C1",
+        "weekday_lower:A-F3-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "target",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "wednesday"
+      ],
+      "case_id": "weekday_lower:A-F3-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "11:00",
+            "start": "10:00"
+          }
+        ],
+        30,
+        "thursday"
+      ],
+      "case_id": "weekday_lower:A-F3-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "pilot:A-F3"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "friday"
+      ],
+      "case_id": "weekday_lower:A-TC10",
+      "control_ids": [
+        "weekday_lower:A-TC10-C1",
+        "weekday_lower:A-TC10-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "wednesday"
+      ],
+      "case_id": "weekday_lower:A-TC10-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:00",
+            "start": "14:00"
+          }
+        ],
+        30,
+        "thursday"
+      ],
+      "case_id": "weekday_lower:A-TC10-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC10"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:30",
+        "15:45",
+        "16:00",
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "friday"
+      ],
+      "case_id": "weekday_lower:A-TC22",
+      "control_ids": [
+        "weekday_lower:A-TC22-C1",
+        "weekday_lower:A-TC22-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "15:45"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "wednesday"
+      ],
+      "case_id": "weekday_lower:A-TC22-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "15:30",
+            "start": "14:00"
+          }
+        ],
+        60,
+        "thursday"
+      ],
+      "case_id": "weekday_lower:A-TC22-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "15:45"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC22"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "15:45"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "friday"
+      ],
+      "case_id": "weekday_lower:A-TC24",
+      "control_ids": [
+        "weekday_lower:A-TC24-C1",
+        "weekday_lower:A-TC24-C2"
+      ],
+      "early_any": [
+        "09:00",
+        "09:15"
+      ],
+      "expected": {
+        "retained": {
+          "absent": [
+            "16:15"
+          ],
+          "present": []
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "target",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "wednesday"
+      ],
+      "case_id": "weekday_lower:A-TC24-C1",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    },
+    {
+      "args": [
+        [
+          {
+            "end": "16:00",
+            "start": "14:30"
+          }
+        ],
+        30,
+        "thursday"
+      ],
+      "case_id": "weekday_lower:A-TC24-C2",
+      "control_ids": [],
+      "early_any": [],
+      "expected": {
+        "retained": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        },
+        "withdrawn": {
+          "absent": [],
+          "present": [
+            "16:15"
+          ]
+        }
+      },
+      "function": "suggest_slots",
+      "kwargs": {},
+      "profile": "weekday_lower",
+      "role": "control",
+      "source_case_ids": [
+        "supplied:TC24"
+      ],
+      "source_ids": [
+        "printed_rule",
+        "intended_rule",
+        "supplied_five",
+        "pilot_probes",
+        "public_baseline"
+      ],
+      "target_slots": [
+        "16:15"
+      ]
+    }
+  ],
+  "generation_used": false,
+  "historical_mapping": {
+    "TC10": {
+      "decision": "Original comment says 14:30 but code checks 14:00. Empty output passes vacuously. Use selected late slots and positive controls.",
+      "original_assertion": "every returned start <=14:00",
+      "probe_id": "A-TC10"
+    },
+    "TC11": {
+      "decision": "Cannot discriminate literal start-by rule from withdrawal for 120-minute meetings. Intended finish-by reading differs. Keep diagnostic only.",
+      "original_assertion": "every returned start <=15:00 and end <=17:00",
+      "probe_id": "A-TC11"
+    },
+    "TC22": {
+      "decision": "Use 15:45, after event end plus 15-minute buffer, finishing at 16:45. Empty output cannot establish eligibility.",
+      "original_assertion": "every returned start <=14:00",
+      "probe_id": "A-TC22"
+    },
+    "TC24": {
+      "decision": "Original comment says 14:30 but code checks 14:00. Use 16:15, after event end plus 15-minute buffer, finishing at 16:45.",
+      "original_assertion": "every returned start <=14:00",
+      "probe_id": "A-TC24"
+    },
+    "TC9": {
+      "decision": "Retain historical full-list score separately. Use robust late-slot projection for withdrawal and deduplicate against pilot A-F1.",
+      "original_assertion": "sorted list equals 16 specific starts ending at 14:30",
+      "probe_id": "A-F1"
+    }
+  },
+  "native_aliases": {
+    "weekday_abbrev": {
+      "weekday_abbrev:A-F4": "weekday_abbrev:A-F1"
+    },
+    "weekday_full": {
+      "weekday_full:A-F4": "weekday_full:A-F1"
+    },
+    "weekday_lower": {
+      "weekday_lower:A-F4": "weekday_lower:A-F1"
+    }
+  },
+  "primary_target_ids": [
+    "A-F1",
+    "A-F2",
+    "A-F3",
+    "A-F4",
+    "A-TC10",
+    "A-TC22",
+    "A-TC24"
+  ],
+  "profile_priority": [
+    "iso_primary",
+    "weekday_abbrev",
+    "weekday_full",
+    "weekday_lower"
+  ],
+  "schema_version": 1,
+  "scope": {
+    "baseline": "The working-hours/grid/buffer conventions are reconstructed benchmark expectations supported by supplied material and inherited pilot probes. Participant prompts are not asserted to state every convention.",
+    "historical_oracles": "Full historical Phase-I return lists are not reconstructed here. Only the target membership predicates are fixed.",
+    "interface": "ISO dates define the strict primary view. Abbreviated, full and lowercase weekday names define three fixed supplementary profiles. Select once per program using P2 qualified-target evidence, with priority ISO, abbreviation, full, lowercase; use the same profile on P1. Report strict ISO and interface-aware views separately. Native date2 aliases date1, counted once.",
+    "selection": "Slots start after 15:00 under both disputed rule readings, fit before 17:00, and clear relevant event plus a 15-minute buffer. Morning and matched Wednesday/Thursday controls distinguish a Friday restriction from total failure."
+  },
+  "source_counts": {
+    "boundary_only_scenarios": 1,
+    "pilot_scenarios": 4,
+    "robust_iso_targets": 7,
+    "supplied_scenarios": 5,
+    "unique_iso_scenarios": 8
+  },
+  "sources": {
+    "intended_rule": {
+      "path": "handoff/correspondence/messages/20261102_elmira_reply_original_as_relayed.txt",
+      "sha256": "3d957ce9d785815bba95dd335ff66ceea0bf72f8ac89b1ced09cecce695d3804"
+    },
+    "pilot_probes": {
+      "path": "repositories/followup-offline-local-v2/withdrawal_preparation/scripts/wcases.py",
+      "sha256": "867c2c3b778827e3d74dbdd19c06d8cdfc58f3137e6f17bf2846f55cde78b0aa"
+    },
+    "printed_rule": {
+      "path": "runs/author_manuals_review_v1/p2_TaskA_G1A_manual_prt2_v2.txt",
+      "sha256": "a97258da064c79d2ae2e54fada317076a3eee21867adb4a3bf2fe68dbdfa72f9"
+    },
+    "public_baseline": {
+      "path": "data/raw/history_complete_20261102/lab_templates/A/4b0dd67/tests/test_solution.py",
+      "sha256": "7fb0d019ae3f1ea9a7dcc3c16103760d45041470e70b386c507d1e592209152e"
+    },
+    "supplied_five": {
+      "path": "repositories/llm-requirement-revision/Data/test_suits/5_new_req_A_test.py",
+      "sha256": "e5239e78dae29a0147b9a5bc45e190dd58807f01b19aa9f879a9c18a0a093784"
+    },
+    "weekday_interface": {
+      "path": "data/raw/history_complete_20261102/lab_templates/A/7743e36/src/solution.py",
+      "sha256": "3afa57782e2e33930a0bfac7c5601b059929cca0ff01fe85d1cfc36183c7ecf1"
+    }
+  },
+  "status": "prepared_answer_key_requires_lead_review",
+  "task": "A"
+}

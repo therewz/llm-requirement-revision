@@ -1,0 +1,92 @@
+task,case_id,role,profile,key_file,O1_field,O2_field,linked_controls
+A,A-F1,target,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""A-F1-C1"", ""A-F1-C2""]"
+A,A-F1-C1,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-F1-C2,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-F2,target,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""A-F2-C1"", ""A-F2-C2""]"
+A,A-F2-C1,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-F2-C2,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-F3,target,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""A-F3-C1"", ""A-F3-C2""]"
+A,A-F3-C1,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-F3-C2,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-F4,target,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""A-F4-C1"", ""A-F4-C2""]"
+A,A-F4-C1,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-F4-C2,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-TC10,target,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""A-TC10-C1"", ""A-TC10-C2""]"
+A,A-TC10-C1,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-TC10-C2,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-TC22,target,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""A-TC22-C1"", ""A-TC22-C2""]"
+A,A-TC22-C1,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-TC22-C2,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-TC24,target,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""A-TC24-C1"", ""A-TC24-C2""]"
+A,A-TC24-C1,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-TC24-C2,control,iso_primary,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,A-TC11,boundary_diagnostic,iso_diagnostic,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-F1,target,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_abbrev:A-F1-C1"", ""weekday_abbrev:A-F1-C2""]"
+A,weekday_abbrev:A-F1-C1,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-F1-C2,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-F2,target,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_abbrev:A-F2-C1"", ""weekday_abbrev:A-F2-C2""]"
+A,weekday_abbrev:A-F2-C1,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-F2-C2,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-F3,target,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_abbrev:A-F3-C1"", ""weekday_abbrev:A-F3-C2""]"
+A,weekday_abbrev:A-F3-C1,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-F3-C2,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-TC10,target,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_abbrev:A-TC10-C1"", ""weekday_abbrev:A-TC10-C2""]"
+A,weekday_abbrev:A-TC10-C1,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-TC10-C2,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-TC22,target,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_abbrev:A-TC22-C1"", ""weekday_abbrev:A-TC22-C2""]"
+A,weekday_abbrev:A-TC22-C1,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-TC22-C2,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-TC24,target,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_abbrev:A-TC24-C1"", ""weekday_abbrev:A-TC24-C2""]"
+A,weekday_abbrev:A-TC24-C1,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_abbrev:A-TC24-C2,control,weekday_abbrev,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-F1,target,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_full:A-F1-C1"", ""weekday_full:A-F1-C2""]"
+A,weekday_full:A-F1-C1,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-F1-C2,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-F2,target,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_full:A-F2-C1"", ""weekday_full:A-F2-C2""]"
+A,weekday_full:A-F2-C1,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-F2-C2,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-F3,target,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_full:A-F3-C1"", ""weekday_full:A-F3-C2""]"
+A,weekday_full:A-F3-C1,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-F3-C2,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-TC10,target,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_full:A-TC10-C1"", ""weekday_full:A-TC10-C2""]"
+A,weekday_full:A-TC10-C1,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-TC10-C2,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-TC22,target,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_full:A-TC22-C1"", ""weekday_full:A-TC22-C2""]"
+A,weekday_full:A-TC22-C1,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-TC22-C2,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-TC24,target,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_full:A-TC24-C1"", ""weekday_full:A-TC24-C2""]"
+A,weekday_full:A-TC24-C1,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_full:A-TC24-C2,control,weekday_full,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-F1,target,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_lower:A-F1-C1"", ""weekday_lower:A-F1-C2""]"
+A,weekday_lower:A-F1-C1,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-F1-C2,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-F2,target,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_lower:A-F2-C1"", ""weekday_lower:A-F2-C2""]"
+A,weekday_lower:A-F2-C1,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-F2-C2,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-F3,target,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_lower:A-F3-C1"", ""weekday_lower:A-F3-C2""]"
+A,weekday_lower:A-F3-C1,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-F3-C2,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-TC10,target,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_lower:A-TC10-C1"", ""weekday_lower:A-TC10-C2""]"
+A,weekday_lower:A-TC10-C1,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-TC10-C2,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-TC22,target,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_lower:A-TC22-C1"", ""weekday_lower:A-TC22-C2""]"
+A,weekday_lower:A-TC22-C1,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-TC22-C2,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-TC24,target,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,"[""weekday_lower:A-TC24-C1"", ""weekday_lower:A-TC24-C2""]"
+A,weekday_lower:A-TC24-C1,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+A,weekday_lower:A-TC24-C2,control,weekday_lower,evaluation/Task_A/O1_O2.json,expected.withdrawn,expected.retained + attribution controls,[]
+B,B-X1,primary_target,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,"[""B-TC31"", ""B-O1""]"
+B,B-X2,primary_target,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,"[""B-C3"", ""B-O2""]"
+B,B-X3,primary_target,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,"[""B-C2"", ""B-O3""]"
+B,B-X4,primary_target,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,"[""B-C4"", ""B-O4""]"
+B,B-TC31,spare_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-C1,spare_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-C2,spare_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-C3,spare_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-O1,over_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-O2,over_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-O3,over_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-C4,spare_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-O4,over_control,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]
+B,B-TC32,interpretation_diagnostic,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,"[""B-C2"", ""B-O3""]"
+B,B-TC22,zero_capacity_diagnostic,boolean,evaluation/Task_B/O1_O2.json,withdrawn_expectation,retained_expectation + attribution controls,[]

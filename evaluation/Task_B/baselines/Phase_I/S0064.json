@@ -1,0 +1,257 @@
+{
+  "core28": {
+    "expected_case_count": 28,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "............................                                             [100%]\n28 passed in 0.02s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_resource_key_not_string": [
+        "passed",
+        ""
+      ],
+      "test_TC11_request_key_not_string": [
+        "passed",
+        ""
+      ],
+      "test_TC12_missing_resource_type": [
+        "passed",
+        ""
+      ],
+      "test_TC13_empty_resource_dict_invalid": [
+        "passed",
+        ""
+      ],
+      "test_TC14_none_resources": [
+        "passed",
+        ""
+      ],
+      "test_TC15_none_requests": [
+        "passed",
+        ""
+      ],
+      "test_TC16_nested_invalid_request": [
+        "passed",
+        ""
+      ],
+      "test_TC17_list_inside_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC18_tuple_inside_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC19_valid_simple_case": [
+        "passed",
+        ""
+      ],
+      "test_TC1_negative_resource_value": [
+        "passed",
+        ""
+      ],
+      "test_TC20_valid_multi_resource": [
+        "passed",
+        ""
+      ],
+      "test_TC21_zero_and_negative_mix": [
+        "passed",
+        ""
+      ],
+      "test_TC23_request_with_extra_invalid_key": [
+        "passed",
+        ""
+      ],
+      "test_TC24_string_number": [
+        "passed",
+        ""
+      ],
+      "test_TC25_string_number_in_request": [
+        "passed",
+        ""
+      ],
+      "test_TC26_empty_requests_valid": [
+        "passed",
+        ""
+      ],
+      "test_TC27_empty_requests_invalid_resources": [
+        "passed",
+        ""
+      ],
+      "test_TC28_valid_float": [
+        "passed",
+        ""
+      ],
+      "test_TC29_invalid_float_nan_request": [
+        "passed",
+        ""
+      ],
+      "test_TC2_negative_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC3_nan_value": [
+        "passed",
+        ""
+      ],
+      "test_TC4_infinite_value": [
+        "passed",
+        ""
+      ],
+      "test_TC5_resources_not_dict": [
+        "passed",
+        ""
+      ],
+      "test_TC6_requests_not_list": [
+        "passed",
+        ""
+      ],
+      "test_TC7_request_item_not_dict": [
+        "passed",
+        ""
+      ],
+      "test_TC8_resource_value_not_number": [
+        "passed",
+        ""
+      ],
+      "test_TC9_request_value_not_number": [
+        "passed",
+        ""
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_B_test.py",
+    "suite_sha256": "d776ae5df8190eb8a58cf7d8b71886b2189f88d0c7b3a2f68f0192ab18e35af3"
+  },
+  "evidence_class": "FRESH_ISOLATED_ORIGINAL_PROGRAM_EXECUTION",
+  "finished_utc": "2026-11-05T06:02:36.811399+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G3",
+  "participant_id": "S0064",
+  "phase": "P1",
+  "source_path": "runs/withdrawal_keys_v1/input_snapshot/Data/v1_human/G3/G3B/S0064/src/solution.py",
+  "source_sha256": "bc75f2b3737c4b1b28552a8a2a66199080481fc207dee63b35c2bd2ff02d17a1",
+  "started_utc": "2026-11-05T06:02:36.345083+00:00",
+  "supplied5": {
+    "expected_case_count": 5,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "FF..F                                                                    [100%]\n=================================== FAILURES ===================================\n_________________________ test_TC22_valid_zero_values __________________________\n\n    def test_TC22_valid_zero_values():\n        # Not feasible because resource=0, must leave 1 unit unallocated\n>       assert is_allocation_feasible({\"cpu\": 0}, [{\"cpu\": 0}]) is False\nE       AssertionError: assert True is False\nE        +  where True = is_allocation_feasible({'cpu': 0}, [{'cpu': 0}])\n\ntest_target.py:125: AssertionError\n___________________ test_TC30_one_resource_must_remain_false ___________________\n\n    def test_TC30_one_resource_must_remain_false():\n        # exact allocation fails CO\n>       assert is_allocation_feasible({\"cpu\": 10}, [{\"cpu\": 10}]) is False\nE       AssertionError: assert True is False\nE        +  where True = is_allocation_feasible({'cpu': 10}, [{'cpu': 10}])\n\ntest_target.py:172: AssertionError\n______________________ test_TC33_multi_resource_exact_cpu ______________________\n\n    def test_TC33_multi_resource_exact_cpu():\n>       assert is_allocation_feasible(\n            {\"cpu\": 10, \"ram\": 8},\n            [{\"cpu\": 10, \"ram\": 8}]\n        ) is False\nE       AssertionError: assert True is False\nE        +  where True = is_allocation_feasible({'cpu': 10, 'ram': 8}, [{'cpu': 10, 'ram': 8}])\n\ntest_target.py:188: AssertionError\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC22_valid_zero_values - AssertionError: assert T...\nFAILED test_target.py::test_TC30_one_resource_must_remain_false - AssertionEr...\nFAILED test_target.py::test_TC33_multi_resource_exact_cpu - AssertionError: a...\n3 failed, 2 passed in 0.02s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC22_valid_zero_values": [
+        "failed",
+        "AssertionError: assert True is False"
+      ],
+      "test_TC30_one_resource_must_remain_false": [
+        "failed",
+        "AssertionError: assert True is False"
+      ],
+      "test_TC31_one_resource_must_remain_true": [
+        "passed",
+        ""
+      ],
+      "test_TC32_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ],
+      "test_TC33_multi_resource_exact_cpu": [
+        "failed",
+        "AssertionError: assert True is False"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_B_test.py",
+    "suite_sha256": "0d75ec77772ecf520b655670999ec617887d0b6de77561c8402c48c1d0535710"
+  },
+  "targets": {
+    "cases": {
+      "B-C1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-O1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC22": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-TC31": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-TC32": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      }
+    },
+    "execution_metadata": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "import_error": null
+  },
+  "task": "B"
+}

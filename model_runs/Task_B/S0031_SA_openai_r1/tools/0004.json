@@ -1,0 +1,1 @@
+{"elapsed_seconds":0.040852,"isolation":"macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS","observed_output_bytes":100,"output_truncated":false,"peak_observed_rss_bytes":19890176,"returncode":0,"status":"ok","stderr":"..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n","stdout":""}

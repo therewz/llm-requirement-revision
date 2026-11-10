@@ -1,0 +1,6 @@
+{
+  "live_enabled": false,
+  "credentials_included": false,
+  "approval_included": false,
+  "purpose": "This artifact replays saved data. Live API execution requires a separately configured run and is not exposed by reproduce.py."
+}

@@ -1,0 +1,59 @@
+Revise the existing Python implementation to satisfy the current requirements below. Treat these requirements as authoritative. Remove restrictions they do not require, preserve all specified functionality, and avoid unrelated changes. If no changes are needed, leave the implementation unchanged.
+
+**Current requirements**
+
+### Task description
+
+You are asked to implement a Python function that determines whether a set of resource requests can be satisfied given limited capacity. The function takes as input a list of requests and available resources and returns whether a valid allocation exists. The goal is to determine feasibility of allocation based on the provided information. You may assume inputs are provided in a reasonable and consistent format. You may use ChatGPT to assist with reasoning about the problem, generating code, or writing tests.
+
+### Specification
+
+```json
+{
+  "id": "S0051",
+  "v1_human_g3_constraints": [
+    {
+      "c_1": "Input format Assumption: The inputs are provided in validated const[str]-format as specified",
+      "c_2": "Resource naming consistency: Resource names used in the reqs correspond to resource names defined in the available resources dictionary",
+      "c_3": "Non negative values: Resources capacities a requested amounts are assumed to be non negative numeric values",
+      "c_4": "Finite resource capacity: Each resource has a fixed max capacity that can't be exceeded during allocation",
+      "c_5": "No partial reqs each request is considered as a whole when evaluating feasibility; The system assumes requests are not partially fulfilled",
+      "c_6": "Static inputs: the available resources a reqs are assumed to remain constant during the evaluation process"
+    }
+  ],
+  "v1_human_g3_exception": "Missing resource in Request: If a request doesn't include a particular resource, it's assumed that the request requires 0 units of that resource. Unknown Resources in Requests: If a request references a resource that is not defined in the resources dictionary, the allocation should be considered invalid/infeasible. Zero capacity Resources: If a resource has 0 available capacity, any request requiring a positive amount of that resource will make the allocation infeasible. Empty Resource Requests list: If the requests list is empty, the function should return true, since no resources are required. Unused Resources: Resources listed in the resources dictionary that are not requested by any request don't affect feasibility. Exact capacity usage: It's valid for the total requested amount of a resource to exactly match its available capacity. Numeric value constraint: All resources capacities a request amounts must be numeric values. Non negative values: Resources capacities a request amounts should be greater than or equal to zero. Order of requests: The order of requests in the list should not affect the final feasibility result, since feasibility depends only on total resource usage.",
+  "v1_human_g3_frs": [
+    {
+      "fr_1": "The system shall accept a dict of available resources, where each key is a source name and each value, cap the total capacity of the resource",
+      "fr_10": "The system shall return False if at least one resource request exceeds the available capacity",
+      "fr_2": "The system shall accept a list of resource requests, where each request specifies the amount of each resource required",
+      "fr_3": "The system shall process multiple requests within the list",
+      "fr_4": "The system shall compare requested resource amounts against the available resource capacity",
+      "fr_5": "The system shall calculate the total amount of each requested amount for each resource across all requests",
+      "fr_6": "The system shall verify that the total requested amount for each resource does not exceed the available capacity",
+      "fr_7": "The system shall determine whether a valid allocation of resources exists based on provided inputs",
+      "fr_8": "The system shall return a boolean result indicating whether the allocation is feasible; resource requests",
+      "fr_9": "The system shall return True if all requests can be satisfied without exceeding any resource capacity"
+    }
+  ],
+  "v1_human_g3_goal": "The objective of the system is to determine whether a set of resources can be successfully allocated given limited available resources. It evaluates the requests against the resource capacity and returns whether a feasible allocation exists",
+  "v1_human_g3_input": "Resources: type: dict[str, Numbered] (a dictionary mapping strings to numeric values e.g int or float). Each key is the name of a resource (e.g CPU, memory, Disk) and the value represents the total available capacity of that resource. Requests: type: List[Dict[str, Numbered]] (a list of dictionaries mapping strings to numeric values). Each element in the list represents a resource request where each key corresponds to resource names to the amount requested for that resource. Valid values: keys must be strings representing resource identifiers, values must be numeric",
+  "v1_human_g3_invariants": [
+    {
+      "inv_1": "Deterministic Evaluation: given the same resources a requests inputs the function must always return the same boolean result",
+      "inv_2": "Boolean return type: The set function must always return either True or False, never another data type",
+      "inv_3": "Consistent resource mapping: Resource names used in requests must consistently refer to the same resource definitions in the resources dictionary throughout the evaluation"
+    }
+  ],
+  "v1_human_g3_neg_req": [
+    {
+      "neg_req_1": "No partial Allocation handling: The system isn't required to partially fulfill requests if full allocation isn't possible",
+      "neg_req_2": "No resource scheduling/ordering: The system isn't required to determine the order in which requests should be allocated or executed"
+    }
+  ],
+  "v1_human_g3_output": "The function returns a boolean value (bool) indicating whether the resource allocation is feasible. True: Returned when the available resources are sufficient to satisfy all the requests without exceeding the capacity of any resource. False: Returned when at least one resource would be over allocated, meaning the total requested amount for the resource exceeds the available capacity",
+  "v1_human_g3_tie_breaking": "The system doesn't need to choose between multiple feasible scenarios. Its purpose is only to check whether at least one valid allocation exists that satisfies the resource capacity constraints. If multiple feasible allocations are possible, the system shall simply return true as soon as feasibility is confirmed. No prioritization, optimization or comparison between scenarios is required because the function only evaluates feasibility, not the quality or efficiency of different allocations."
+}
+```
+
+Briefly summarize any changes.

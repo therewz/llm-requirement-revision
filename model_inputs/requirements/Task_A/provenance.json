@@ -1,0 +1,81 @@
+{
+  "descriptions": [
+    {
+      "path": "runs/author_manuals_review_v1/p1_TaskA_G1A_manual.txt",
+      "sha256": "fb80d71ef5e436d7c15efb2227b7398d4ca2c1329a40a9bf93f60212b554eb03",
+      "bytes": 6788,
+      "line": 25,
+      "paragraph_marker": "[word/document.xml paragraph 39]",
+      "payload_byte_start": 2485,
+      "payload_byte_end": 3232,
+      "normalization": "Remove extracted-paragraph outer whitespace only.",
+      "payload_sha256": "39fcf6bed92507d25690ee057f2fcb9e47be5f615832a40f865b8b1ede4ce2df"
+    },
+    {
+      "path": "runs/author_manuals_review_v1/p1_TaskA_G2A_manual.txt",
+      "sha256": "4b13382788e3e6687e8bab830f09129554c6561f972480e95e3c53ee1e317be1",
+      "bytes": 6978,
+      "line": 25,
+      "paragraph_marker": "[word/document.xml paragraph 39]",
+      "payload_byte_start": 2485,
+      "payload_byte_end": 3232,
+      "normalization": "Remove extracted-paragraph outer whitespace only.",
+      "payload_sha256": "39fcf6bed92507d25690ee057f2fcb9e47be5f615832a40f865b8b1ede4ce2df"
+    },
+    {
+      "path": "runs/author_manuals_review_v1/p1_TaskA_G3A_manual.txt",
+      "sha256": "6c0f6c0b26e0db73d90d84d35240589230ad7c1bfd94b7d60b48107f7766fa2a",
+      "bytes": 7004,
+      "line": 25,
+      "paragraph_marker": "[word/document.xml paragraph 39]",
+      "payload_byte_start": 2485,
+      "payload_byte_end": 3232,
+      "normalization": "Remove extracted-paragraph outer whitespace only.",
+      "payload_sha256": "39fcf6bed92507d25690ee057f2fcb9e47be5f615832a40f865b8b1ede4ce2df"
+    }
+  ],
+  "requirements": [
+    {
+      "path": "runs/author_manuals_review_v1/p2_TaskA_G1A_manual_prt2_v2.txt",
+      "sha256": "a97258da064c79d2ae2e54fada317076a3eee21867adb4a3bf2fe68dbdfa72f9",
+      "bytes": 8137,
+      "line": 24,
+      "paragraph_marker": "[word/document.xml paragraph 41]",
+      "payload_byte_start": 2431,
+      "payload_byte_end": 2760,
+      "normalization": "Remove extracted-paragraph outer whitespace only.",
+      "payload_sha256": "2fc52e3dc8c9a5f8fd32d7a732e36be00cfff1d6d1906dea9e13cb4a4b593500",
+      "behavioral_payload_sha256": "95fc509a9769192c1fb2d937e59873ea659ec0524a2c71192d93b35fa54aa36b",
+      "excluded_suffix": "Update your solution, tests and documents to incorporate this requirement.",
+      "boundary_reason": "The first three sentences define the rule. The final sentence directs lab test/document edits, outside the prepared revision workspace."
+    },
+    {
+      "path": "runs/author_manuals_review_v1/p2_TaskA_G2A_manual_prt2_v2.txt",
+      "sha256": "18688b87bf3346e6d2a82f765c21f681ef06decd4de7b7b70cc793639ca68227",
+      "bytes": 9234,
+      "line": 24,
+      "paragraph_marker": "[word/document.xml paragraph 43]",
+      "payload_byte_start": 2431,
+      "payload_byte_end": 2760,
+      "normalization": "Remove extracted-paragraph outer whitespace only.",
+      "payload_sha256": "2fc52e3dc8c9a5f8fd32d7a732e36be00cfff1d6d1906dea9e13cb4a4b593500",
+      "behavioral_payload_sha256": "95fc509a9769192c1fb2d937e59873ea659ec0524a2c71192d93b35fa54aa36b",
+      "excluded_suffix": "Update your solution, tests and documents to incorporate this requirement.",
+      "boundary_reason": "The first three sentences define the rule. The final sentence directs lab test/document edits, outside the prepared revision workspace."
+    },
+    {
+      "path": "runs/author_manuals_review_v1/p2_TaskA_G3A_manual_prt2_v2.txt",
+      "sha256": "d339f5150a6f41a2d4956f43b456f5354e68392b38c9bc741cac8c1f3f1a5570",
+      "bytes": 9715,
+      "line": 24,
+      "paragraph_marker": "[word/document.xml paragraph 43]",
+      "payload_byte_start": 2431,
+      "payload_byte_end": 2760,
+      "normalization": "Remove extracted-paragraph outer whitespace only.",
+      "payload_sha256": "2fc52e3dc8c9a5f8fd32d7a732e36be00cfff1d6d1906dea9e13cb4a4b593500",
+      "behavioral_payload_sha256": "95fc509a9769192c1fb2d937e59873ea659ec0524a2c71192d93b35fa54aa36b",
+      "excluded_suffix": "Update your solution, tests and documents to incorporate this requirement.",
+      "boundary_reason": "The first three sentences define the rule. The final sentence directs lab test/document edits, outside the prepared revision workspace."
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "core28": {
+    "expected_case_count": 28,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": ": Failed\n_______________________ test_TC12_missing_resource_type ________________________\n\n    def test_TC12_missing_resource_type():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:66: Failed\n____________________ test_TC13_empty_resource_dict_invalid _____________________\n\n    def test_TC13_empty_resource_dict_invalid():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:70: Failed\n_______________________ test_TC21_zero_and_negative_mix ________________________\n\n    def test_TC21_zero_and_negative_mix():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:120: Failed\n___________________ test_TC23_request_with_extra_invalid_key ___________________\n\n    def test_TC23_request_with_extra_invalid_key():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:136: Failed\n__________________ test_TC27_empty_requests_invalid_resources __________________\n\n    def test_TC27_empty_requests_invalid_resources():\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:162: Failed\n_____________________ test_TC29_invalid_float_nan_request ______________________\n\n    def test_TC29_invalid_float_nan_request():\n        import math\n>       with pytest.raises(ValueError):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntest_target.py:170: Failed\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC1_negative_resource_value - Failed: DID NOT RAI...\nFAILED test_target.py::test_TC2_negative_request_value - Failed: DID NOT RAIS...\nFAILED test_target.py::test_TC3_nan_value - Failed: DID NOT RAISE <class 'Val...\nFAILED test_target.py::test_TC4_infinite_value - Failed: DID NOT RAISE <class...\nFAILED test_target.py::test_TC6_requests_not_list - ValueError: All requests ...\nFAILED test_target.py::test_TC7_request_item_not_dict - ValueError: All reque...\nFAILED test_target.py::test_TC10_resource_key_not_string - Failed: DID NOT RA...\nFAILED test_target.py::test_TC11_request_key_not_string - Failed: DID NOT RAI...\nFAILED test_target.py::test_TC12_missing_resource_type - Failed: DID NOT RAIS...\nFAILED test_target.py::test_TC13_empty_resource_dict_invalid - Failed: DID NO...\nFAILED test_target.py::test_TC21_zero_and_negative_mix - Failed: DID NOT RAIS...\nFAILED test_target.py::test_TC23_request_with_extra_invalid_key - Failed: DID...\nFAILED test_target.py::test_TC27_empty_requests_invalid_resources - Failed: D...\nFAILED test_target.py::test_TC29_invalid_float_nan_request - Failed: DID NOT ...\n14 failed, 14 passed in 0.04s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_resource_key_not_string": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'TypeError'>"
+      ],
+      "test_TC11_request_key_not_string": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'TypeError'>"
+      ],
+      "test_TC12_missing_resource_type": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC13_empty_resource_dict_invalid": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC14_none_resources": [
+        "passed",
+        ""
+      ],
+      "test_TC15_none_requests": [
+        "passed",
+        ""
+      ],
+      "test_TC16_nested_invalid_request": [
+        "passed",
+        ""
+      ],
+      "test_TC17_list_inside_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC18_tuple_inside_request_value": [
+        "passed",
+        ""
+      ],
+      "test_TC19_valid_simple_case": [
+        "passed",
+        ""
+      ],
+      "test_TC1_negative_resource_value": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC20_valid_multi_resource": [
+        "passed",
+        ""
+      ],
+      "test_TC21_zero_and_negative_mix": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC23_request_with_extra_invalid_key": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC24_string_number": [
+        "passed",
+        ""
+      ],
+      "test_TC25_string_number_in_request": [
+        "passed",
+        ""
+      ],
+      "test_TC26_empty_requests_valid": [
+        "passed",
+        ""
+      ],
+      "test_TC27_empty_requests_invalid_resources": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC28_valid_float": [
+        "passed",
+        ""
+      ],
+      "test_TC29_invalid_float_nan_request": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC2_negative_request_value": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC3_nan_value": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC4_infinite_value": [
+        "failed",
+        "Failed: DID NOT RAISE <class 'ValueError'>"
+      ],
+      "test_TC5_resources_not_dict": [
+        "passed",
+        ""
+      ],
+      "test_TC6_requests_not_list": [
+        "failed",
+        "ValueError: All requests must be dictionaries."
+      ],
+      "test_TC7_request_item_not_dict": [
+        "failed",
+        "ValueError: All requests must be dictionaries."
+      ],
+      "test_TC8_resource_value_not_number": [
+        "passed",
+        ""
+      ],
+      "test_TC9_request_value_not_number": [
+        "passed",
+        ""
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_B_test.py",
+    "suite_sha256": "d776ae5df8190eb8a58cf7d8b71886b2189f88d0c7b3a2f68f0192ab18e35af3"
+  },
+  "evidence_class": "FRESH_ISOLATED_ORIGINAL_PROGRAM_EXECUTION",
+  "finished_utc": "2026-11-05T06:02:25.720622+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G1",
+  "participant_id": "S0019",
+  "phase": "P2",
+  "source_path": "runs/withdrawal_keys_v1/input_snapshot/Data/v2_human/G1/G1B/S0019/src/solution.py",
+  "source_sha256": "4e3358457adeb275714b3a1e549499bb5af7d0f38643fb4236840b1932c02b8f",
+  "started_utc": "2026-11-05T06:02:25.306041+00:00",
+  "supplied5": {
+    "expected_case_count": 5,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ".....                                                                    [100%]\n5 passed in 0.01s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC22_valid_zero_values": [
+        "passed",
+        ""
+      ],
+      "test_TC30_one_resource_must_remain_false": [
+        "passed",
+        ""
+      ],
+      "test_TC31_one_resource_must_remain_true": [
+        "passed",
+        ""
+      ],
+      "test_TC32_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ],
+      "test_TC33_multi_resource_exact_cpu": [
+        "passed",
+        ""
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_B_test.py",
+    "suite_sha256": "0d75ec77772ecf520b655670999ec617887d0b6de77561c8402c48c1d0535710"
+  },
+  "targets": {
+    "cases": {
+      "B-C1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-C4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-O1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-O4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC22": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-TC31": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-TC32": {
+        "kind": "ret",
+        "type": "bool",
+        "value": true
+      },
+      "B-X1": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X2": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X3": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      },
+      "B-X4": {
+        "kind": "ret",
+        "type": "bool",
+        "value": false
+      }
+    },
+    "execution_metadata": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "import_error": null
+  },
+  "task": "B"
+}

@@ -1,0 +1,502 @@
+{
+  "answer_provenance": "Retained assertions link to supplied tests and handout. Withdrawal answers are new-study reconstructions from capacity feasibility after removal of the reserve condition.",
+  "cases": [
+    {
+      "aliases": [
+        "TC30"
+      ],
+      "args": [
+        {
+          "cpu": 10
+        },
+        [
+          {
+            "cpu": 10
+          }
+        ]
+      ],
+      "case_id": "B-X1",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [
+        "B-TC31",
+        "B-O1"
+      ],
+      "retained_expectation": false,
+      "role": "primary_target",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "public_exact_use",
+        "pilot_cases",
+        "supplied_five"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 10
+        },
+        [
+          {
+            "cpu": 4
+          },
+          {
+            "cpu": 6
+          }
+        ]
+      ],
+      "case_id": "B-X2",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [
+        "B-C3",
+        "B-O2"
+      ],
+      "retained_expectation": false,
+      "role": "primary_target",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "public_exact_use",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [
+        "TC33"
+      ],
+      "args": [
+        {
+          "cpu": 10,
+          "ram": 8
+        },
+        [
+          {
+            "cpu": 10,
+            "ram": 8
+          }
+        ]
+      ],
+      "case_id": "B-X3",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [
+        "B-C2",
+        "B-O3"
+      ],
+      "retained_expectation": false,
+      "role": "primary_target",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "public_exact_use",
+        "pilot_cases",
+        "supplied_five"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 6,
+          "ram": 4
+        },
+        [
+          {
+            "cpu": 3,
+            "ram": 2
+          },
+          {
+            "cpu": 3,
+            "ram": 2
+          }
+        ]
+      ],
+      "case_id": "B-X4",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [
+        "B-C4",
+        "B-O4"
+      ],
+      "retained_expectation": false,
+      "role": "primary_target",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "public_exact_use",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [
+        "TC31"
+      ],
+      "args": [
+        {
+          "cpu": 10
+        },
+        [
+          {
+            "cpu": 9
+          }
+        ]
+      ],
+      "case_id": "B-TC31",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": true,
+      "role": "spare_control",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "supplied_five"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 10
+        },
+        [
+          {
+            "cpu": 5
+          }
+        ]
+      ],
+      "case_id": "B-C1",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": true,
+      "role": "spare_control",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 10,
+          "ram": 8
+        },
+        [
+          {
+            "cpu": 5,
+            "ram": 3
+          }
+        ]
+      ],
+      "case_id": "B-C2",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": true,
+      "role": "spare_control",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 10
+        },
+        [
+          {
+            "cpu": 4
+          },
+          {
+            "cpu": 5
+          }
+        ]
+      ],
+      "case_id": "B-C3",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": true,
+      "role": "spare_control",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 10
+        },
+        [
+          {
+            "cpu": 11
+          }
+        ]
+      ],
+      "case_id": "B-O1",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": false,
+      "role": "over_control",
+      "source_ids": [
+        "phase_i_task",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": false
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 10
+        },
+        [
+          {
+            "cpu": 6
+          },
+          {
+            "cpu": 5
+          }
+        ]
+      ],
+      "case_id": "B-O2",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": false,
+      "role": "over_control",
+      "source_ids": [
+        "phase_i_task",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": false
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 10,
+          "ram": 8
+        },
+        [
+          {
+            "cpu": 5,
+            "ram": 9
+          }
+        ]
+      ],
+      "case_id": "B-O3",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": false,
+      "role": "over_control",
+      "source_ids": [
+        "phase_i_task",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": false
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 6,
+          "ram": 4
+        },
+        [
+          {
+            "cpu": 2,
+            "ram": 1
+          },
+          {
+            "cpu": 3,
+            "ram": 2
+          }
+        ]
+      ],
+      "case_id": "B-C4",
+      "construction": "B-X4 companion with demand 5 CPU and 3 RAM, leaving one unit of each resource.",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": true,
+      "role": "spare_control",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [],
+      "args": [
+        {
+          "cpu": 6,
+          "ram": 4
+        },
+        [
+          {
+            "cpu": 4,
+            "ram": 3
+          },
+          {
+            "cpu": 3,
+            "ram": 2
+          }
+        ]
+      ],
+      "case_id": "B-O4",
+      "construction": "B-X4 companion with demand 7 CPU and 5 RAM, exceeding both capacities by one.",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "retained_expectation": false,
+      "role": "over_control",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule"
+      ],
+      "withdrawn_expectation": false
+    },
+    {
+      "aliases": [
+        "TC32",
+        "B-P1"
+      ],
+      "args": [
+        {
+          "cpu": 10,
+          "ram": 8
+        },
+        [
+          {
+            "cpu": 10,
+            "ram": 5
+          }
+        ]
+      ],
+      "case_id": "B-TC32",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [
+        "B-C2",
+        "B-O3"
+      ],
+      "primary_exclusion_reason": "Retained answer varies with the two documented reserve-rule readings.",
+      "retained_default_basis": "Supplied TC32 expects True under the any-resource reading.",
+      "retained_expectation": true,
+      "retained_expectation_by_reading": {
+        "any_resource_spare": true,
+        "every_resource_spare": false
+      },
+      "role": "interpretation_diagnostic",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "supplied_five",
+        "pilot_cases"
+      ],
+      "withdrawn_expectation": true
+    },
+    {
+      "aliases": [
+        "TC22"
+      ],
+      "args": [
+        {
+          "cpu": 0
+        },
+        [
+          {
+            "cpu": 0
+          }
+        ]
+      ],
+      "case_id": "B-TC22",
+      "function": "is_allocation_feasible",
+      "kwargs": {},
+      "linked_controls": [],
+      "primary_exclusion_reason": "The brief task description does not settle the zero-capacity input domain. Report this reconstructed diagnostic separately.",
+      "retained_expectation": false,
+      "role": "zero_capacity_diagnostic",
+      "source_ids": [
+        "phase_i_task",
+        "phase_ii_rule",
+        "supplied_five"
+      ],
+      "withdrawn_assumption": "Zero capacity and zero demand are valid nonnegative inputs after the reserve rule is removed.",
+      "withdrawn_expectation": true
+    }
+  ],
+  "numeric_scope": "Positive integer primary inputs with exact arithmetic. Zero capacity is a separate diagnostic. No fractional reserve assumptions or tolerance are introduced.",
+  "phase_i_flags": "Keep target matches and linked-control matches separately. A True target alone is the draft's affected-case pass, while passing controls additionally supports a historical transition.",
+  "primary_output_policy": "Exact Python bool. Record exceptions, missing runs and invalid return types separately. Never use bool(value).",
+  "primary_phase_ii_gate": "Target exactly False and all its linked controls exactly their expected bool. A failed or unavailable control leaves that target ineligible or unassessable as recorded by the caller.",
+  "primary_target_ids": [
+    "B-X1",
+    "B-X2",
+    "B-X3",
+    "B-X4"
+  ],
+  "schema_version": 1,
+  "sources": {
+    "phase_i_task": {
+      "basis": "Determine whether requests can be satisfied given limited capacity.",
+      "line": 25,
+      "path": "runs/author_manuals_review_v1/p1_TaskB_G1B_manual.txt"
+    },
+    "phase_ii_rule": {
+      "basis": "At least one resource must remain unallocated; consuming all available resources is invalid.",
+      "line": 24,
+      "path": "runs/author_manuals_review_v1/p2_TaskB_G1B_manual_prt2_v2.txt"
+    },
+    "pilot_cases": {
+      "basis": "Previously specified B-X targets and spare/over-capacity controls, reused without reference to generated outcomes.",
+      "line": 33,
+      "path": "repositories/followup-offline-local-v2/withdrawal_preparation/scripts/wcases.py",
+      "sha256": "867c2c3b778827e3d74dbdd19c06d8cdfc58f3137e6f17bf2846f55cde78b0aa"
+    },
+    "public_exact_use": {
+      "basis": "The distributed example accepts demand 3+4+3 against capacity 10. Used as evaluator evidence only.",
+      "line": 15,
+      "path": "data/raw/history_complete_20261102/lab_templates/B/5f1ad5b/tests/test_solution.py"
+    },
+    "supplied_five": {
+      "basis": "Five supplied retained-rule assertions. Withdrawal answers are documented study reconstructions.",
+      "path": "repositories/llm-requirement-revision/Data/test_suits/5_new_req_B_test.py",
+      "sha256": "0d75ec77772ecf520b655670999ec617887d0b6de77561c8402c48c1d0535710"
+    }
+  },
+  "status": "prepared_before_new_baseline_results",
+  "supplied_five_mapping": {
+    "TC22": "B-TC22",
+    "TC30": "B-X1",
+    "TC31": "B-TC31",
+    "TC32": "B-TC32",
+    "TC33": "B-X3"
+  },
+  "task": "B",
+  "tuple_policy": "A two-element tuple with a Boolean first element and dictionary second element can produce a separately labelled native-interface diagnostic matching S0027's declared shape. It cannot satisfy the strict primary gate."
+}

@@ -1,0 +1,1 @@
+{"elapsed_seconds":0.060445,"isolation":"macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS","observed_output_bytes":56,"output_truncated":false,"peak_observed_rss_bytes":15335424,"returncode":0,"status":"ok","stderr":"","stdout":"All 15 targeted cases and 4096 exhaustive cases passed.\n"}

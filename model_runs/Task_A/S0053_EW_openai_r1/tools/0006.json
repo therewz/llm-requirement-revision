@@ -1,0 +1,1 @@
+{"elapsed_seconds":0.069689,"isolation":"macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS","observed_output_bytes":47,"output_truncated":false,"peak_observed_rss_bytes":16318464,"returncode":0,"status":"ok","stderr":"","stdout":"All targeted and 300 randomized checks passed.\n"}

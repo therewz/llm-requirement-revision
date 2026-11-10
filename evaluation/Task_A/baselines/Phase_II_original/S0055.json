@@ -1,0 +1,1020 @@
+{
+  "core28": {
+    "expected_case_count": 28,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "l_gaps_between_events():\n        events = [{\"start\":\"09:00\",\"end\":\"09:15\"},{\"start\":\"09:30\",\"end\":\"09:45\"}]\n        meeting_duration = 30\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        # Ensure free slots are correct\n        expected = [\"10:00\",\"10:15\",\"10:30\",\"10:45\",\"11:00\",\"11:15\",\n                    \"13:15\",\"13:30\",\"13:45\",\"14:00\",\"14:15\",\n                    \"14:30\",\"14:45\",\"15:00\",\"15:15\",\"15:30\",\"15:45\",\"16:00\",\"16:15\",\"16:30\"]\n>       slots_equal(result, expected)\n\ntest_target.py:298: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = ['10:00', '10:15', '10:30', '10:45', '11:00', '11:15', ...]\nexpected = ['10:00', '10:15', '10:30', '10:45', '11:00', '11:15', ...]\n\n    def slots_equal(actual: List[str], expected: List[str]):\n        \"\"\"Helper to compare lists of time slots.\"\"\"\n>       assert sorted(actual) == sorted(expected)\nE       AssertionError: assert ['10:00', '10... '11:15', ...] == ['10:00', '10... '11:15', ...]\nE         \nE         At index 6 diff: '11:30' != '13:15'\nE         Left contains 3 more items, first extra item: '16:00'\nE         Use -v to get more diff\n\ntest_target.py:10: AssertionError\n___________________ test_TC25_multiple_consecutive_overlaps ____________________\n\n    def test_TC25_multiple_consecutive_overlaps():\n        events = [{\"start\":\"10:00\",\"end\":\"11:00\"},\n                  {\"start\":\"13:30\",\"end\":\"14:30\"},\n                  {\"start\":\"16:00\",\"end\":\"16:30\"}]\n        meeting_duration = 30\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"09:00\",\"09:15\",\n            \"11:15\",\n            \"14:45\",\n            \"15:00\",\"15:15\"\n        ]\n>       assert result == expected\nE       AssertionError: assert ['09:00', '09... '11:45', ...] == ['09:00', '09...:00', '15:15']\nE         \nE         At index 2 diff: '09:30' != '11:15'\nE         Left contains 5 more items, first extra item: '13:00'\nE         Use -v to get more diff\n\ntest_target.py:357: AssertionError\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC1_empty_day - AssertionError: assert ['09:00', ...\nFAILED test_target.py::test_TC2_single_event_midday - AssertionError: assert ...\nFAILED test_target.py::test_TC3_multiple_nonoverlapping_events - AssertionErr...\nFAILED test_target.py::test_TC4_overlapping_events - AssertionError: assert [...\nFAILED test_target.py::test_TC5_adjacent_events - AssertionError: assert ['09...\nFAILED test_target.py::test_TC6_meeting_fits_morning - AssertionError: assert...\nFAILED test_target.py::test_TC8_event_partial_outside_hours - AssertionError:...\nFAILED test_target.py::test_TC12_granularity_15min - AssertionError: assert [...\nFAILED test_target.py::test_TC21_small_gaps_between_events - AssertionError: ...\nFAILED test_target.py::test_TC25_multiple_consecutive_overlaps - AssertionErr...\n10 failed, 18 passed in 0.07s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC12_granularity_15min": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '10:15', ...] == ['09:00', '09... '10:15', ...]"
+      ],
+      "test_TC13_short_duration": [
+        "passed",
+        ""
+      ],
+      "test_TC14_event_full_day": [
+        "passed",
+        ""
+      ],
+      "test_TC15_negative_duration": [
+        "passed",
+        ""
+      ],
+      "test_TC16_invalid_time_format": [
+        "passed",
+        ""
+      ],
+      "test_TC17_invalid_event_interval": [
+        "passed",
+        ""
+      ],
+      "test_TC18_invalid_date": [
+        "passed",
+        ""
+      ],
+      "test_TC19_multiple_windows_order": [
+        "passed",
+        ""
+      ],
+      "test_TC1_empty_day": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '10:15', ...] == ['09:00', '09... '10:15', ...]"
+      ],
+      "test_TC20_many_events": [
+        "passed",
+        ""
+      ],
+      "test_TC21_small_gaps_between_events": [
+        "failed",
+        "AssertionError: assert ['10:00', '10... '11:15', ...] == ['10:00', '10... '11:15', ...]"
+      ],
+      "test_TC23_empty_day_duration_fills_last_slot": [
+        "passed",
+        ""
+      ],
+      "test_TC25_multiple_consecutive_overlaps": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '11:45', ...] == ['09:00', '09...:00', '15:15']"
+      ],
+      "test_TC26_lunch_break_blocked": [
+        "passed",
+        ""
+      ],
+      "test_TC27_start_after_lunch_allowed": [
+        "passed",
+        ""
+      ],
+      "test_TC28_buffer_after_event": [
+        "passed",
+        ""
+      ],
+      "test_TC29_zero_duration_meeting": [
+        "passed",
+        ""
+      ],
+      "test_TC2_single_event_midday": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '10:15', ...] == ['09:00', '09... '10:15', ...]"
+      ],
+      "test_TC30_meeting_duration_multiple_of_30[20-False]": [
+        "passed",
+        ""
+      ],
+      "test_TC30_meeting_duration_multiple_of_30[30-True]": [
+        "passed",
+        ""
+      ],
+      "test_TC30_meeting_duration_multiple_of_30[45-False]": [
+        "passed",
+        ""
+      ],
+      "test_TC30_meeting_duration_multiple_of_30[60-True]": [
+        "passed",
+        ""
+      ],
+      "test_TC3_multiple_nonoverlapping_events": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '11:45', ...] == ['09:00', '09... '15:30', ...]"
+      ],
+      "test_TC4_overlapping_events": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '13:15', ...] == ['09:00', '09... '14:00', ...]"
+      ],
+      "test_TC5_adjacent_events": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '13:30', ...] == ['09:00', '09... '14:00', ...]"
+      ],
+      "test_TC6_meeting_fits_morning": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '10:15', ...] == ['09:00', '09... '14:00', ...]"
+      ],
+      "test_TC7_meeting_exceeds_working_hours": [
+        "passed",
+        ""
+      ],
+      "test_TC8_event_partial_outside_hours": [
+        "failed",
+        "AssertionError: assert ['10:15', '10... '11:30', ...] == ['10:15', '10... '13:45', ...]"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_A_test.py",
+    "suite_sha256": "c382f5b754dcadc4b6ee3f904c3e83ceff82c7a02c1b075f1ca758bc9d650344"
+  },
+  "evidence_class": "FRESH_ISOLATED_ORIGINAL_PROGRAM_EXECUTION",
+  "finished_utc": "2026-11-05T06:02:33.846626+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G3",
+  "participant_id": "S0055",
+  "phase": "P2",
+  "source_path": "runs/withdrawal_keys_v1/input_snapshot/Data/v2_human/G3/G3A/S0055/src/solution.py",
+  "source_sha256": "a51554378a18c9fc0efc993935d105cf803050c8f961c596179a54b2b4094f2f",
+  "started_utc": "2026-11-05T06:02:33.319661+00:00",
+  "supplied5": {
+    "expected_case_count": 5,
+    "metadata": {
+      "collection_error": null,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "F....                                                                    [100%]\n=================================== FAILURES ===================================\n____________________________ test_TC9_friday_cutoff ____________________________\n\n    def test_TC9_friday_cutoff():\n        events = []\n        meeting_duration = 30\n        day = \"2026-03-13\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"09:00\",\"09:15\",\"09:30\",\"09:45\",\n            \"10:00\",\"10:15\",\"10:30\",\"10:45\",\"11:00\",\"11:15\",\n            \"13:15\",\"13:30\",\"13:45\",\"14:00\",\"14:15\",\"14:30\"\n        ]\n>       slots_equal(result, expected)\n\ntest_target.py:161: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = ['09:00', '09:15', '09:30', '09:45', '10:00', '10:15', ...]\nexpected = ['09:00', '09:15', '09:30', '09:45', '10:00', '10:15', ...]\n\n    def slots_equal(actual: List[str], expected: List[str]):\n        \"\"\"Helper to compare lists of time slots.\"\"\"\n>       assert sorted(actual) == sorted(expected)\nE       AssertionError: assert ['09:00', '09... '10:15', ...] == ['09:00', '09... '10:15', ...]\nE         \nE         At index 10 diff: '11:30' != '13:15'\nE         Left contains 3 more items, first extra item: '14:00'\nE         Use -v to get more diff\n\ntest_target.py:10: AssertionError\n=========================== short test summary info ============================\nFAILED test_target.py::test_TC9_friday_cutoff - AssertionError: assert ['09:0...\n1 failed, 4 passed in 0.03s\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_friday_event_ends_at_cutoff": [
+        "passed",
+        ""
+      ],
+      "test_TC11_friday_long_meeting": [
+        "passed",
+        ""
+      ],
+      "test_TC22_friday_overlap_long_meeting": [
+        "passed",
+        ""
+      ],
+      "test_TC24_friday_event_partial_cutoff": [
+        "passed",
+        ""
+      ],
+      "test_TC9_friday_cutoff": [
+        "failed",
+        "AssertionError: assert ['09:00', '09... '10:15', ...] == ['09:00', '09... '10:15', ...]"
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_A_test.py",
+    "suite_sha256": "e5239e78dae29a0147b9a5bc45e190dd58807f01b19aa9f879a9c18a0a093784"
+  },
+  "targets": {
+    "cases": {
+      "A-F1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30"
+        ]
+      },
+      "A-F1-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F1-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00"
+        ]
+      },
+      "A-F2-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00"
+        ]
+      },
+      "A-F2-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00"
+        ]
+      },
+      "A-F3": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30"
+        ]
+      },
+      "A-F3-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F3-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F4": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30"
+        ]
+      },
+      "A-F4-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F4-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-TC10": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30"
+        ]
+      },
+      "A-TC10-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-TC10-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-TC11": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00"
+        ]
+      },
+      "A-TC22": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00"
+        ]
+      },
+      "A-TC22-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "15:45",
+          "16:00"
+        ]
+      },
+      "A-TC22-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "15:45",
+          "16:00"
+        ]
+      },
+      "A-TC24": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00"
+        ]
+      },
+      "A-TC24-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-TC24-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "11:45",
+          "13:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "weekday_abbrev:A-F1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Fri"
+      },
+      "weekday_abbrev:A-F1-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wed"
+      },
+      "weekday_abbrev:A-F1-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thu"
+      },
+      "weekday_abbrev:A-F2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Fri"
+      },
+      "weekday_abbrev:A-F2-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wed"
+      },
+      "weekday_abbrev:A-F2-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thu"
+      },
+      "weekday_abbrev:A-F3": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Fri"
+      },
+      "weekday_abbrev:A-F3-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wed"
+      },
+      "weekday_abbrev:A-F3-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thu"
+      },
+      "weekday_abbrev:A-TC10": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Fri"
+      },
+      "weekday_abbrev:A-TC10-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wed"
+      },
+      "weekday_abbrev:A-TC10-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thu"
+      },
+      "weekday_abbrev:A-TC22": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Fri"
+      },
+      "weekday_abbrev:A-TC22-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wed"
+      },
+      "weekday_abbrev:A-TC22-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thu"
+      },
+      "weekday_abbrev:A-TC24": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Fri"
+      },
+      "weekday_abbrev:A-TC24-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wed"
+      },
+      "weekday_abbrev:A-TC24-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thu"
+      },
+      "weekday_full:A-F1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Friday"
+      },
+      "weekday_full:A-F1-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wednesday"
+      },
+      "weekday_full:A-F1-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thursday"
+      },
+      "weekday_full:A-F2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Friday"
+      },
+      "weekday_full:A-F2-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wednesday"
+      },
+      "weekday_full:A-F2-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thursday"
+      },
+      "weekday_full:A-F3": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Friday"
+      },
+      "weekday_full:A-F3-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wednesday"
+      },
+      "weekday_full:A-F3-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thursday"
+      },
+      "weekday_full:A-TC10": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Friday"
+      },
+      "weekday_full:A-TC10-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wednesday"
+      },
+      "weekday_full:A-TC10-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thursday"
+      },
+      "weekday_full:A-TC22": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Friday"
+      },
+      "weekday_full:A-TC22-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wednesday"
+      },
+      "weekday_full:A-TC22-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thursday"
+      },
+      "weekday_full:A-TC24": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Friday"
+      },
+      "weekday_full:A-TC24-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Wednesday"
+      },
+      "weekday_full:A-TC24-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: Thursday"
+      },
+      "weekday_lower:A-F1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: friday"
+      },
+      "weekday_lower:A-F1-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: wednesday"
+      },
+      "weekday_lower:A-F1-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: thursday"
+      },
+      "weekday_lower:A-F2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: friday"
+      },
+      "weekday_lower:A-F2-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: wednesday"
+      },
+      "weekday_lower:A-F2-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: thursday"
+      },
+      "weekday_lower:A-F3": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: friday"
+      },
+      "weekday_lower:A-F3-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: wednesday"
+      },
+      "weekday_lower:A-F3-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: thursday"
+      },
+      "weekday_lower:A-TC10": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: friday"
+      },
+      "weekday_lower:A-TC10-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: wednesday"
+      },
+      "weekday_lower:A-TC10-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: thursday"
+      },
+      "weekday_lower:A-TC22": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: friday"
+      },
+      "weekday_lower:A-TC22-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: wednesday"
+      },
+      "weekday_lower:A-TC22-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: thursday"
+      },
+      "weekday_lower:A-TC24": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: friday"
+      },
+      "weekday_lower:A-TC24-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: wednesday"
+      },
+      "weekday_lower:A-TC24-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date: thursday"
+      }
+    },
+    "execution_metadata": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "import_error": null
+  },
+  "task": "A"
+}

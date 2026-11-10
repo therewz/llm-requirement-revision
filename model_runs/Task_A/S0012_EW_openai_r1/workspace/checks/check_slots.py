@@ -1,0 +1,35 @@
+import importlib.util
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location(
+    "solution", Path(__file__).resolve().parents[1] / "src" / "solution.py"
+)
+solution = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(solution)
+suggest_slots = solution.suggest_slots
+
+friday = "2026-06-05"
+thursday = "2026-06-04"
+slots = suggest_slots([], 30, friday)
+assert "15:00" in slots
+assert "15:15" in slots
+assert "16:30" in slots
+assert "16:45" not in slots
+assert slots == suggest_slots([], 30, thursday)
+assert "12:00" not in slots
+assert "12:45" not in slots
+assert "13:00" in slots
+
+busy = [{"start": "15:30", "end": "16:00"}]
+slots = suggest_slots(busy, 30, friday)
+assert slots == suggest_slots(busy, 30, thursday)
+assert "15:00" in slots
+assert "15:15" not in slots
+assert "15:30" not in slots
+assert "15:45" not in slots
+assert "16:15" in slots
+assert "16:30" in slots
+
+assert suggest_slots([{"start": "09:00", "end": "17:00"}], 30, friday) == []
+assert suggest_slots([], 481, friday) == []
+print("All slot checks passed.")

@@ -1,3 +1,5 @@
-Data/.DS_Store
-Data/v1_human/G1/G1A/S0002/.DS_Store
-Data/v1_human/.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+outputs/

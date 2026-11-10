@@ -1,0 +1,1 @@
+{"elapsed_seconds":1.068054,"isolation":"macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS","observed_output_bytes":43,"output_truncated":false,"peak_observed_rss_bytes":17448960,"returncode":0,"status":"ok","stderr":"","stdout":"All boundary and randomized checks passed.\n"}

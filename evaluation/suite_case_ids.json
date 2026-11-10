@@ -1,0 +1,80 @@
+{
+  "A": {
+    "core28": [
+      "test_TC12_granularity_15min",
+      "test_TC13_short_duration",
+      "test_TC14_event_full_day",
+      "test_TC15_negative_duration",
+      "test_TC16_invalid_time_format",
+      "test_TC17_invalid_event_interval",
+      "test_TC18_invalid_date",
+      "test_TC19_multiple_windows_order",
+      "test_TC1_empty_day",
+      "test_TC20_many_events",
+      "test_TC21_small_gaps_between_events",
+      "test_TC23_empty_day_duration_fills_last_slot",
+      "test_TC25_multiple_consecutive_overlaps",
+      "test_TC26_lunch_break_blocked",
+      "test_TC27_start_after_lunch_allowed",
+      "test_TC28_buffer_after_event",
+      "test_TC29_zero_duration_meeting",
+      "test_TC2_single_event_midday",
+      "test_TC30_meeting_duration_multiple_of_30[20-False]",
+      "test_TC30_meeting_duration_multiple_of_30[30-True]",
+      "test_TC30_meeting_duration_multiple_of_30[45-False]",
+      "test_TC30_meeting_duration_multiple_of_30[60-True]",
+      "test_TC3_multiple_nonoverlapping_events",
+      "test_TC4_overlapping_events",
+      "test_TC5_adjacent_events",
+      "test_TC6_meeting_fits_morning",
+      "test_TC7_meeting_exceeds_working_hours",
+      "test_TC8_event_partial_outside_hours"
+    ],
+    "supplied5": [
+      "test_TC10_friday_event_ends_at_cutoff",
+      "test_TC11_friday_long_meeting",
+      "test_TC22_friday_overlap_long_meeting",
+      "test_TC24_friday_event_partial_cutoff",
+      "test_TC9_friday_cutoff"
+    ]
+  },
+  "B": {
+    "core28": [
+      "test_TC10_resource_key_not_string",
+      "test_TC11_request_key_not_string",
+      "test_TC12_missing_resource_type",
+      "test_TC13_empty_resource_dict_invalid",
+      "test_TC14_none_resources",
+      "test_TC15_none_requests",
+      "test_TC16_nested_invalid_request",
+      "test_TC17_list_inside_request_value",
+      "test_TC18_tuple_inside_request_value",
+      "test_TC19_valid_simple_case",
+      "test_TC1_negative_resource_value",
+      "test_TC20_valid_multi_resource",
+      "test_TC21_zero_and_negative_mix",
+      "test_TC23_request_with_extra_invalid_key",
+      "test_TC24_string_number",
+      "test_TC25_string_number_in_request",
+      "test_TC26_empty_requests_valid",
+      "test_TC27_empty_requests_invalid_resources",
+      "test_TC28_valid_float",
+      "test_TC29_invalid_float_nan_request",
+      "test_TC2_negative_request_value",
+      "test_TC3_nan_value",
+      "test_TC4_infinite_value",
+      "test_TC5_resources_not_dict",
+      "test_TC6_requests_not_list",
+      "test_TC7_request_item_not_dict",
+      "test_TC8_resource_value_not_number",
+      "test_TC9_request_value_not_number"
+    ],
+    "supplied5": [
+      "test_TC22_valid_zero_values",
+      "test_TC30_one_resource_must_remain_false",
+      "test_TC31_one_resource_must_remain_true",
+      "test_TC32_multi_resource_exact_cpu",
+      "test_TC33_multi_resource_exact_cpu"
+    ]
+  }
+}

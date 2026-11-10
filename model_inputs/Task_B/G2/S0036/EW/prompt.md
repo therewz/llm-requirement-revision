@@ -1,0 +1,46 @@
+Revise the existing Python implementation to satisfy the current requirements below. Treat these requirements as authoritative. Remove restrictions they do not require, preserve all specified functionality, and avoid unrelated changes. If no changes are needed, leave the implementation unchanged.
+
+**Current requirements**
+
+### Task description
+
+You are asked to implement a Python function that determines whether a set of resource requests can be satisfied given limited capacity. The function takes as input a list of requests and available resources and returns whether a valid allocation exists. The goal is to determine feasibility of allocation based on the provided information. You may assume inputs are provided in a reasonable and consistent format. You may use ChatGPT to assist with reasoning about the problem, generating code, or writing tests.
+
+### Specification
+
+```json
+{
+  "v1_human_g2_ac": [
+    {
+      "ac_1": "Given a system with available CPU resources of 10 unit, when user submits requests totalling 10 CPU units across multiple tasks, then system should return true",
+      "ac_2": "Given a system with available memory at 20GB and CPU resource at 8 when a user submits a request over 20 GB, system then shall return false.",
+      "ac_3": "given requests for resources that do not exist, when checking if possible then return false",
+      "ac_4": "given available resources, all no requests, when checking if possible, then return true.",
+      "ac_5": "given request that exactly match available resources, other if possible return true.",
+      "ac_6": "given request that 0 not Dict, when if possible, then return false."
+    }
+  ],
+  "v1_human_g2_constraints": [
+    {
+      "c_1": "can't use more than available resources.",
+      "c_2": "can't request resources that do not exist",
+      "c_3": "all values must be zero or positive.",
+      "c_4": "each request must be a dictionary (python)",
+      "c_5": "empty request list is okay.",
+      "c_6": "resources are shared (not reserved per request)."
+    }
+  ],
+  "v1_human_g2_goal": "The goal of the system is to take two inputs, resources, requests. It returns true if the requests input can be mapped to a set of resources such that the request could be potentially handled.",
+  "v1_human_g2_input": "Input 1. Object: resources List str, Number str = string, Number = Union of an integer and float (decimal). Input 2. requests: List Dict str, Number. Dict is a table of key, value pairs, in this case the key being the string value, the value being number",
+  "v1_human_g2_output": "true or false if the inputs are valid and meets the conditions or not for allocation. false Error if the inputs are not valid.",
+  "id": "S0036"
+}
+```
+
+**Requirement withdrawal**
+
+The following requirement has been withdrawn. Remove the restriction it introduced; it is not part of the current requirements:
+
+At least one resource must remain unallocated after assignment. This requirement applies in addition to all previously described behavior. An allocation that satisfies all other conditions but consumes all available resources is no longer valid.
+
+Briefly summarize any changes.

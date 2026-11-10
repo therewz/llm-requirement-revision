@@ -1,0 +1,1 @@
+Meetings scheduled on Fridays must not start after 15:00. This requirement applies in addition to all previously described behavior. If a meeting would otherwise be valid but starts after 15:00 on a Friday, it must be excluded from the returned results.

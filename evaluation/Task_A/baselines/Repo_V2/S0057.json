@@ -1,0 +1,1024 @@
+{
+  "core28": {
+    "complete": true,
+    "expected_case_count": 28,
+    "metadata": {
+      "collected_case_ids": [
+        "test_TC1_empty_day",
+        "test_TC2_single_event_midday",
+        "test_TC3_multiple_nonoverlapping_events",
+        "test_TC4_overlapping_events",
+        "test_TC5_adjacent_events",
+        "test_TC6_meeting_fits_morning",
+        "test_TC7_meeting_exceeds_working_hours",
+        "test_TC8_event_partial_outside_hours",
+        "test_TC12_granularity_15min",
+        "test_TC13_short_duration",
+        "test_TC14_event_full_day",
+        "test_TC15_negative_duration",
+        "test_TC16_invalid_time_format",
+        "test_TC17_invalid_event_interval",
+        "test_TC18_invalid_date",
+        "test_TC19_multiple_windows_order",
+        "test_TC20_many_events",
+        "test_TC21_small_gaps_between_events",
+        "test_TC23_empty_day_duration_fills_last_slot",
+        "test_TC25_multiple_consecutive_overlaps",
+        "test_TC26_lunch_break_blocked",
+        "test_TC27_start_after_lunch_allowed",
+        "test_TC28_buffer_after_event",
+        "test_TC29_zero_duration_meeting",
+        "test_TC30_meeting_duration_multiple_of_30[30-True]",
+        "test_TC30_meeting_duration_multiple_of_30[60-True]",
+        "test_TC30_meeting_duration_multiple_of_30[45-False]",
+        "test_TC30_meeting_duration_multiple_of_30[20-False]"
+      ],
+      "collection_error": null,
+      "complete": true,
+      "elapsed_seconds": 0.19085,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 6154,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 35012608,
+      "pytest_exitcode": 1,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "    meeting_duration = 30\\n        day = \\\"2026-03-11\\\"\\n        result = suggest_slots(events, meet\"], \"test_TC26_lunch_break_blocked\": [\"passed\", \"\"], \"test_TC27_start_after_lunch_allowed\": [\"passed\", \"\"], \"test_TC28_buffer_after_event\": [\"passed\", \"\"], \"test_TC29_zero_duration_meeting\": [\"passed\", \"\"], \"test_TC30_meeting_duration_multiple_of_30[30-True]\": [\"passed\", \"\"], \"test_TC30_meeting_duration_multiple_of_30[60-True]\": [\"passed\", \"\"], \"test_TC30_meeting_duration_multiple_of_30[45-False]\": [\"passed\", \"\"], \"test_TC30_meeting_duration_multiple_of_30[20-False]\": [\"failed\", \"duration = 20, valid = False\\n\\n    @pytest.mark.parametrize(\\\"duration, valid\\\", [\\n        (30, True),\\n        (60, True),\\n        (45, False),\\n        (20, False),\\n    ])\\n    def test_TC30_meeting_duration_multiple_of_30(duration, valid):\\n        events = []\\n        day = \\\"2026-03-11\\\"\\n        if valid\"]}, \"collected\": [\"test_TC1_empty_day\", \"test_TC2_single_event_midday\", \"test_TC3_multiple_nonoverlapping_events\", \"test_TC4_overlapping_events\", \"test_TC5_adjacent_events\", \"test_TC6_meeting_fits_morning\", \"test_TC7_meeting_exceeds_working_hours\", \"test_TC8_event_partial_outside_hours\", \"test_TC12_granularity_15min\", \"test_TC13_short_duration\", \"test_TC14_event_full_day\", \"test_TC15_negative_duration\", \"test_TC16_invalid_time_format\", \"test_TC17_invalid_event_interval\", \"test_TC18_invalid_date\", \"test_TC19_multiple_windows_order\", \"test_TC20_many_events\", \"test_TC21_small_gaps_between_events\", \"test_TC23_empty_day_duration_fills_last_slot\", \"test_TC25_multiple_consecutive_overlaps\", \"test_TC26_lunch_break_blocked\", \"test_TC27_start_after_lunch_allowed\", \"test_TC28_buffer_after_event\", \"test_TC29_zero_duration_meeting\", \"test_TC30_meeting_duration_multiple_of_30[30-True]\", \"test_TC30_meeting_duration_multiple_of_30[60-True]\", \"test_TC30_meeting_duration_multiple_of_30[45-False]\", \"test_TC30_meeting_duration_multiple_of_30[20-False]\"], \"collection_error\": null, \"pytest_exitcode\": 1}\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC12_granularity_15min": [
+        "failed",
+        "def test_TC12_granularity_15min():\n        events = []\n        meeting_duration = 30\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"09:00\",\"09:15\",\"09:30\",\"09:45\",\n            \"10:00\",\"10:15\",\"10:30\",\"10:45\", \"11:00\",\"11:15\""
+      ],
+      "test_TC13_short_duration": [
+        "passed",
+        ""
+      ],
+      "test_TC14_event_full_day": [
+        "passed",
+        ""
+      ],
+      "test_TC15_negative_duration": [
+        "passed",
+        ""
+      ],
+      "test_TC16_invalid_time_format": [
+        "passed",
+        ""
+      ],
+      "test_TC17_invalid_event_interval": [
+        "passed",
+        ""
+      ],
+      "test_TC18_invalid_date": [
+        "passed",
+        ""
+      ],
+      "test_TC19_multiple_windows_order": [
+        "passed",
+        ""
+      ],
+      "test_TC1_empty_day": [
+        "failed",
+        "def test_TC1_empty_day():\n        events = []\n        meeting_duration = 30\n        day = \"2026-03-11\"  # Wednesday\n        result = suggest_slots(events, meeting_duration, day)\n    \n        # Hardcoded expected slots for a full empty day\n        expected = [\n            \"09:00\",\"09:15\",\"09:30\",\"09:"
+      ],
+      "test_TC20_many_events": [
+        "passed",
+        ""
+      ],
+      "test_TC21_small_gaps_between_events": [
+        "failed",
+        "def test_TC21_small_gaps_between_events():\n        events = [{\"start\":\"09:00\",\"end\":\"09:15\"},{\"start\":\"09:30\",\"end\":\"09:45\"}]\n        meeting_duration = 30\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        # Ensure free slots are correct\n        expecte"
+      ],
+      "test_TC23_empty_day_duration_fills_last_slot": [
+        "passed",
+        ""
+      ],
+      "test_TC25_multiple_consecutive_overlaps": [
+        "failed",
+        "def test_TC25_multiple_consecutive_overlaps():\n        events = [{\"start\":\"10:00\",\"end\":\"11:00\"},\n                  {\"start\":\"13:30\",\"end\":\"14:30\"},\n                  {\"start\":\"16:00\",\"end\":\"16:30\"}]\n        meeting_duration = 30\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meet"
+      ],
+      "test_TC26_lunch_break_blocked": [
+        "passed",
+        ""
+      ],
+      "test_TC27_start_after_lunch_allowed": [
+        "passed",
+        ""
+      ],
+      "test_TC28_buffer_after_event": [
+        "passed",
+        ""
+      ],
+      "test_TC29_zero_duration_meeting": [
+        "passed",
+        ""
+      ],
+      "test_TC2_single_event_midday": [
+        "failed",
+        "def test_TC2_single_event_midday():\n        events = [{\"start\":\"12:00\",\"end\":\"13:00\"}]\n        meeting_duration = 60\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n    \n        # Hardcoded expected slots considering lunch + buffer\n        expected = [\n      "
+      ],
+      "test_TC30_meeting_duration_multiple_of_30[20-False]": [
+        "failed",
+        "duration = 20, valid = False\n\n    @pytest.mark.parametrize(\"duration, valid\", [\n        (30, True),\n        (60, True),\n        (45, False),\n        (20, False),\n    ])\n    def test_TC30_meeting_duration_multiple_of_30(duration, valid):\n        events = []\n        day = \"2026-03-11\"\n        if valid"
+      ],
+      "test_TC30_meeting_duration_multiple_of_30[30-True]": [
+        "passed",
+        ""
+      ],
+      "test_TC30_meeting_duration_multiple_of_30[45-False]": [
+        "passed",
+        ""
+      ],
+      "test_TC30_meeting_duration_multiple_of_30[60-True]": [
+        "passed",
+        ""
+      ],
+      "test_TC3_multiple_nonoverlapping_events": [
+        "failed",
+        "def test_TC3_multiple_nonoverlapping_events():\n        events = [{\"start\":\"10:00\",\"end\":\"11:00\"},{\"start\":\"14:00\",\"end\":\"15:00\"}]\n        meeting_duration = 30\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"09:00\",\"09:15\",\n "
+      ],
+      "test_TC4_overlapping_events": [
+        "failed",
+        "def test_TC4_overlapping_events():\n        events = [{\"start\":\"10:00\",\"end\":\"11:00\"},{\"start\":\"10:30\",\"end\":\"11:30\"}]\n        meeting_duration = 30\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"09:00\",\"09:15\",\n            \""
+      ],
+      "test_TC5_adjacent_events": [
+        "failed",
+        "def test_TC5_adjacent_events():\n        events = [{\"start\":\"10:00\",\"end\":\"11:00\"},{\"start\":\"11:00\",\"end\":\"12:00\"}]\n        meeting_duration = 30\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"09:00\",\"09:15\",\n            \"13:"
+      ],
+      "test_TC6_meeting_fits_morning": [
+        "failed",
+        "def test_TC6_meeting_fits_morning():\n        events = []\n        meeting_duration = 150 # 2 hours 30 minutes, fits exactly from 09:00 to 11:45\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"09:00\", \"09:15\",\n            \"13:1"
+      ],
+      "test_TC7_meeting_exceeds_working_hours": [
+        "passed",
+        ""
+      ],
+      "test_TC8_event_partial_outside_hours": [
+        "failed",
+        "def test_TC8_event_partial_outside_hours():\n        events = [{\"start\":\"08:00\",\"end\":\"10:00\"}]\n        meeting_duration = 60\n        day = \"2026-03-11\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"10:15\",\"10:30\",\"10:45\",\n            \"13:15\",\"13:30\","
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/28_core_A_test.py",
+    "suite_sha256": "c382f5b754dcadc4b6ee3f904c3e83ceff82c7a02c1b075f1ca758bc9d650344"
+  },
+  "effective_timezone": "UTC",
+  "evaluation_complete": true,
+  "evidence_class": "FRESH_ISOLATED_CLEANED_START_NOT_MODEL_OUTPUT",
+  "finished_at_utc": "2026-11-05T18:51:56.409825+00:00",
+  "freeze_sha256": "b4f53052786d7ea25229d0cd4bc0dff96250b0ec5083a8f6b1f1e9bc22e6ac82",
+  "group": "G3",
+  "no_feedback_to_agent": true,
+  "participant_id": "S0057",
+  "source_sha256": "5d1ffb7372fdfa4ebaddb516f6052fb56c27bdb49a8d2320a414003f5786d328",
+  "started_at_utc": "2026-11-05T18:51:56.006360+00:00",
+  "supplied5": {
+    "complete": true,
+    "expected_case_count": 5,
+    "metadata": {
+      "collected_case_ids": [
+        "test_TC9_friday_cutoff",
+        "test_TC10_friday_event_ends_at_cutoff",
+        "test_TC11_friday_long_meeting",
+        "test_TC22_friday_overlap_long_meeting",
+        "test_TC24_friday_event_partial_cutoff"
+      ],
+      "collection_error": null,
+      "complete": true,
+      "elapsed_seconds": 0.145141,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 851,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 33505280,
+      "pytest_exitcode": 1,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "{\"results\": {\"test_TC9_friday_cutoff\": [\"failed\", \"def test_TC9_friday_cutoff():\\n        events = []\\n        meeting_duration = 30\\n        day = \\\"2026-03-13\\\"\\n        result = suggest_slots(events, meeting_duration, day)\\n        expected = [\\n            \\\"09:00\\\",\\\"09:15\\\",\\\"09:30\\\",\\\"09:45\\\",\\n            \\\"10:00\\\",\\\"10:15\\\",\\\"10:30\\\",\\\"10:45\\\",\\\"11:00\\\",\\\"11:15\\\",\\n    \"], \"test_TC10_friday_event_ends_at_cutoff\": [\"passed\", \"\"], \"test_TC11_friday_long_meeting\": [\"passed\", \"\"], \"test_TC22_friday_overlap_long_meeting\": [\"passed\", \"\"], \"test_TC24_friday_event_partial_cutoff\": [\"passed\", \"\"]}, \"collected\": [\"test_TC9_friday_cutoff\", \"test_TC10_friday_event_ends_at_cutoff\", \"test_TC11_friday_long_meeting\", \"test_TC22_friday_overlap_long_meeting\", \"test_TC24_friday_event_partial_cutoff\"], \"collection_error\": null, \"pytest_exitcode\": 1}\n",
+      "timed_out_file": false
+    },
+    "results": {
+      "test_TC10_friday_event_ends_at_cutoff": [
+        "passed",
+        ""
+      ],
+      "test_TC11_friday_long_meeting": [
+        "passed",
+        ""
+      ],
+      "test_TC22_friday_overlap_long_meeting": [
+        "passed",
+        ""
+      ],
+      "test_TC24_friday_event_partial_cutoff": [
+        "passed",
+        ""
+      ],
+      "test_TC9_friday_cutoff": [
+        "failed",
+        "def test_TC9_friday_cutoff():\n        events = []\n        meeting_duration = 30\n        day = \"2026-03-13\"\n        result = suggest_slots(events, meeting_duration, day)\n        expected = [\n            \"09:00\",\"09:15\",\"09:30\",\"09:45\",\n            \"10:00\",\"10:15\",\"10:30\",\"10:45\",\"11:00\",\"11:15\",\n    "
+      ]
+    },
+    "suite_path": "runs/withdrawal_keys_v1/input_snapshot/Data/test_suits/5_new_req_A_test.py",
+    "suite_sha256": "e5239e78dae29a0147b9a5bc45e190dd58807f01b19aa9f879a9c18a0a093784"
+  },
+  "targets": {
+    "answer_key_sha256": "9d47ccad65384e86f009b080c572fc43b19eeb46fee625dfd9ab2bda6ebc0684",
+    "cases": {
+      "A-F1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30"
+        ]
+      },
+      "A-F1-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F1-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00"
+        ]
+      },
+      "A-F2-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00"
+        ]
+      },
+      "A-F2-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00"
+        ]
+      },
+      "A-F3": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30"
+        ]
+      },
+      "A-F3-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F3-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F4": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30"
+        ]
+      },
+      "A-F4-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-F4-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "14:15",
+          "14:30",
+          "14:45",
+          "15:00",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-TC10": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30"
+        ]
+      },
+      "A-TC10-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-TC10-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "15:15",
+          "15:30",
+          "15:45",
+          "16:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-TC11": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00"
+        ]
+      },
+      "A-TC22": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00"
+        ]
+      },
+      "A-TC22-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "15:45",
+          "16:00"
+        ]
+      },
+      "A-TC22-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "15:45",
+          "16:00"
+        ]
+      },
+      "A-TC24": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00"
+        ]
+      },
+      "A-TC24-C1": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "A-TC24-C2": {
+        "kind": "ret",
+        "type": "list_str",
+        "value": [
+          "09:00",
+          "09:15",
+          "09:30",
+          "09:45",
+          "10:00",
+          "10:15",
+          "10:30",
+          "10:45",
+          "11:00",
+          "11:15",
+          "11:30",
+          "13:15",
+          "13:30",
+          "13:45",
+          "14:00",
+          "16:15",
+          "16:30"
+        ]
+      },
+      "weekday_abbrev:A-F1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-F1-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-F1-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-F2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-F2-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-F2-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-F3": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-F3-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-F3-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC10": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC10-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC10-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC22": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC22-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC22-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC24": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC24-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_abbrev:A-TC24-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F1-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F1-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F2-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F2-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F3": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F3-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-F3-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC10": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC10-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC10-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC22": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC22-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC22-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC24": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC24-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_full:A-TC24-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F1-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F1-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F2-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F2-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F3": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F3-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-F3-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC10": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC10-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC10-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC22": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC22-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC22-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC24": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC24-C1": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      },
+      "weekday_lower:A-TC24-C2": {
+        "exc": "ValueError",
+        "kind": "exc",
+        "msg": "Invalid date format. Use YYYY-MM-DD"
+      }
+    },
+    "complete": true,
+    "execution_metadata": {
+      "elapsed_seconds": 0.057427,
+      "isolation": "macOS sandbox-exec; no network/fork; read-only workspace; monitored RSS",
+      "observed_output_bytes": 10580,
+      "output_truncated": false,
+      "peak_observed_rss_bytes": 16711680,
+      "returncode": 0,
+      "status": "ok",
+      "stderr_tail": "",
+      "stdout_tail": "valid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F1\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F1-C1\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F1-C2\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F2\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F2-C1\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F2-C2\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F3\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F3-C1\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-F3-C2\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC10\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC10-C1\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC10-C2\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC22\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC22-C1\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC22-C2\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC24\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC24-C1\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}, \"weekday_lower:A-TC24-C2\": {\"kind\": \"exc\", \"exc\": \"ValueError\", \"msg\": \"Invalid date format. Use YYYY-MM-DD\"}}}\n",
+      "timed_out_file": false
+    },
+    "expected_case_count": 76,
+    "import_error": null
+  },
+  "task": "A"
+}

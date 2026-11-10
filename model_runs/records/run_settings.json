@@ -1,0 +1,97 @@
+{
+  "opening": {
+    "concurrency": 4,
+    "per_provider_concurrency": 2,
+    "provider_cost_caps_usd": {
+      "anthropic": "6.00",
+      "openai": "6.00"
+    },
+    "run_cost_cap_usd": "12.00"
+  },
+  "continuation": {
+    "concurrency": 4,
+    "per_provider_concurrency": 2,
+    "provider_cost_caps_usd": {
+      "anthropic": "18.00",
+      "openai": "18.00"
+    },
+    "run_cost_cap_usd": "36.00"
+  },
+  "environment": {
+    "system": "Darwin",
+    "release": "27.0.0",
+    "architecture": "arm64",
+    "python_version": "3.12.6",
+    "evaluator_packages": {
+      "numpy": "2.3.5",
+      "pytest": "9.0.2"
+    },
+    "timezone": "UTC"
+  },
+  "providers": {
+    "openai": {
+      "model": "gpt-6.1-sol",
+      "api_version": "Responses v1; documentation checked 2026-11-05",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        },
+        "service_tier": "default"
+      },
+      "pricing": {
+        "cache_read_per_million": "0.10",
+        "cache_write_per_million": "2.50",
+        "input_per_million": "2",
+        "output_per_million": "10"
+      },
+      "limits": {
+        "file_bytes": 131072,
+        "max_429_retries": 1,
+        "max_model_turns": 8,
+        "max_output_tokens": 8192,
+        "max_request_bytes": 131072,
+        "max_tool_calls": 12,
+        "memory_mb": 256,
+        "output_bytes": 16384,
+        "python_timeout_seconds": 10,
+        "session_cost_cap_usd": "1.00",
+        "session_seconds": 600,
+        "workspace_bytes": 1048576,
+        "workspace_files": 32
+      }
+    },
+    "anthropic": {
+      "model": "claude-sonnet-5-5",
+      "api_version": "2026-10-21",
+      "settings": {
+        "output_config": {
+          "effort": "high"
+        },
+        "thinking": {
+          "type": "adaptive"
+        }
+      },
+      "pricing": {
+        "cache_read_per_million": "0.10",
+        "cache_write_per_million": "2.50",
+        "input_per_million": "2",
+        "output_per_million": "10"
+      },
+      "limits": {
+        "file_bytes": 131072,
+        "max_429_retries": 1,
+        "max_model_turns": 8,
+        "max_output_tokens": 8192,
+        "max_request_bytes": 131072,
+        "max_tool_calls": 12,
+        "memory_mb": 256,
+        "output_bytes": 16384,
+        "python_timeout_seconds": 10,
+        "session_cost_cap_usd": "1.00",
+        "session_seconds": 600,
+        "workspace_bytes": 1048576,
+        "workspace_files": 32
+      }
+    }
+  }
+}

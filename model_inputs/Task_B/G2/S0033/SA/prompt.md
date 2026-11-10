@@ -1,0 +1,40 @@
+Revise the existing Python implementation to satisfy the current requirements below. Treat these requirements as authoritative. Remove restrictions they do not require, preserve all specified functionality, and avoid unrelated changes. If no changes are needed, leave the implementation unchanged.
+
+**Current requirements**
+
+### Task description
+
+You are asked to implement a Python function that determines whether a set of resource requests can be satisfied given limited capacity. The function takes as input a list of requests and available resources and returns whether a valid allocation exists. The goal is to determine feasibility of allocation based on the provided information. You may assume inputs are provided in a reasonable and consistent format. You may use ChatGPT to assist with reasoning about the problem, generating code, or writing tests.
+
+### Specification
+
+```json
+{
+  "v1_human_g2_ac": [
+    {
+      "ac_1": "Given available resources with fixed capacities then when requested amount is equal to its capacity function returns True",
+      "ac_2": "Given available resources with limited capacity when the total requested amount for any resource exceeds it's available capacity the function returns False",
+      "ac_3": "Given the inputs are provided when the format of inputs is not as expected the function returns a ValueError",
+      "ac_4": "Given a set of requests when function finds an invalid request it returns False",
+      "ac_5": "Given resources in decimals when total request amount does not exceed capacity then function returns True",
+      "ac_6": "Given resource & request values when values are valid and requested is less than max capacity then function returns True"
+    }
+  ],
+  "v1_human_g2_constraints": [
+    {
+      "c_1": "The resources are always +ve number",
+      "c_2": "The requests can be +ve or -ve number",
+      "c_3": "The strings are only \"cpu\", \"ram\", \"mem\" for both request and resource",
+      "c_4": "The formatting must be done as specified in comments (input parameter to function)",
+      "c_5": "The s (resources & requests mapped is not returned only boolean",
+      "c_6": "The resource, request values will never exceed max +ve int capacity"
+    }
+  ],
+  "v1_human_g2_goal": "The system is used to determine if a set of resource requests can be satisfied given limited capacity. Provided resources and requests, the objective is to map each request to a resource if and only if it is feasible",
+  "v1_human_g2_input": "request: List[Dict[str, Number]]: string like CPU, mem, ram mapped to the numbers\nresource: Dict[str, Number]: same as above",
+  "v1_human_g2_output": "The function returns True if all requests can be mapped to resources, no resource capacity exceeded, all capacities are valid, empty request list. False: Resource requested does not exist, total requested amount exceeds the capacity or requested amount. Value Error: only when the inputs are not in data structures as expected",
+  "id": "S0033"
+}
+```
+
+Briefly summarize any changes.
