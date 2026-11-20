@@ -1,0 +1,17 @@
+program,task,provider,context_id,test,SA_outcome,SA_grade,EW_outcome,EW_grade
+S0037,A,anthropic,CTX-A-02,test_TC20_many_events,passed,model_runs/Task_A/S0037_SA_anthropic_r1/evaluation.json,passed,model_runs/Task_A/S0037_EW_anthropic_r1/evaluation.json
+S0037,A,openai,CTX-A-02,test_TC20_many_events,passed,model_runs/Task_A/S0037_SA_openai_r1/evaluation.json,passed,model_runs/Task_A/S0037_EW_openai_r1/evaluation.json
+S0044,A,anthropic,CTX-A-08,test_TC20_many_events,passed,model_runs/Task_A/S0044_SA_anthropic_r1/evaluation.json,passed,model_runs/Task_A/S0044_EW_anthropic_r1/evaluation.json
+S0044,A,anthropic,CTX-A-08,test_TC27_start_after_lunch_allowed,passed,model_runs/Task_A/S0044_SA_anthropic_r1/evaluation.json,passed,model_runs/Task_A/S0044_EW_anthropic_r1/evaluation.json
+S0044,A,anthropic,CTX-A-08,test_TC28_buffer_after_event,passed,model_runs/Task_A/S0044_SA_anthropic_r1/evaluation.json,passed,model_runs/Task_A/S0044_EW_anthropic_r1/evaluation.json
+S0044,A,openai,CTX-A-08,test_TC20_many_events,passed,model_runs/Task_A/S0044_SA_openai_r1/evaluation.json,passed,model_runs/Task_A/S0044_EW_openai_r1/evaluation.json
+S0044,A,openai,CTX-A-08,test_TC27_start_after_lunch_allowed,passed,model_runs/Task_A/S0044_SA_openai_r1/evaluation.json,passed,model_runs/Task_A/S0044_EW_openai_r1/evaluation.json
+S0044,A,openai,CTX-A-08,test_TC28_buffer_after_event,passed,model_runs/Task_A/S0044_SA_openai_r1/evaluation.json,passed,model_runs/Task_A/S0044_EW_openai_r1/evaluation.json
+S0049,A,anthropic,CTX-A-13,test_TC27_start_after_lunch_allowed,passed,model_runs/Task_A/S0049_SA_anthropic_r1/evaluation.json,passed,model_runs/Task_A/S0049_EW_anthropic_r1/evaluation.json
+S0049,A,anthropic,CTX-A-13,test_TC28_buffer_after_event,passed,model_runs/Task_A/S0049_SA_anthropic_r1/evaluation.json,passed,model_runs/Task_A/S0049_EW_anthropic_r1/evaluation.json
+S0049,A,openai,CTX-A-13,test_TC27_start_after_lunch_allowed,passed,model_runs/Task_A/S0049_SA_openai_r1/evaluation.json,passed,model_runs/Task_A/S0049_EW_openai_r1/evaluation.json
+S0049,A,openai,CTX-A-13,test_TC28_buffer_after_event,passed,model_runs/Task_A/S0049_SA_openai_r1/evaluation.json,passed,model_runs/Task_A/S0049_EW_openai_r1/evaluation.json
+S0060,A,anthropic,CTX-A-21,test_TC20_many_events,failed,model_runs/Task_A/S0060_SA_anthropic_r1/evaluation.json,passed,model_runs/Task_A/S0060_EW_anthropic_r1/evaluation.json
+S0060,A,openai,CTX-A-21,test_TC20_many_events,passed,model_runs/Task_A/S0060_SA_openai_r1/evaluation.json,passed,model_runs/Task_A/S0060_EW_openai_r1/evaluation.json
+S0062,A,anthropic,CTX-A-23,test_TC27_start_after_lunch_allowed,passed,model_runs/Task_A/S0062_SA_anthropic_r1/evaluation.json,passed,model_runs/Task_A/S0062_EW_anthropic_r1/evaluation.json
+S0062,A,openai,CTX-A-23,test_TC27_start_after_lunch_allowed,passed,model_runs/Task_A/S0062_SA_openai_r1/evaluation.json,passed,model_runs/Task_A/S0062_EW_openai_r1/evaluation.json

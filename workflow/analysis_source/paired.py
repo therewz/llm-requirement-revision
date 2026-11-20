@@ -13,15 +13,6 @@ from fractions import Fraction
 from pathlib import Path
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[2]
-INPUT = ROOT / 'reports/full_analysis_v2_prelim/tables/session_metrics.csv'
-INPUT_MANIFEST = ROOT / 'reports/full_analysis_v2_prelim/analysis_manifest.json'
-PLAN = ROOT / 'planning/ANALYSIS_PLAN_v2_PRESTAT.md'
-FREEZE = ROOT / 'planning/ANALYSIS_PLAN_v2_PRESTAT_FREEZE.json'
-LOCK = ROOT / 'planning/STATISTICAL_ANALYSIS_V3_OPERATIONAL_LOCK.md'
-LOCK_RECORD = ROOT / 'planning/STATISTICAL_ANALYSIS_V3_OPERATIONAL_LOCK.json'
-PREFLIGHT = ROOT / 'reports/statistical_analysis_v3/PREFLIGHT.json'
-OUT = ROOT / 'reports/statistical_analysis_v3/paired'
 SEED = 20261106
 BOOT = 10000
 MC = 99999
@@ -200,16 +191,6 @@ def ratio(row, metric):
 def mean_fraction(v): return float(sum(v,Fraction(0))/len(v)) if v else None
 
 
-def load_rows():
-    frozen=json.loads(FREEZE.read_text()); assert sha(PLAN)==frozen['sha256'];assert frozen['sha256']=='abf7fa160883376f0b74a35f85433522e7474a3b76142bb2ac33a6fb01afa416'
-    manifest=json.loads(INPUT_MANIFEST.read_text());assert sha(INPUT)==manifest['outputs']['session_metrics.csv']
-    rows=list(csv.DictReader(INPUT.open(newline='')))
-    assert len(rows)==manifest['table_rows']['session_metrics.csv']
-    assert len({(r['view'],r['participant_id'],r['provider'],r['condition']) for r in rows})==len(rows)
-    assert len({r['view'] for r in rows})==24
-    return rows
-
-
 def run_analysis(rows):
     views=sorted({r['view'] for r in rows});allrows=[];mean_rows=[];fried_rows=[];observations=[]
     index={(r['view'],r['task'],r['provider'],r['participant_id'],r['condition']):r for r in rows}
@@ -266,31 +247,3 @@ def write_csv(path,rows):
     with path.open('w',newline='',encoding='utf8') as stream:
         w=csv.DictWriter(stream,fieldnames=keys);w.writeheader()
         for r in rows:w.writerow({k:json.dumps(v,sort_keys=True,separators=(',',':')) if isinstance(v,(list,dict)) else v for k,v in r.items()})
-
-
-def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--prerequisites-confirmed',action='store_true');args=ap.parse_args()
-    if not args.prerequisites_confirmed:raise SystemExit('Real-data inference requires the lead prerequisite confirmation flag.')
-    gate_bytes=PREFLIGHT.read_bytes();gate=json.loads(gate_bytes)
-    policy=json.loads(LOCK_RECORD.read_text())
-    assert gate['status']=='PASS', 'Prerequisite gate is not PASS'
-    assert gate['plan_sha256']==sha(PLAN)==policy['plan_sha256']
-    assert gate['operational_lock_sha256']==sha(LOCK)==policy['operational_lock_sha256']
-    assert policy['v2_manifest_sha256']==sha(INPUT_MANIFEST)
-    if 'v2_manifest_sha256' in gate: assert gate['v2_manifest_sha256']==sha(INPUT_MANIFEST)
-    assert gate['implementation_sha256']['paired']==sha(__file__), 'Paired implementation differs from preflight'
-    rows=load_rows();OUT.mkdir(parents=True,exist_ok=True)
-    rank,mean,fried,obs=run_analysis(rows)
-    files={'paired_wilcoxon.csv':rank,'paired_mean_permutation.csv':mean,'friedman.csv':fried,'paired_observations.csv':obs}
-    for name,tab in files.items():write_csv(OUT/name,tab)
-    manifest={'plan_sha256':sha(PLAN),'freeze_sha256':sha(FREEZE),'operational_lock_sha256':sha(LOCK),'operational_lock_record_sha256':sha(LOCK_RECORD),'preflight_sha256':hashlib.sha256(gate_bytes).hexdigest(),'data_sha256':sha(INPUT),'data_manifest_sha256':sha(INPUT_MANIFEST),
-              'code_sha256':sha(__file__),'seed':SEED,'rng':'numpy PCG64','numpy_version':np.__version__,'python_version':platform.python_version(),
-              'exact_sign_max_nonzero':EXACT_SIGN_MAX,'exact_friedman_max_complete_blocks':EXACT_FRIEDMAN_MAX,
-              'monte_carlo_draws':MC,'bootstrap_draws':BOOT,'holm':'reserve untestable family slots as p=1 internally; return NA for those tests',
-              'row_counts':{k:len(v) for k,v in files.items()},'outputs':{k:sha(OUT/k) for k in files},
-              'no_candidate_execution':True,'no_model_calls':True,'rng_stream':'first 64 bits SHA256 of compact JSON [20261106, purpose, view, task, provider, metric, left, right] for pairs, or [20261106, purpose, view, task, provider] for Friedman; PCG64',
-              'meanflip_comparisons':'exact rational integer weights; v1 used float tolerance 1e-10','signedrank_ties':'Fraction exact; average ranks, remove exact zeros'}
-    (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
-    print(json.dumps({'status':'complete','rows':manifest['row_counts']},indent=2))
-
-if __name__=='__main__':main()

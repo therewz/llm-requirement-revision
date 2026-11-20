@@ -1,0 +1,119 @@
+session_id,round,rating,obsolete_logic,unrelated_named_function,mechanisms,final_basis
+S0006_EW_openai_r1,shared,reviewer_1,removed,no,,
+S0006_EW_openai_r1,shared,reviewer_2,removed,no,,
+S0006_EW_openai_r1,shared,final,removed,no,,No core losses. All seven withdrawal targets restored.
+S0006_SA_openai_r1,shared,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0006_SA_openai_r1,shared,reviewer_2,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0006_SA_openai_r1,shared,final,removed,yes,requirement_reinterpretation,"Lunch, start-time increments and event boundaries changed. The G1 prompt left those conventions open."
+S0008_EW_anthropic_r1,shared,reviewer_1,removed,no,,
+S0008_EW_anthropic_r1,shared,reviewer_2,removed,no,,
+S0008_EW_anthropic_r1,shared,final,removed,no,,No core losses. All seven withdrawal targets restored.
+S0008_SA_anthropic_r1,shared,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0008_SA_anthropic_r1,shared,reviewer_2,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0008_SA_anthropic_r1,shared,final,removed,yes,requirement_reinterpretation,Lunch and event-end behavior explain the losses. Making day optional changed the signature but did not explain the observed failures.
+S0032_EW_openai_r1,shared,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0032_EW_openai_r1,shared,reviewer_2,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0032_EW_openai_r1,shared,final,removed,no,interface_drift|requirement_reinterpretation,Ten tests expected exceptions. Returning False still rejects infeasible requests. The finite-value guard had unclear requirement support.
+S0032_SA_openai_r1,shared,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0032_SA_openai_r1,shared,reviewer_2,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0032_SA_openai_r1,shared,final,removed,no,interface_drift|requirement_reinterpretation,Twenty-four tests expected exceptions. Broader validation changes occurred inside the allocation function.
+S0036_EW_anthropic_r1,shared,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0036_EW_anthropic_r1,shared,reviewer_2,removed,yes,interface_drift|requirement_reinterpretation,
+S0036_EW_anthropic_r1,shared,final,removed,no,interface_drift|requirement_reinterpretation,"TC7, TC12 and TC23 expected exceptions. The supplied acceptance criteria specify False for these inputs."
+S0036_SA_anthropic_r1,shared,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0036_SA_anthropic_r1,shared,reviewer_2,removed,yes,interface_drift|requirement_reinterpretation,
+S0036_SA_anthropic_r1,shared,final,removed,yes,interface_drift|requirement_reinterpretation,Returning False extends to more invalid inputs. The wording leaves some of the 24 expected exception cases open.
+S0049_SA_openai_r1,shared,reviewer_1,removed,yes,requirement_reinterpretation,
+S0049_SA_openai_r1,shared,reviewer_2,removed,yes,other_or_insufficient_evidence|requirement_reinterpretation,
+S0049_SA_openai_r1,shared,final,removed,no,requirement_reinterpretation,"The prompt gives conflicting work hours. The 15:00 end on every day removes the 16:30 core slot and late control slots, leaving all seven withdrawal outcomes inconclusive after removal of the Friday branch."
+S0058_EW_openai_r1,shared,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0058_EW_openai_r1,shared,reviewer_2,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0058_EW_openai_r1,shared,final,removed,yes,interface_drift|requirement_reinterpretation,The weekday abbreviation check rejects the standard ISO dates before scheduling. The lunch-boundary observation is separate.
+S0058_SA_anthropic_r1,shared,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0058_SA_anthropic_r1,shared,reviewer_2,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0058_SA_anthropic_r1,shared,final,removed,yes,interface_drift|requirement_reinterpretation,The weekday abbreviation check rejects the standard ISO dates before scheduling. The lunch-boundary observation is separate.
+S0060_SA_anthropic_r1,shared,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0060_SA_anthropic_r1,shared,reviewer_2,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0060_SA_anthropic_r1,shared,final,removed,yes,interface_drift|requirement_reinterpretation,The revision interprets durations in hours and requires string events. Event validation explains the loss of required TC20. The all-days 11:00 limit has separate support in the specification.
+S0004_EW_anthropic_r1,remaining,reviewer_1,removed,no,,
+S0004_EW_anthropic_r1,remaining,final,removed,no,,The Friday constant and branch disappear. The remaining date conversion does not affect the schedule. Seven targets restore and there is no new core failure.
+S0004_SA_anthropic_r1,remaining,reviewer_1,removed,yes,,
+S0004_SA_anthropic_r1,remaining,final,removed,yes,,"The exception handler in the time helper changed. The additional duration guard produces a gain on TC29. Making day optional changes the shared call signature, although the benchmark reports no new failure."
+S0005_EW_anthropic_r1,remaining,reviewer_1,removed,no,,
+S0005_EW_anthropic_r1,remaining,final,removed,no,,The nested overlaps_busy helper changed only to remove the Friday cap. The helper name in the diff alone does not establish an unrelated edit. No new core failure.
+S0005_SA_anthropic_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0005_SA_anthropic_r1,remaining,final,removed,yes,requirement_reinterpretation,The lunch and event-end rules disappear. The 15-minute grid stays. TC27 now includes the forbidden 12:45. The G1 prompt leaves the lunch and buffer rules open; making day optional is a separate signature change.
+S0007_EW_openai_r1,remaining,reviewer_1,removed,yes,still_valid_constraint_removed,
+S0007_EW_openai_r1,remaining,final,removed,no,interface_drift,"TC18 passes an impossible calendar date. Removing datetime.strptime together with the Friday lookup means that input no longer raises ValueError. The G1 prompt never requires that error. No separate helper changed, and the parser had served both purposes."
+S0007_SA_openai_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0007_SA_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,"TC18 changes from an exception to returning slots. Lunch and one-minute starts explain TC26, TC27 and the valid-duration TC30 tests. G1 does not prescribe a lunch break or 15-minute grid. The edits are inside suggest_slots."
+S0011_EW_openai_r1,remaining,reviewer_1,removed,no,,
+S0011_EW_openai_r1,remaining,final,removed,no,,Only day normalization and the Friday latest-start cap disappear. All seven targets restore and all prior core passes survive.
+S0011_SA_openai_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0011_SA_openai_r1,remaining,final,removed,no,requirement_reinterpretation,The single scheduling function drops the lunch block and moves to one-minute starts. TC26/27 and the valid-duration TC30 tests lose passes. Neither convention is specified for G1.
+S0015_EW_anthropic_r1,remaining,reviewer_1,removed,no,,
+S0015_EW_anthropic_r1,remaining,final,removed,no,,Only the spare-capacity loop and related documentation change. All four exact-capacity checks restore and no prior pass is lost.
+S0015_EW_openai_r1,remaining,reviewer_1,removed,no,,
+S0015_EW_openai_r1,remaining,final,removed,no,,The spare-capacity check is replaced by a successful return after ordinary feasibility checks. Four targets restore and no prior pass is lost.
+S0015_SA_anthropic_r1,remaining,reviewer_1,removed,no,,
+S0015_SA_anthropic_r1,remaining,final,removed,no,,The final spare-capacity scan is deleted. The other allocation checks still run. Four targets restore and no prior pass is lost.
+S0015_SA_openai_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0015_SA_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,"TC1, TC2 and TC21 expect ValueError for negative inputs. The revised calculation returns Booleans instead, including True for the negative request on TC2. G1 permits reasonable-input assumptions and has no required negative-input exception. All edits are in the allocation function."
+S0022_EW_openai_r1,remaining,reviewer_1,removed,no,,
+S0022_EW_openai_r1,remaining,final,removed,no,,Only the final remaining-capacity check is replaced. All four targets restore without a lost core pass.
+S0022_SA_openai_r1,remaining,reviewer_1,removed,no,,
+S0022_SA_openai_r1,remaining,final,removed,no,,The final remaining-capacity predicate is replaced by True after the capacity checks. No other named function or recorded failure.
+S0025_EW_anthropic_r1,remaining,reviewer_1,removed,no,,
+S0025_EW_anthropic_r1,remaining,final,removed,no,,"The removed nested-dictionary check was unreachable behind a numeric type check. TC16 still passes, as do all 28 core tests. Four targets restore."
+S0025_SA_anthropic_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0025_SA_anthropic_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,TC12/13/23 now return False on unmet positive demand and TC27 returns True for no demand. The prompt describes a Boolean feasibility decision. TC12/23/27 were judged Conflicting in Stage 1. Only is_allocation_feasible changed.
+S0033_EW_anthropic_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0033_EW_anthropic_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,"Fourteen lost tests expected TypeError and receive ValueError. Seven expected ValueError and instead receive Booleans. The prompt supports ValueError for malformed structures and False for missing resources. It allows negative requests, so treating every negative as invalid has weaker support."
+S0033_SA_anthropic_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0033_SA_anthropic_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,TC1 and TC3 still reject negative and NaN capacity with False for the exercised requests. TC4 is different: the former finite guard is gone and the function accepts positive infinite capacity. The output clause ties success to valid capacities and c6 names a maximum. The precise out-of-range error is unspecified. The tolerance is a separate edit.
+S0039_EW_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0039_EW_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,"The weekday whitelist rejects ISO dates in all seven targets and eight core losses. Nonpositive duration returns an empty list on TC15, as ac_5 asks. Only suggest_slots changed."
+S0039_SA_anthropic_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0039_SA_anthropic_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,"As in item 19, eight losses follow the ISO format check. TC15 returns an empty list instead of raising. The helper changes include how zero-length events are treated."
+S0039_SA_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0039_SA_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,Date validation and the nonpositive-duration response account for the nine lost core passes. The one-minute grid is real but those date failures occur first; a fixed grid was not specified here.
+S0042_EW_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0042_EW_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,The two-letter day requirement rejects ISO dates on all seven targets and ten core losses. to_minutes also tightens time parsing. Behavior behind the day check does not explain those failures.
+S0042_SA_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0042_SA_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,"The revised two-letter check rejects the ISO target and control dates. The changed helper parses times more strictly, and event-key handling changes separately. Ten core passes are lost."
+S0046_EW_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0046_EW_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,March target and control dates were already past in the November 5 evaluation. The prompt explicitly excludes past days. Early empty returns mask event errors on TC16/17; TC13 loses the short-duration exception. Only suggest_slots changed.
+S0046_SA_anthropic_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0046_SA_anthropic_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,"Same past-day mechanism as item 24, including the masked event errors. This patch also adds separately named helpers to resolve dates and filter past times."
+S0046_SA_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0046_SA_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,A per-call clock reading and the past-day return explain the empty March targets and controls. Short-duration and malformed-event cases change from exceptions to lists. Only suggest_slots changed.
+S0048_SA_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation,
+S0048_SA_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,The 3-letter whitelist rejects all ISO withdrawal inputs and accounts for the 11 core losses. The grid and buffer stay. Changed input handling is inside suggest_slots alone.
+S0053_EW_openai_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0053_EW_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,The prompt specifies starts one meeting duration apart. A-F1 returns the tested 15:30 and 16:00 starts on Friday and controls and omits the tested 15:45 and 16:15. TC27 lacks 13:15. TC16/17 now skip malformed events instead of raising. No explicit post-event cooldown.
+S0053_SA_anthropic_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0053_SA_anthropic_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,The duration grid omits 13:15 on TC27. A 600-minute request now raises on TC7. The prompt says over 480 should fail and also calls for an empty list if no fit exists. Those clauses leave the exact response open. The cooldown has no explicit support.
+S0053_SA_openai_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0053_SA_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,The duration grid and changed cooldown explain lost slots. Skipping malformed events changes TC16/17; raising above 480 changes TC7. A separate change ignores otherwise valid events marked peaceable=False; the baseline had used their times.
+S0056_EW_openai_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0056_EW_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,"The prompt asks for all workable slots and no overlap but specifies no quarter-hour grid, extra buffer or 30-minute duration multiple. TC13 and invalid-duration TC30 calls change from exceptions to lists. All seven targets restore despite 17 core losses."
+S0056_SA_openai_r1,remaining,reviewer_1,removed,yes,requirement_reinterpretation|still_valid_constraint_removed,
+S0056_SA_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,"The scheduler produces one-minute starts and preserves lunch and non-overlap. Removed duration validation changes the caller response on TC13 and invalid-duration TC30. The buffer, grid and duration multiple were benchmark conventions here."
+S0057_EW_anthropic_r1,remaining,reviewer_1,removed,yes,,
+S0057_EW_anthropic_r1,remaining,final,removed,no,,A wider day validator accepts three-letter strings without losing the old ISO path. This is an edit inside suggest_slots. All targets restore and there are no core losses.
+S0057_EW_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0057_EW_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,The three-letter check rejects ISO dates before slot generation. Ten other core losses involve ordinary scheduling calls and TC30[45-False] expects a specific duration-error message. Lunch and buffer edits do not explain these failures.
+S0057_SA_anthropic_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0057_SA_anthropic_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,The ISO rejection precedes slot scheduling. The valid-day diagnostic can return late Friday starts. The modified time helper qualifies as an unrelated function edit. This revision belongs to both paper cohorts.
+S0057_SA_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0057_SA_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,"The new day check fails before scheduling. The duration-sized grid changes the abbreviated-day output as well. TC30[45-False] expects the duration-error text, not merely a ValueError."
+S0058_SA_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0058_SA_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,All standard withdrawal inputs fail the weekday-abbreviation check. The saved Fri diagnostic reaches scheduling and ends at 11:30 on both Friday and its comparison days. This exposes the separate 09:00–12:00 reading under the conflicting hours clauses.
+S0060_EW_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0060_EW_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,"The revised scheduler reads 30/60 as hours and returns empty lists for all seven targets and their controls. The all-days rule prohibits starts at or after 11:00. TC18 loses the date error. validate_date still exists, unchanged but unused."
+S0060_SA_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0060_SA_openai_r1,remaining,final,removed,yes,interface_drift|requirement_reinterpretation,The same hours interpretation and all-days cap apply. The scheduler accepts event dictionaries and can return an empty list on every withdrawal target. Time-parsing helpers changed; the edited validate_date is no longer called.
+S0071_EW_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0071_EW_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,"TC7 now raises the specified ValueError. TC12, TC13 and TC23 request unavailable resources and receive False. TC27 is the distinct empty-resources/no-requests case. All five remain benchmark losses, all four withdrawal targets restore, and no separate function changed."
+S0071_SA_openai_r1,remaining,reviewer_1,removed,yes,interface_drift|requirement_reinterpretation|still_valid_constraint_removed,
+S0071_SA_openai_r1,remaining,final,removed,no,interface_drift|requirement_reinterpretation,"The single allocation function removes validation but still rejects undefined keys. The prompt forbids malformed requests without specifying negative amounts, finite capacity or these exact exceptions. TC2/21 can now accept negative demand and TC4 accepts infinite supply. Record those concerns alongside the established interface changes."

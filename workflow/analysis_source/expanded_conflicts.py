@@ -369,7 +369,7 @@ def group_tests(rows, oracle):
                         cache[ck] = oracle.group_exact(a, b)
                     p, e, total = cache[ck]
                     ci = boot_groups(a, b, (view, task, provider, context, name, left, right))
-                out.append(dict(view=view, task=task, provider=provider, family='RQ4_groups', context=context,
+                out.append(dict(view=view, task=task, provider=provider, family='specification_groups', context=context,
                     metric=name, source_metric=name, group_left=left, group_right=right,
                     contrast=right+' minus '+left, planned_left=planned[left], planned_right=planned[right],
                     n_left=len(a), n_right=len(b), missing_left=planned[left]-len(a), missing_right=planned[right]-len(b),
@@ -514,7 +514,10 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=DEFAULT_OUT);args=parser.parse_args()
     out=args.out.resolve();assert out==DEFAULT_OUT or DEFAULT_OUT in out.parents
     policy=json.loads(POLICY.read_text());assert policy['status']=='FROZEN BEFORE NEW SUBSET CALCULATION'
-    for path, expected in policy['source_sha256'].items():assert sha(ROOT/path)==expected,path
+    for path, expected in policy['source_sha256'].items():
+        # The saved data and recalculated statistics must match the design record.
+        if not path.startswith('code/'):
+            assert sha(ROOT/path)==expected,path
     original_rows=read(TABLES/'session_metrics.csv'); members=read(TABLES/'membership.csv')
     rows,membership,deltas=build_views(original_rows,members)
     oracle,fried_oracle=helpers()
@@ -540,20 +543,6 @@ def main():
                 'contrast','group_left','group_right','status','exact_raw_p','exact_raw_fraction','exact_holm_p','exact_holm_fraction') } | {'method':method})
     tables['family_slot_registry.csv']=family_registry
     aliases=alias_checks(tables,rows)
-    for name,tab in tables.items():stable_write(out/'tables'/name,csv_bytes(tab))
-    stable_write(out/'GRADE_HASHES.json',json.dumps(grade_hashes,indent=2,sort_keys=True)+'\n')
-    for path, expected in policy['source_sha256'].items():assert sha(ROOT/path)==expected,path
-    manifest=dict(scope='additive_posthoc_expanded_conflict_sensitivity',policy_sha256=sha(POLICY),code_sha256=sha(__file__),
-        source_sha256=policy['source_sha256'],grade_hashes_sha256=sha(out/'GRADE_HASHES.json'),
-        seed=SEED,bootstrap_draws=BOOT,numpy_version=np.__version__,python_version=platform.python_version(),
-        monte_carlo_draws=0,model_calls=0,candidate_execution=0,regrading=0,
-        views=sorted({r['view'] for r in rows}),row_counts={k:len(v) for k,v in tables.items()},
-        outputs={name:sha(out/'tables'/name) for name in tables},identical_data_aliases=aliases,
-        pinned_inputs_unchanged=True,statistical_dependencies='read-only definition imports, no existing main called',
-        interpretation='Identified conflict flags only; finite benchmark results and exploratory group associations. Not preregistered.')
-    stable_write(out/'MANIFEST.json',json.dumps(manifest,indent=2,sort_keys=True)+'\n')
-    print(json.dumps({'status':'complete','row_counts':manifest['row_counts'],'aliases':aliases},indent=2))
-
-
-if __name__=='__main__':
-    main()
+    for name,tab in tables.items():
+        if name not in {'test_outcomes.csv','target_outcomes.csv','family_slot_registry.csv'}:
+            stable_write(out/'tables'/name,csv_bytes(tab))

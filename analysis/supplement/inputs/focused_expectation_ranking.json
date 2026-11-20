@@ -1,0 +1,346 @@
+{
+  "frozen_selection_sha256": "b6783f781c94dcaeab523605949f84e9b1f196ff3f9c46d8fd8035154578df8a",
+  "rankings": {
+    "A": [
+      {
+        "PF": 55,
+        "rank": 1,
+        "selected": true,
+        "test_id": "test_TC20_many_events"
+      },
+      {
+        "PF": 55,
+        "rank": 2,
+        "selected": true,
+        "test_id": "test_TC27_start_after_lunch_allowed"
+      },
+      {
+        "PF": 52,
+        "rank": 3,
+        "selected": true,
+        "test_id": "test_TC28_buffer_after_event"
+      },
+      {
+        "PF": 50,
+        "rank": 4,
+        "selected": false,
+        "test_id": "test_TC13_short_duration"
+      },
+      {
+        "PF": 49,
+        "rank": 5,
+        "selected": false,
+        "test_id": "test_TC26_lunch_break_blocked"
+      },
+      {
+        "PF": 37,
+        "rank": 6,
+        "selected": false,
+        "test_id": "test_TC18_invalid_date"
+      },
+      {
+        "PF": 37,
+        "rank": 7,
+        "selected": false,
+        "test_id": "test_TC30_meeting_duration_multiple_of_30[45-False]"
+      },
+      {
+        "PF": 31,
+        "rank": 8,
+        "selected": false,
+        "test_id": "test_TC30_meeting_duration_multiple_of_30[30-True]"
+      },
+      {
+        "PF": 31,
+        "rank": 9,
+        "selected": false,
+        "test_id": "test_TC30_meeting_duration_multiple_of_30[60-True]"
+      },
+      {
+        "PF": 30,
+        "rank": 10,
+        "selected": false,
+        "test_id": "test_TC30_meeting_duration_multiple_of_30[20-False]"
+      },
+      {
+        "PF": 19,
+        "rank": 11,
+        "selected": false,
+        "test_id": "test_TC23_empty_day_duration_fills_last_slot"
+      },
+      {
+        "PF": 15,
+        "rank": 12,
+        "selected": false,
+        "test_id": "test_TC14_event_full_day"
+      },
+      {
+        "PF": 14,
+        "rank": 13,
+        "selected": false,
+        "test_id": "test_TC7_meeting_exceeds_working_hours"
+      },
+      {
+        "PF": 13,
+        "rank": 14,
+        "selected": false,
+        "test_id": "test_TC19_multiple_windows_order"
+      },
+      {
+        "PF": 11,
+        "rank": 15,
+        "selected": false,
+        "test_id": "test_TC17_invalid_event_interval"
+      },
+      {
+        "PF": 11,
+        "rank": 16,
+        "selected": false,
+        "test_id": "test_TC2_single_event_midday"
+      },
+      {
+        "PF": 10,
+        "rank": 17,
+        "selected": false,
+        "test_id": "test_TC15_negative_duration"
+      },
+      {
+        "PF": 9,
+        "rank": 18,
+        "selected": false,
+        "test_id": "test_TC16_invalid_time_format"
+      },
+      {
+        "PF": 6,
+        "rank": 19,
+        "selected": false,
+        "test_id": "test_TC12_granularity_15min"
+      },
+      {
+        "PF": 6,
+        "rank": 20,
+        "selected": false,
+        "test_id": "test_TC1_empty_day"
+      },
+      {
+        "PF": 6,
+        "rank": 21,
+        "selected": false,
+        "test_id": "test_TC21_small_gaps_between_events"
+      },
+      {
+        "PF": 6,
+        "rank": 22,
+        "selected": false,
+        "test_id": "test_TC25_multiple_consecutive_overlaps"
+      },
+      {
+        "PF": 6,
+        "rank": 23,
+        "selected": false,
+        "test_id": "test_TC3_multiple_nonoverlapping_events"
+      },
+      {
+        "PF": 6,
+        "rank": 24,
+        "selected": false,
+        "test_id": "test_TC4_overlapping_events"
+      },
+      {
+        "PF": 6,
+        "rank": 25,
+        "selected": false,
+        "test_id": "test_TC5_adjacent_events"
+      },
+      {
+        "PF": 6,
+        "rank": 26,
+        "selected": false,
+        "test_id": "test_TC6_meeting_fits_morning"
+      },
+      {
+        "PF": 6,
+        "rank": 27,
+        "selected": false,
+        "test_id": "test_TC8_event_partial_outside_hours"
+      },
+      {
+        "PF": 0,
+        "rank": 28,
+        "selected": false,
+        "test_id": "test_TC29_zero_duration_meeting"
+      }
+    ],
+    "B": [
+      {
+        "PF": 68,
+        "rank": 1,
+        "selected": true,
+        "test_id": "test_TC27_empty_requests_invalid_resources"
+      },
+      {
+        "PF": 51,
+        "rank": 2,
+        "selected": true,
+        "test_id": "test_TC12_missing_resource_type"
+      },
+      {
+        "PF": 51,
+        "rank": 3,
+        "selected": true,
+        "test_id": "test_TC23_request_with_extra_invalid_key"
+      },
+      {
+        "PF": 50,
+        "rank": 4,
+        "selected": false,
+        "test_id": "test_TC13_empty_resource_dict_invalid"
+      },
+      {
+        "PF": 31,
+        "rank": 5,
+        "selected": false,
+        "test_id": "test_TC21_zero_and_negative_mix"
+      },
+      {
+        "PF": 31,
+        "rank": 6,
+        "selected": false,
+        "test_id": "test_TC2_negative_request_value"
+      },
+      {
+        "PF": 30,
+        "rank": 7,
+        "selected": false,
+        "test_id": "test_TC4_infinite_value"
+      },
+      {
+        "PF": 30,
+        "rank": 8,
+        "selected": false,
+        "test_id": "test_TC7_request_item_not_dict"
+      },
+      {
+        "PF": 29,
+        "rank": 9,
+        "selected": false,
+        "test_id": "test_TC29_invalid_float_nan_request"
+      },
+      {
+        "PF": 24,
+        "rank": 10,
+        "selected": false,
+        "test_id": "test_TC10_resource_key_not_string"
+      },
+      {
+        "PF": 24,
+        "rank": 11,
+        "selected": false,
+        "test_id": "test_TC11_request_key_not_string"
+      },
+      {
+        "PF": 24,
+        "rank": 12,
+        "selected": false,
+        "test_id": "test_TC3_nan_value"
+      },
+      {
+        "PF": 23,
+        "rank": 13,
+        "selected": false,
+        "test_id": "test_TC1_negative_resource_value"
+      },
+      {
+        "PF": 19,
+        "rank": 14,
+        "selected": false,
+        "test_id": "test_TC16_nested_invalid_request"
+      },
+      {
+        "PF": 19,
+        "rank": 15,
+        "selected": false,
+        "test_id": "test_TC17_list_inside_request_value"
+      },
+      {
+        "PF": 19,
+        "rank": 16,
+        "selected": false,
+        "test_id": "test_TC18_tuple_inside_request_value"
+      },
+      {
+        "PF": 19,
+        "rank": 17,
+        "selected": false,
+        "test_id": "test_TC25_string_number_in_request"
+      },
+      {
+        "PF": 19,
+        "rank": 18,
+        "selected": false,
+        "test_id": "test_TC9_request_value_not_number"
+      },
+      {
+        "PF": 18,
+        "rank": 19,
+        "selected": false,
+        "test_id": "test_TC24_string_number"
+      },
+      {
+        "PF": 18,
+        "rank": 20,
+        "selected": false,
+        "test_id": "test_TC8_resource_value_not_number"
+      },
+      {
+        "PF": 17,
+        "rank": 21,
+        "selected": false,
+        "test_id": "test_TC6_requests_not_list"
+      },
+      {
+        "PF": 13,
+        "rank": 22,
+        "selected": false,
+        "test_id": "test_TC15_none_requests"
+      },
+      {
+        "PF": 12,
+        "rank": 23,
+        "selected": false,
+        "test_id": "test_TC14_none_resources"
+      },
+      {
+        "PF": 12,
+        "rank": 24,
+        "selected": false,
+        "test_id": "test_TC5_resources_not_dict"
+      },
+      {
+        "PF": 4,
+        "rank": 25,
+        "selected": false,
+        "test_id": "test_TC28_valid_float"
+      },
+      {
+        "PF": 0,
+        "rank": 26,
+        "selected": false,
+        "test_id": "test_TC19_valid_simple_case"
+      },
+      {
+        "PF": 0,
+        "rank": 27,
+        "selected": false,
+        "test_id": "test_TC20_valid_multi_resource"
+      },
+      {
+        "PF": 0,
+        "rank": 28,
+        "selected": false,
+        "test_id": "test_TC26_empty_requests_valid"
+      }
+    ]
+  },
+  "scope": "Projection of the two frozen 28-test rankings, selected test IDs and loss counts."
+}

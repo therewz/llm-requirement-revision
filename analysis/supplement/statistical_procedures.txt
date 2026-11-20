@@ -1,0 +1,43 @@
+Statistical procedures
+
+The unit of analysis is the program. Calculations are stratified by task and model. The paired methods compare revisions of the same program by the same model across conditions. Each mean gives every assessable program in its stratum equal weight. The descriptive pooled joint result counts program/model pairs; the same program can appear under both models. No test treats those pooled pairs as independent observations.
+
+Outcomes and denominators
+
+For each revision, use the number of eligible withdrawal targets as the denominator for the residue and restoration rates. During withdrawal, residue includes retained and partial restriction outcomes. Restoration counts outcomes that meet the target behavior, and complete restoration requires all eligible targets to meet it. The archived strict_controls views additionally require the saved linked-control flag. For scheduling this flag concerns the linked midweek tests. The stricter joint-success analysis separately requires the Friday-morning observation as well as every linked control.
+
+The 28 core tests give four transitions: PP (pass to pass), PF (pass to nonpass), FP (nonpass to pass), and FF (nonpass to nonpass). Transition proportions, including recovery, divide each count by 28. Core loss divides PF by PP + PF, the number of prior passes. Loss occurrence counts revisions with any PF, and severity measures the number of PF transitions. A gain does not offset a lost prior pass. Joint success requires complete restoration and no lost prior passes.
+
+A paired contrast uses both available, defined outcomes for a program/model pair. A missing grade or undefined denominator excludes that pair from the applicable comparison and stays in the planned count. The Friedman statistic uses only complete RR/SA/EW blocks. Joint success requires assessable target outcomes and a nonempty prior-pass set in both arms; failed observed controls count against strict success. The joint tables retain all four restoration/preservation combinations and unassessable counts. Requiring every associated control to pass leaves joint success at 27/138 for SA and 73/138 for EW. In both GPT revisions of Task B program S0069, all four withdrawal targets pass, two linked controls fail (B-O3 and B-O4), and some prior core passes are lost. Those two revisions change from restoration only to neither under the strict definition. The paired classifications and control observations are in joint_success/.
+
+Paired and group comparisons
+
+- Paired signed-rank. Take right minus left within each pair, omit zero differences from the test, and use midranks for tied absolute differences. The two-sided tail counts sign assignments with an absolute signed-rank sum at least as large as observed. The mean paired difference and the bootstrap interval retain zero differences.
+- Paired mean permutation check. Flip the signs of nonzero paired differences and compare the absolute sum, equivalently the absolute mean on the same pairs. Integer weights from the rational outcomes preserve ties in the tail counts.
+- Friedman. Rank the three condition outcomes within each complete program block using midranks for ties. Use the tie-corrected statistic and count condition-label permutations within each block that are at least as extreme as observed.
+- Exploratory group contrasts. Compare G1 versus G2, G1 versus G3, and G2 versus G3 within each task and model. The outcomes are residue rate, complete restoration, and core loss in SA and EW, plus each program's EW minus SA difference. Permute group labels at fixed observed group sizes and compare the absolute difference in means. Groups differ in starting programs and supplied requirements, so these comparisons describe associations.
+
+The paired tests assume sign symmetry of differences under the null, while the Friedman and group tests assume exchangeability of condition labels within complete blocks and of group labels at fixed group sizes, respectively.
+
+The archived calibration uses exact conditional counts where feasible and otherwise applies the plus-one Monte Carlo estimate (extreme + 1) / (draws + 1). The budgets are 99,999 for paired and Friedman tests and 9,999 for group permutations. Exact recalibration leaves the outcomes, hypotheses, test statistics and multiplicity families fixed. It uses dynamic counts or enumeration of the same null assignments. The joined reporting tables retain the original planned_raw_p and planned_holm_p alongside exact_raw_p and exact_holm_p. The exact values support the reported tests; Monte Carlo columns document the original calibration.
+
+Multiplicity and intervals
+
+Apply Holm's procedure separately within each view and each planned comparison family:
+
+Planned comparison family and number of slots
+  Residue, SA versus EW: 4
+  Restoration, SA versus EW: 4
+  Core loss, three pairwise condition contrasts: 12
+  Core loss, Friedman: 4
+  Exploratory group contrasts: 108
+
+Each four-slot set corresponds to the two tasks by two models. The exploratory group family crosses these four strata with three group contrasts, three condition contexts, and three outcomes. Untestable slots are retained internally at p = 1 to preserve the full adjustment family, and their reported p-value cells remain blank. The paired mean permutation check applies the same relevant family sizes to its own test results. The all-program preservation view defines only its applicable comparison families. Interpret reported adjusted values using the paper's p < 0.05 threshold.
+
+The nominal 95% percentile intervals use 10,000 program resamples for nondegenerate effects. Paired resampling preserves the matched programs; group resampling takes place separately within each group. The base seed is 20261106 and the producers derive deterministic streams for each comparison. Intervals describe differences in means and do not carry a multiplicity adjustment. Tests calibrate the corresponding test statistic, so an interval and an adjusted p-value can answer different questions. Constant paired effects have a degenerate interval; uninformative comparisons retain their status and denominator.
+
+The analysis policy was refined after preliminary outcomes. The expanded conflict views and the supplementary descriptive joint, recovery and audit tables use the existing observations. The descriptive additions introduce no new significance family.
+
+Group distributions
+
+In analysis/descriptive/session_metrics.csv, select primary69__main, then separate task, model, condition and specification group. For EW minus SA, match participant_id within task and model before taking the difference. The groups_all_views.csv table in analysis/statistics/reporting/ identifies the exact programs used in each contrast. The program-level values shown in the figure and the group means come from these records.

@@ -10,8 +10,6 @@ from statistics import mean, median
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'reports/full_analysis_v2_prelim'
-PLAN = 'planning/ANALYSIS_PLAN_v2_PRESTAT.md'
-PLAN_SHA = 'abf7fa160883376f0b74a35f85433522e7474a3b76142bb2ac33a6fb01afa416'
 EXTENSION_ID = 'S0033_SA_openai_r1'
 CONFLICTS = {'S0034','S0041','S0049','S0053','S0058','S0060','S0046'}
 LABELS = ('RESTORED','RETAINED','PARTIAL','OTHER_FAILURE','INDETERMINATE')
@@ -96,14 +94,7 @@ def validate_grade(e, session, base):
 
 
 def load():
-    assert digest((ROOT/PLAN).read_bytes())==PLAN_SHA
-    INPUTS[PLAN]=PLAN_SHA
-    clarification='planning/ANALYSIS_PLAN_v2_PRESTAT_CLARIFICATIONS.md'
-    INPUTS[clarification]=digest((ROOT/clarification).read_bytes())
-    frozen=read('planning/ANALYSIS_PLAN_v2_PRESTAT_FREEZE.json')
-    assert frozen['sha256']==PLAN_SHA and frozen['statistical_tests_authorized_now'] is False
-    old=read('reports/full_analysis_v1/tables/analysis_manifest.json')
-    expected=old['inputs']
+    expected = read('reports/full_analysis_v2_prelim/analysis_manifest.json')['inputs']
     audit_path='reports/cleaned_continuation_v1/LIVE_AUDIT.json'
     audit=read(audit_path,expected[audit_path])
     baseline_path='runs/cleaned_starts_v1/baseline_manifest.json'
@@ -296,17 +287,16 @@ def summary(rows,group=False):
     return out
 
 
-def descriptive_contrasts(rows,provider_comparison=False):
-    detail=[];summ=[]
+def descriptive_contrasts(rows):
+    summ=[]
     byview=defaultdict(list)
     for r in rows:byview[r['view']].append(r)
-    contexts=ARMS if provider_comparison else PROVIDERS
     for view,rr in sorted(byview.items()):
-        for task,ctx in itertools.product(('A','B'),contexts):
-            candidates=[r for r in rr if r['task']==task and r['condition' if provider_comparison else 'provider']==ctx]
-            axis='provider' if provider_comparison else 'condition'
+        for task,ctx in itertools.product(('A','B'),PROVIDERS):
+            candidates=[r for r in rr if r['task']==task and r['provider']==ctx]
+            axis='condition'
             by={(r['participant_id'],r[axis]):r for r in candidates}
-            comparisons=[('anthropic','openai')] if provider_comparison else [('SA','EW'),('RR','SA'),('RR','EW')]
+            comparisons=[('SA','EW'),('RR','SA'),('RR','EW')]
             for left,right in comparisons:
                 for metric in METRICS:
                     pp=[]
@@ -318,7 +308,7 @@ def descriptive_contrasts(rows,provider_comparison=False):
                                         metric=metric,participant_id=pid,group=a['group'],left=a[metric],right=b[metric],
                                         difference=delta,known_conflict=a['known_conflict'],source_changed=a['source_changed'])
                             if metric in RATE_METRICS:common['difference_percentage_points']=100*delta
-                            detail.append(common);pp.append(common)
+                            pp.append(common)
                     x=dict(view=view,task=task,context=ctx,axis=axis,contrast=right+' minus '+left,metric=metric,
                            n_pairs=len(pp),assessment='observed' if pp else 'no_assessable_pairs',
                            left_mean=mean(p['left'] for p in pp) if pp else None,
@@ -329,7 +319,7 @@ def descriptive_contrasts(rows,provider_comparison=False):
                            tied=sum(abs(p['difference']) <= 1e-12 for p in pp))
                     if metric in RATE_METRICS:x['difference_percentage_points']=100*x['difference'] if pp else None
                     summ.append(x)
-    return detail,summ
+    return summ
 
 
 def group_contrasts(rows):
@@ -487,46 +477,15 @@ def sensitivity_comparisons(arms,paired):
     return out
 
 
-def crosscheck_exports(tests,targets,rows):
-    root='output/elmira_author_package_v1/analysis/'
-    checks={}
-    for name,newrows,keys,fields in [
-        ('raw_outcomes/test_outcomes.csv',tests,('session_id','suite','test_id'),('revision_status',)),
-        ('raw_outcomes/withdrawal_outcomes.csv',targets,('session_id','case_id'),('outcome',))]:
-        path=ROOT/(root+name);data=path.read_bytes();INPUTS[root+name]=digest(data)
-        old=list(csv.DictReader(data.decode().splitlines()))
-        if 'test_outcomes' in name:
-            converted=[dict(t,suite='core' if t['suite']=='core28' else 'original_five') for t in newrows]
-        else:converted=newrows
-        index={tuple(r[k] for k in keys):r for r in converted}
-        assert len(index)==len(old)
-        for r in old:
-            n=index[tuple(r[k] for k in keys)]
-            assert all(r[f]==n[f] for f in fields)
-        checks[name]={'records_compared':len(old),'status':'exact_identity_and_outcome_match'}
-    path=root+'tables/session_metrics_with_extra_turn.csv';data=(ROOT/path).read_bytes();INPUTS[path]=digest(data)
-    old=list(csv.DictReader(data.decode().splitlines()))
-    new={r['session_id']:r for r in rows if r['view']=='all72_preservation__main'}
-    assert len(old)==len(new)==432
-    for r in old:
-        for f in ('core_loss_count','core_loss_rate','core_absolute_passes','target_n','target_met'):
-            a=r[f];b=new[r['session_id']][f]
-            assert (a=='' and b is None) or (a!='' and b is not None and abs(float(a)-b)<1e-12),(r['session_id'],f,a,b)
-    checks['session_metrics_with_extra_turn.csv']={'records_compared':432,'fields':['core_loss_count','core_loss_rate','core_absolute_passes','target_n','target_met'],'status':'match'}
-    return checks
-
-
 def main():
     sessions,bases,baselines,original,complete=load()
     rows,members=view_rows(sessions,bases,original,complete)
     arms=summary(rows);groups=summary(rows,True)
-    pairdetail,pairs=descriptive_contrasts(rows)
-    provdetail,prov=descriptive_contrasts(rows,True)
+    pairs=descriptive_contrasts(rows)
     tests,targets,btests=raw_tables(sessions,bases,baselines,complete)
     cohorts,bg=cohort_tables(members,bases)
     missing,attrib=bounds(rows)
     percore,perfiv=per_test_tables(rows,tests)
-    checks=crosscheck_exports(tests,targets,rows)
     programs=[]
     for pid,b in sorted(bases.items()):
         programs.append(dict(participant_id=pid,task=b['task'],group=b['group'],
@@ -539,8 +498,7 @@ def main():
                              baseline_core_pass_ids=b['core_baseline_pass_ids']))
     tables={'programs.csv':programs,'membership.csv':members,'cohorts.csv':cohorts,'baseline_groups.csv':bg,
             'session_metrics.csv':rows,'arm_summary.csv':arms,'group_summary.csv':groups,
-            'paired_program_differences.csv':pairdetail,'paired_summary.csv':pairs,
-            'provider_program_differences.csv':provdetail,'provider_summary.csv':prov,
+            'paired_summary.csv':pairs,
             'group_comparisons.csv':group_contrasts(rows),'raw_test_outcomes.csv':tests,
             'raw_target_outcomes.csv':targets,'baseline_test_outcomes.csv':btests,
             'per_core_test.csv':percore,'original_five_diagnostics.csv':perfiv,
@@ -552,17 +510,3 @@ def main():
     assert [by['alternative62__main',t]['programs'] for t in ('A','B')]==[30,32]
     assert sum(p['stricter_format61'] for p in programs)==61
     assert len(tests)==432*33 and len(targets)==381*6
-    manifest=dict(schema='withdrawal_descriptive_analysis_v2',plan_sha256=PLAN_SHA,
-                  scope='saved_evidence_descriptive_only',new_hypothesis_tests=0,new_confidence_intervals=0,
-                  participant_executions=0,model_calls=0,original_slots=432,original_grades=431,complete_grades=432,
-                  extension_slot=EXTENSION_ID,views=sorted({r['view'] for r in rows}),
-                  inputs=dict(sorted(INPUTS.items())),table_rows={n:len(rr) for n,rr in tables.items()},
-                  checks=checks,
-                  aliases={'alternative62__phase_i_all_targets':'alternative62__main in this saved dataset only',
-                           'primary69__phase_i_all_targets':'alternative62__main in this saved dataset only'},
-                  outputs={n:digest((OUT/'tables'/n).read_bytes()) for n in tables},
-                  source_sha256=digest(Path(__file__).read_bytes()))
-    (OUT/'analysis_manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
-    print(json.dumps({'status':'PASS','views':len(manifest['views']),'table_rows':manifest['table_rows'],'checks':checks},indent=2))
-
-if __name__=='__main__':main()

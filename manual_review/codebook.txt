@@ -1,0 +1,32 @@
+Human review of core-test expectations and revision patches
+
+Test expectations
+-----------------
+In the main 69-program sample, we counted losses of previously passing core tests under SA and EW, pooling both models within each task. We selected the three most frequently lost tests per task, breaking ties by test ID. We grouped programs only when the full SA and EW prompt texts for the task both matched byte for byte.
+
+Two researchers independently read each selected test and the two prompts without seeing revision outcomes. They rated the behavior that the test actually asserts. "Required" means the supplied instructions require that behavior. "Conflicting" means the expected behavior conflicts with those instructions. "Unspecified or ambiguous" covers expectations the instructions leave open, including cases where different reasonable interpretations lead to different results. The reviewers could rate SA and EW separately. For these 141 assessments each reviewer gave both conditions the same category, and the final categories also matched across conditions.
+
+oracle_contexts.csv lists the 47 contexts, their programs and a representative prompt for each condition. The tests are in evaluation/Task_A/T_core.py and evaluation/Task_B/T_core.py. The common operational instructions are in model_inputs/shared_instructions.txt. oracle_ratings.csv contains both independent ratings and the post-discussion consensus. Each row represents one test and one context. Exact agreement compares the three categories; required-status agreement compares required against the other two combined.
+
+For the required-only comparison, we kept tests required under both prompts that passed on the prepared program. Within each task and model, the reported rate is the mean of the individual program loss rates. Programs with no qualifying test have no rate. results/required_test_outcomes.csv identifies each included program/test/model and its two grades.
+
+Patch selection and ratings
+---------------------------
+All 22 incomplete SA or EW revisions are included. Separately, for each task and model we paired SA and EW on the same program. We selected the greatest improvement in the proportion of prior passes preserved under EW, two other improvements nearest the median of all strictly positive improvements, and a random tie. Each stratum supplied four distinct pairs. Deterministic ties were resolved by program ID. One revision was in both sets and was reviewed once.
+
+Both researchers independently reviewed the same four pairs (one per task/model) and four additional incomplete revisions. They then reconciled these 12 and agreed on the criteria below. Reviewer 1 made the initial ratings on the 41 remaining revisions. Both researchers discussed and agreed on amendments. patch_ratings.csv contains the first ratings, final categories and final case-level explanations. "Shared" denotes the independent double review. A single reviewer_1 entry followed by a final rating denotes the remaining round.
+
+Reviewers compared the prepared and revised program, the supplied prompts, core-test changes and targeted withdrawal results. They assessed:
+* obsolete_logic: removed, bypassed with the code still present, retained, or unassessable. Removing the code can coexist with failure to restore the tested behavior.
+* unrelated_named_function: yes, no, or unassessable. Count a named function or nested helper added, removed or modified for a reason outside the withdrawn rule, including a new helper replacing inline work. A change to a separate responsibility inside the main function alone does not qualify. The mechanical function count separately counts all added, removed or structurally changed named functions, including nested functions; changing a nested function can also change its enclosing function's syntax tree.
+* mechanisms: any categories that help explain an observed failure. interface_drift covers changes in accepted inputs or the kind of response. requirement_reinterpretation covers a different reading of the supplied requirements. still_valid_constraint_removed requires a continuing rule in the prompt and a loss of enforcement explaining a failure. unrelated_rewrite covers a change elsewhere that explains a failure. other_or_insufficient_evidence applies when the available evidence cannot establish a cause or the cause lies outside these categories. Multiple categories are separated by |. A blank means none assigned.
+
+results/reviewed_cases.csv identifies each revision, the sampling slot if paired, its membership in the incomplete census, its test counts and the four files needed to inspect it. Pair by program and provider. The shared cases were sampled with independent named random draws using seed 20261116. analyze.py specifies the draws and selection tie-breaks and checks that the sampled IDs match the released ratings.
+
+The paper's matched example is program S0005 under the anthropic provider. Compare its SA and EW rows and the linked sources. In the prepared scheduler the lunch guard excludes a 12:45 start; EW preserves it and SA removes it. The SA and EW evaluation files report TC27, the 12 baseline core passes and all seven restored targets. The associated prompts distinguish the two instructions.
+
+Reproduction
+------------
+From the repository root, run:
+    python3 manual_review/analyze.py --output reproduced_manual
+Compare the three outputs with manual_review/results/. All input paths in the CSV files start at the repository root. The program reads the saved evaluations and parses the source text without executing participant programs.

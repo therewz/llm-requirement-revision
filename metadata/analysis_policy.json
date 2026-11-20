@@ -1,6 +1,4 @@
 {
-  "title": "Can Coding Agents Let Go? Understanding Behavioral Residue After Requirement Withdrawal",
-  "paper_sha256": "5bc4bf72e174adbac5674ac8acf915b693729ea0ffdcc65f31b562e7725d6d1b",
   "authors": [
     "Reza Rezazadeh Tehrani",
     "Elmira Onagh",
@@ -38,7 +36,7 @@
     "exploratory_groups": 108
   },
   "exact_tests": "Conditional sign/rank permutations, within-program Friedman label permutations, and independent group-label permutations; all planned family slots retained.",
-  "intervals": "Nominal95% participant bootstrap percentile intervals, not multiplicity-adjusted.",
+  "intervals": "Nominal 95% participant bootstrap percentile intervals, not multiplicity-adjusted.",
   "analysis_timing": "Analysis plan revised after preliminary outcomes; not preregistered. Exact recalibration followed original Monte Carlo estimates. Expanded conflicts are post hoc.",
   "oracle_terms": {
     "O1": "Behavior expected after withdrawal",
@@ -58,5 +56,5 @@
       "method": "Git blob SHA1 matches, verified locally against the pinned repository tree."
     }
   },
-  "portable_adapter": "Unchanged numerical producer functions, relative hash-bound input mapping and fresh disposable workspace; author-specific planning/approval gates replaced by package integrity checks. Final CSV bytes checked against accepted output."
+  "analysis_reference_sha256": "5bc4bf72e174adbac5674ac8acf915b693729ea0ffdcc65f31b562e7725d6d1b"
 }

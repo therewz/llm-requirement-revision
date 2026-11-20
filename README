@@ -1,0 +1,74 @@
+Requirement withdrawal by coding agents
+======================================
+
+This package accompanies "Can Coding Agents Let Go? Understanding Behavioral
+Residue and Preservation After Requirement Withdrawal." It contains 72 original
+programs, three revision conditions and two models (432 sessions). The main
+analysis uses the 69 programs with evidence of the added restriction. A second
+analysis requires evidence of the earlier behavior in Phase I (62 programs).
+
+Reproduce the results
+---------------------
+Use Python 3.12. From the repository root:
+
+  python3.12 -m venv .venv
+  source .venv/bin/activate
+  python -m pip install -r requirements.txt
+  python workflow/check_prompts.py
+  python reproduce.py --part check
+  python reproduce.py --part all --output outputs/run1
+
+The last command rebuilds the numerical tables, manual-review summaries and
+quantitative figures. It compares results with the released files and writes
+outputs/run1/REPRODUCTION.json. Choose a new output directory for each run.
+For the two human reviews alone, use --part manual. These commands use saved
+observations and run offline after dependencies are installed.
+
+Where to find the evidence
+--------------------------
+  metadata/programs.csv    Starting sources, adaptations and cohort membership.
+  metadata/sessions.csv    One row per session with its effective grade.
+  metadata/variables.txt   Outcome definitions, denominators and table fields.
+  programs/                Original Phase I and II programs, prepared sources
+                           for 13 adapted programs, and their cleanup patches.
+                           For the other 59, Repo_V2 in the program index points
+                           directly to the original Phase II bytes used.
+  model_inputs/            Exact prompts, original requirements, shared editing
+                           instructions and provider tool definitions.
+  model_runs/              Per-session plans, API requests and responses, tool
+                           activity, final source, outcomes and event logs.
+                           records/ gives the execution settings.
+  evaluation/              Task A (scheduling) and Task B (allocation) hidden
+                           tests, O1/O2 keys, attribution controls and baselines.
+  manual_review/           Review criteria, independent and final ratings,
+                           sample membership and data behind the matched example.
+                           Start with codebook.txt. results/ gives the outcomes.
+  analysis/descriptive/    Program- and test-level observations, rates,
+                           group distributions, and results by condition.
+  analysis/statistics/     Paired observations and complete comparison tables.
+  analysis/sensitivity/    Additional specification-conflict comparisons.
+  analysis/supplement/     Joint success, recovery, core-test transitions,
+                           counts and statistical procedures.
+  analysis/figures/        The paper's figures and their sources.
+  workflow/                Prompt checking, source preparation, grading,
+                           execution and quantitative analysis code.
+
+RR keeps the added rule active. SA asks the model to align code with the supplied
+requirements. EW explicitly names the withdrawn rule and asks the model to remove
+its restriction. O1 measures expected behavior after withdrawal. O2 checks for
+the added restriction with supporting controls. The test and prompt records in
+manual_review/ link back to these same experimental inputs.
+
+One session, S0033_SA_openai_r1, needed a ninth turn. Its extra_turn/ folder
+contains the additional exchange and effective grade. The first eight exchanges
+are in the parent session. The initial result is retained for the turn-limit
+sensitivity analysis. The 432 sessions count this program/condition/model once.
+
+Archived paths in the original evidence use the study's execution layout.
+metadata/source_map.json resolves inputs used by the analysis. Each final.py
+contains the final workspace source. The event journals also name transport
+receipts and normalized responses; the actual request/response bodies are in
+attempts/. The numerical reproduction uses the saved grades. Executing the
+original grader requires the historical Mac environment and is sensitive to
+the system date. See metadata/environment.json for versions and NOTICE for
+the provenance and reuse of participant materials.

@@ -1,0 +1,145 @@
+{
+  "oracle_audit": {
+    "all_core_losses": 1238,
+    "audited_losses_by_consensus": {
+      "conflicting": 202,
+      "required": 1,
+      "unspecified_or_ambiguous": 129
+    },
+    "consensus": {
+      "conflicting": 72,
+      "required": 8,
+      "unspecified_or_ambiguous": 61
+    },
+    "contexts": 47,
+    "exact_agreement": {
+      "cohens_kappa": 0.605525,
+      "items": 141,
+      "matching": 109,
+      "percent": 77.305
+    },
+    "ranked_tests": {
+      "A": [
+        "test_TC20_many_events",
+        "test_TC27_start_after_lunch_allowed",
+        "test_TC28_buffer_after_event"
+      ],
+      "B": [
+        "test_TC27_empty_requests_invalid_resources",
+        "test_TC12_missing_resource_type",
+        "test_TC23_request_with_extra_invalid_key"
+      ]
+    },
+    "required_results": [
+      {
+        "EW_losses": 0,
+        "EW_mean_program_loss_percent": 0,
+        "SA_losses": 1,
+        "SA_mean_program_loss_percent": 20.0,
+        "baseline_passing_required_tests": 8,
+        "eligible_programs": 5,
+        "provider": "anthropic",
+        "task": "A"
+      },
+      {
+        "EW_losses": 0,
+        "EW_mean_program_loss_percent": 0,
+        "SA_losses": 0,
+        "SA_mean_program_loss_percent": 0,
+        "baseline_passing_required_tests": 8,
+        "eligible_programs": 5,
+        "provider": "openai",
+        "task": "A"
+      },
+      {
+        "EW_losses": null,
+        "EW_mean_program_loss_percent": null,
+        "SA_losses": null,
+        "SA_mean_program_loss_percent": null,
+        "baseline_passing_required_tests": 0,
+        "eligible_programs": 0,
+        "provider": "anthropic",
+        "task": "B"
+      },
+      {
+        "EW_losses": null,
+        "EW_mean_program_loss_percent": null,
+        "SA_losses": null,
+        "SA_mean_program_loss_percent": null,
+        "baseline_passing_required_tests": 0,
+        "eligible_programs": 0,
+        "provider": "openai",
+        "task": "B"
+      }
+    ],
+    "required_status_agreement": {
+      "cohens_kappa": 0.639912,
+      "items": 141,
+      "matching": 134,
+      "percent": 95.035
+    }
+  },
+  "patch_review": {
+    "distinct_reviewed": 53,
+    "incomplete_by_condition": {
+      "EW": 7,
+      "SA": 15
+    },
+    "incomplete_by_task": {
+      "A": 22
+    },
+    "incomplete_patterns": {
+      "error_only": 12,
+      "inconclusive_only": 9,
+      "mixed_error_and_inconclusive": 1
+    },
+    "incomplete_programs": 9,
+    "incomplete_revisions": 22,
+    "incomplete_same_weekday_lists": 66,
+    "incomplete_target_outcomes": {
+      "INDETERMINATE": 66,
+      "OTHER_FAILURE": 88
+    },
+    "matched_by_condition": {
+      "EW": {
+        "mechanisms": {
+          "interface_drift": 6,
+          "other_or_insufficient_evidence": 0,
+          "requirement_reinterpretation": 5,
+          "still_valid_constraint_removed": 0,
+          "unrelated_rewrite": 0
+        },
+        "median_named_functions_changed": 1.0,
+        "no_core_loss": 10,
+        "no_mechanism": 10,
+        "revisions": 16,
+        "unrelated_named_function": 2
+      },
+      "SA": {
+        "mechanisms": {
+          "interface_drift": 9,
+          "other_or_insufficient_evidence": 0,
+          "requirement_reinterpretation": 13,
+          "still_valid_constraint_removed": 1,
+          "unrelated_rewrite": 0
+        },
+        "median_named_functions_changed": 1.5,
+        "no_core_loss": 3,
+        "no_mechanism": 3,
+        "revisions": 16,
+        "unrelated_named_function": 8
+      }
+    },
+    "matched_pairs": 16,
+    "obsolete_logic": {
+      "removed": 53
+    },
+    "remaining_amended_after_first_rating": 25,
+    "remaining_reviewed": 41,
+    "set_overlap": [
+      "S0057_SA_anthropic_r1"
+    ],
+    "shared_reviewed": 12,
+    "withdrawal_revisions": 276
+  }
+}

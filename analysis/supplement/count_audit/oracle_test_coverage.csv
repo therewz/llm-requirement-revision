@@ -1,0 +1,4 @@
+task,primary_programs,selected_test_ids,lost_passes_in_selected_tests,all_lost_passes,share_percent
+A,35,3,162,583,27.78730703259005
+B,34,3,170,655,25.954198473282442
+all,69,6,332,1238,26.81744749596123

@@ -1,8 +1,4 @@
-"""Exploratory independent-group analysis of immutable saved v2 results.
-
-Run only after the coordinator writes a passing preflight record. This module
-does not execute participant code, access model providers or modify v2 data.
-"""
+"""Permutation tests and bootstrap intervals for comparisons across specification groups."""
 from __future__ import annotations
 
 import argparse
@@ -18,16 +14,6 @@ from pathlib import Path
 import sys
 
 import numpy as np
-
-ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'reports/statistical_analysis_v3/groups'
-PLAN = 'planning/ANALYSIS_PLAN_v2_PRESTAT.md'
-PLAN_SHA = 'abf7fa160883376f0b74a35f85433522e7474a3b76142bb2ac33a6fb01afa416'
-LOCK = 'planning/STATISTICAL_ANALYSIS_V3_OPERATIONAL_LOCK.md'
-LOCK_JSON = 'planning/STATISTICAL_ANALYSIS_V3_OPERATIONAL_LOCK.json'
-PREFLIGHT = 'reports/statistical_analysis_v3/PREFLIGHT.json'
-V2_ROOT = 'reports/full_analysis_v2_prelim/'
-V2_MANIFEST = V2_ROOT + 'analysis_manifest.json'
 GROUPS = ('G1', 'G2', 'G3')
 TASKS = ('A', 'B')
 PROVIDERS = ('anthropic', 'openai')
@@ -43,15 +29,6 @@ TOL = 1e-12
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
-
-
-def read_bytes(rel, inputs, expected=None):
-    data = (ROOT / rel).read_bytes()
-    sha = digest(data)
-    if expected is not None and expected != sha:
-        raise ValueError(f'Input hash mismatch: {rel}')
-    inputs[rel] = sha
-    return data
 
 
 def rng_for(key):
@@ -94,61 +71,6 @@ def metric_value(row, metric, strict=False):
     if value is not None and (not 0 <= value <= 1 or abs(float(value) - float(stored)) > TOL):
         raise ValueError(f'Rate mismatch: {row["session_id"]} {metric}')
     return value
-
-
-def load_data():
-    inputs = {}
-    read_bytes(PLAN, inputs, PLAN_SHA)
-    lock_json = json.loads(read_bytes(LOCK_JSON, inputs))
-    lock_sha = lock_json['operational_lock_sha256']
-    read_bytes(LOCK, inputs, lock_sha)
-    if lock_json['plan_sha256'] != PLAN_SHA or lock_json['holm_family_sizes']['group'] != FAMILY_SIZE:
-        raise ValueError('Statistical policy lock mismatch')
-    preflight = json.loads(read_bytes(PREFLIGHT, inputs))
-    if preflight.get('status') != 'PASS' or preflight.get('plan_sha256') != PLAN_SHA:
-        raise ValueError('Passing preflight and matching frozen plan are required')
-    if preflight.get('operational_lock_sha256') != lock_sha:
-        raise ValueError('Preflight does not bind the operational lock')
-    if preflight.get('implementation_sha256', {}).get('groups') != digest(Path(__file__).read_bytes()):
-        raise ValueError('Preflight does not bind the current group-analysis implementation')
-    manifest_data = read_bytes(V2_MANIFEST, inputs, lock_json['v2_manifest_sha256'])
-    manifest = json.loads(manifest_data)
-    if manifest['plan_sha256'] != PLAN_SHA or manifest['new_hypothesis_tests'] != 0:
-        raise ValueError('Unexpected v2 provenance')
-    rel = V2_ROOT + 'tables/session_metrics.csv'
-    data = read_bytes(rel, inputs, manifest['outputs']['session_metrics.csv'])
-    lines = data.decode('utf-8').splitlines()
-    records = list(csv.DictReader(lines))
-    if len(records) != manifest['table_rows']['session_metrics.csv']:
-        raise ValueError('v2 row count mismatch')
-    rows = defaultdict(dict)
-    patient_group = {}
-    for r in records:
-        if r['view'] not in manifest['views'] or r['task'] not in TASKS or r['provider'] not in PROVIDERS:
-            raise ValueError(f'Bad stratum: {r}')
-        if r['condition'] not in ARMS or r['group'] not in GROUPS:
-            raise ValueError(f'Bad arm/group: {r}')
-        pid = r['participant_id']
-        if pid in patient_group and patient_group[pid] != r['group']:
-            raise ValueError(f'Participant group changed across observations: {pid}')
-        patient_group[pid] = r['group']
-        key = (r['task'], r['provider'], pid, r['condition'])
-        if key in rows[r['view']]:
-            raise ValueError(f'Duplicate session in view: {r["view"]} {key}')
-        rows[r['view']][key] = r
-    if set(rows) != set(manifest['views']) or len(rows) != 24:
-        raise ValueError('Unexpected view inventory')
-    for view, view_data in rows.items():
-        subjects = {(task, prov, pid) for task, prov, pid, _ in view_data}
-        for task, prov, pid in subjects:
-            obs = [view_data.get((task, prov, pid, arm)) for arm in ARMS]
-            if any(r is None for r in obs):
-                raise ValueError(f'Missing condition in planned participant slot: {view} {pid}')
-            if len({r['group'] for r in obs}) != 1:
-                raise ValueError(f'Group changed across conditions: {view} {pid}')
-            if len({r['selected_case_ids'] for r in obs}) != 1:
-                raise ValueError(f'Case selection changed across conditions: {view} {pid}')
-    return rows, inputs
 
 
 def sample_groups(view_data, task, provider, context, metric, strict):
@@ -324,38 +246,3 @@ def write_csv(path, rows):
         for row in rows:
             writer.writerow({k: json.dumps(v, separators=(',', ':')) if isinstance(v, list) else v
                              for k, v in row.items()})
-
-
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--execute', action='store_true', help='Run after passing saved preflight')
-    args = parser.parse_args()
-    if not args.execute:
-        parser.error('A passing preflight and --execute are required')
-    views, inputs = load_data()
-    result = []
-    for view in sorted(views):
-        result.extend(analyze_view(view, views[view]))
-        print(f'completed {view}', flush=True)
-    assert len(result) == 24 * FAMILY_SIZE
-    OUT.mkdir(parents=True, exist_ok=True)
-    table = OUT / 'group_tests.csv'
-    write_csv(table, result)
-    manifest = dict(status='COMPLETE', description='Exploratory program-level group-label tests',
-                    frozen_plan_sha256=PLAN_SHA, python=platform.python_version(), numpy=np.__version__,
-                    operational_lock_sha256=inputs[LOCK], preflight_sha256=inputs[PREFLIGHT],
-                    seed=BASE_SEED, draws_random=N_PERM, draws_bootstrap=N_BOOT,
-                    family_size_per_view=FAMILY_SIZE, views=len(views), rows=len(result),
-                    status_counts=dict(Counter(r['status'] for r in result)),
-                    inputs=dict(sorted(inputs.items())),
-                    operations_sha256=digest((ROOT/'code/statistical_analysis_v3_groups/OPERATIONS.md').read_bytes()),
-                    script_sha256=digest(Path(__file__).read_bytes()),
-                    output_sha256=digest(table.read_bytes()),
-                    model_calls=0, participant_execution=0, regraded_evaluations=0)
-    (OUT/'analysis_manifest.json').write_text(json.dumps(manifest, indent=2, sort_keys=True)+'\n')
-    print(json.dumps({'rows':len(result), 'statuses':manifest['status_counts'],
-                      'output_sha256':manifest['output_sha256']}, indent=2), flush=True)
-
-
-if __name__ == '__main__':
-    main()

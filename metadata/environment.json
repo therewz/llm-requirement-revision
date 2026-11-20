@@ -8,7 +8,6 @@
   },
   "historical_evaluation_runtime": {
     "interpreter_sha256": "db0899d91d9bbf0635a168d274d3301b74a408ec93b10c33aa6117e44e039b70",
-    "python": "/Users/rezatehrani/.pyenv/versions/3.12.6/bin/python3.12",
     "runtime": {
       "numpy": "2.3.5",
       "pytest": "9.0.2",

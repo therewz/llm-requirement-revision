@@ -1,22 +1,12 @@
-"""Reproduce saved-data results offline; never execute participants or call models.
-
-The original numerical modules are retained unchanged in workflow/analysis_source.
-This adapter replaces author-workspace loading/approval plumbing with the package
-manifest, a relative source map and a disposable workspace. Numerical functions,
-cohort selection, seeds, resampling budgets and exact probability calculations
-are unchanged. Every regenerated CSV is compared with its saved reference.
-"""
+"""Reproduce the released results from saved data without running participant programs or calling models."""
 from __future__ import annotations
 import argparse
-import ast
 from collections import defaultdict
-import contextlib
 import csv
 import hashlib
 import importlib.util
-import inspect
 import json
-import os
+import subprocess
 from pathlib import Path
 import shutil
 import sys
@@ -61,7 +51,7 @@ def check():
         p=byid[row['participant_id']]
         plan=json.loads((b/'plan.json').read_text())['plan']
         assert plan['source_sha256']==p['Repo_V2_sha256'],row['session_id']
-        prompt=ROOT/f'model_inputs/Task_{p["task"]}/{p["group"]}/{p["participant_id"]}/{row["condition"]}/prompt.md'
+        prompt=ROOT/f'model_inputs/Task_{p["task"]}/{p["group"]}/{p["participant_id"]}/{row["condition"]}/prompt.txt'
         assert HASH(prompt)==plan['prompt_sha256'],row['session_id']
         final=(b/'extra_turn/final.py') if row['session_id']=='S0033_SA_openai_r1' else b/'final.py'
         assert HASH(final)==e['binding']['final_source_sha256'],row['session_id']
@@ -92,20 +82,8 @@ def compare(folder,reference,comparisons):
         comparisons.append({'file':str(p.relative_to(folder.parent)), 'reference':str(expected.relative_to(ROOT)),
                             'sha256':HASH(p),'same_bytes':True})
 
-def replace_main(module,source):
-    """Only adapt I/O/old audit plumbing; source numerical definitions stay intact."""
-    exec(compile(source,module.__file__+' [portable entry point]','exec'),module.__dict__)
-
 def descriptive(work,out,comparisons):
     m=load('replication_descriptive',work/'code/full_analysis_v2_prelim/analyze.py')
-    original=inspect.getsource(m.load)
-    marker="    audit_path='reports/cleaned_continuation_v1/LIVE_AUDIT.json'"
-    assert original.count(marker)==1
-    portable="def load():\n    expected=read('reports/full_analysis_v2_prelim/analysis_manifest.json')['inputs']\n"+original[original.index(marker):]
-    replace_main(m,portable)
-    # Legacy author-ZIP comparisons are superseded by comparison of every
-    # regenerated public table to its hash-bound saved reference below.
-    m.crosscheck_exports=lambda *_:{'package_reference_tables':'checked by reproduce.py after generation'}
     m.OUT=out/'descriptive';m.main()
     compare(m.OUT/'tables','analysis/descriptive',comparisons)
     for p in (m.OUT/'tables').glob('*.csv'):
@@ -115,7 +93,7 @@ def descriptive(work,out,comparisons):
 def statistics(work,out,rows,comparisons):
     paired=load('replication_paired',work/'code/statistical_analysis_v3_paired/analyze.py')
     group=load('replication_groups',work/'code/statistical_analysis_v3_groups/analyze.py')
-    dest=out/'statistics/planned';dest.mkdir(parents=True)
+    dest=work/'computed/statistics';dest.mkdir(parents=True)
     rank,means,fried,observations=paired.run_analysis(rows)
     tables={'paired_wilcoxon.csv':rank,'paired_mean_permutation.csv':means,'friedman.csv':fried,'paired_observations.csv':observations}
     for name,tab in tables.items():paired.write_csv(dest/name,tab)
@@ -130,14 +108,14 @@ def statistics(work,out,rows,comparisons):
         groups.extend(group.analyze_view(view,byview[view]))
         print('Group statistics:',view,flush=True)
     group.write_csv(dest/'group_tests.csv',groups)
-    compare(dest,'analysis/statistics/planned',comparisons)
+    expected = ROOT/'analysis/statistics/paired_observations.csv'
+    if HASH(dest/'paired_observations.csv') != HASH(expected):
+        raise ValueError('The paired observations differ from the released observations.')
+    comparisons.append({'reference':'analysis/statistics/paired_observations.csv','sha256':HASH(expected),'same_bytes':True})
     pairdir=work/'reports/statistical_analysis_v3/paired';pairdir.mkdir(parents=True,exist_ok=True)
     groupdir=work/'reports/statistical_analysis_v3/groups';groupdir.mkdir(parents=True,exist_ok=True)
     for name in tables:shutil.copy2(dest/name,pairdir/name)
     shutil.copy2(dest/'group_tests.csv',groupdir/'group_tests.csv')
-    # These fresh manifests bind computed inputs for the unchanged exact routine.
-    (pairdir/'manifest.json').write_text(json.dumps({'outputs':{n:HASH(pairdir/n) for n in tables}}))
-    (groupdir/'analysis_manifest.json').write_text(json.dumps({'output_sha256':HASH(groupdir/'group_tests.csv')}))
 
 def exact(work,out,comparisons):
     helpers=work/'code/statistical_analysis_v3_independent'
@@ -145,24 +123,8 @@ def exact(work,out,comparisons):
     try:
         sys.modules.pop('outcome_checks',None)
         m=load('replication_exact',helpers/'all_view_precision.py')
-        source=inspect.getsource(m.main)
-        start='    # Check every main/alternate value against the already independent first audit.'
-        end='    DEST.mkdir(parents=True,exist_ok=False);output_hashes={}'
-        assert source.count(start)==source.count(end)==1
-        # Old review-to-review checks are replaced by full output-byte comparison.
-        source=source[:source.index(start)]+source[source.index(end):]
-        replace_main(m,source)
-        m.DEST=out/'statistics/exact';m.POLICY=ROOT/'metadata/analysis_policy.json'
-        gate=work/'reports/statistical_analysis_v3/PREFLIGHT.json'
-        gate.parent.mkdir(parents=True,exist_ok=True)
-        gate.write_text(json.dumps({'status':'PASS','basis':'package manifest, raw-grade validation and reproduced planned inputs'}))
-        # When exact is requested alone, bind its existing saved planned inputs.
-        pair=m.PAIR;group=m.GROUP
-        if not (pair/'manifest.json').exists():
-            (pair/'manifest.json').write_text(json.dumps({'outputs':{p.name:HASH(p) for p in pair.glob('*.csv')}}))
-        if not (group/'analysis_manifest.json').exists():
-            (group/'analysis_manifest.json').write_text(json.dumps({'output_sha256':HASH(group/'group_tests.csv')}))
-        m.main();compare(m.DEST,'analysis/statistics/exact',comparisons)
+        m.DEST=work/'computed/exact'
+        m.main()
         target=work/'reports/statistical_analysis_v3/verification/all_views_exact_v1'
         target.mkdir(parents=True,exist_ok=True)
         for p in m.DEST.glob('*.csv'):shutil.copy2(p,target/p.name)
@@ -173,15 +135,6 @@ def reporting(work,out,comparisons):
     m=load('replication_reporting',work/'code/statistical_analysis_v3_lead/build_reporting_tables.py')
     m.OUT=out/'statistics/reporting';m.main()
     compare(m.OUT,'analysis/statistics/reporting',comparisons)
-    # Preserve the original path-valued provenance columns and provide source_map.
-    dest=work/'reports/statistical_analysis_v3/reporting';dest.mkdir(exist_ok=True,parents=True)
-    for p in m.OUT.glob('*.csv'):shutil.copy2(p,dest/p.name)
-    tables=load('replication_paper_tables',work/'code/results_readiness_v1/build_review_tables.py')
-    tables.OUT=out/'paper_tables';tables.main()
-    compare(tables.OUT,'analysis/paper_tables',comparisons)
-    dest=work/'reports/results_readiness_v1/tables';dest.mkdir(exist_ok=True,parents=True)
-    for p in tables.OUT.glob('*.csv'):shutil.copy2(p,dest/p.name)
-
 def conflicts(work,out,comparisons):
     m=load('replication_expanded_conflicts',work/'code/results_readiness_conflicts_v1/analyze.py')
     m.DEFAULT_OUT=out/'expanded_conflicts';m.POLICY=ROOT/'metadata/expanded_conflict_policy.json'
@@ -191,28 +144,34 @@ def conflicts(work,out,comparisons):
     finally:sys.argv=previous
     compare(m.DEFAULT_OUT/'tables','analysis/sensitivity/expanded_conflicts',comparisons)
 
-def figures(work,out,comparisons):
-    path=work/'reports/results_insertion_v2/figure_source/build_figures.py'
-    (path.parent/'data').mkdir(parents=True,exist_ok=True)
-    (work/'paper/results_draft_v1/figures').mkdir(parents=True,exist_ok=True)
-    m=load('replication_figures',path)
-    m.preservation();m.groups()
-    dest=out/'figures';dest.mkdir(parents=True)
-    for p in m.ART.iterdir():
-        if p.suffix in ('.pdf','.png','.svg'):shutil.copy2(p,dest/p.name)
-    # Plot values must be exact; PDF metadata timestamps need not be identical.
-    actual={p.name for p in (path.parent/'data').glob('*.csv')}
-    expected={p.name for p in (ROOT/'analysis/figures/data').glob('*.csv')}
-    assert actual==expected=={'preservation_effects.csv','group_preservation.csv'}
-    for p in (path.parent/'data').glob('*.csv'):
-        ref=ROOT/'analysis/figures/data'/p.name
-        assert p.read_bytes()==ref.read_bytes(),p.name
-        shutil.copy2(p,dest/p.name)
-        comparisons.append({'file':'figures/'+p.name,'reference':str(ref.relative_to(ROOT)),'same_bytes':True,'sha256':HASH(p)})
+def figures(out, comparisons):
+    source = ROOT/'analysis/figures/build_figures.py'
+    subprocess.run([sys.executable, str(source), '--output', str(out/'figures')],check=True)
+    for line in (ROOT/'analysis/figures/plot_data.sha256').read_text().splitlines():
+        expected, name = line.split('  ', 1)
+        if HASH(out/'figures'/name) != expected:
+            raise ValueError('Figure data differs: '+name)
+        comparisons.append({'file':'figures/'+name,'sha256':expected,'same_bytes':True})
+
+
+def manual(out, comparisons):
+    script=ROOT/'manual_review/analyze.py'
+    target=out/'manual_review'
+    subprocess.run([sys.executable,str(script),'--output',str(target)],check=True)
+    expected={p.name for p in (ROOT/'manual_review/results').iterdir() if p.is_file()}
+    actual={p.name for p in target.iterdir() if p.is_file()}
+    if not expected or actual != expected:
+        raise ValueError('Manual result inventory differs.')
+    for name in sorted(expected):
+        ref=ROOT/'manual_review/results'/name
+        if HASH(target/name)!=HASH(ref):
+            raise ValueError('Manual result differs: '+name)
+        comparisons.append({'reference':str(ref.relative_to(ROOT)),'sha256':HASH(ref),'same_bytes':True})
+
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--part',choices=['check','descriptive','statistics','exact','conflicts','figures','all'],default='check')
+    parser.add_argument('--part',choices=['check','descriptive','statistics','exact','conflicts','figures','supplement','manual','all'],default='check')
     parser.add_argument('--output',default='outputs/reproduction')
     args=parser.parse_args()
     _,mapping=check()
@@ -223,22 +182,32 @@ def main():
         parser.error('--output must be a new directory under outputs/. Existing output is never overwritten.')
     out.mkdir(parents=True)
     comparisons=[];started=time.monotonic()
-    with tempfile.TemporaryDirectory(prefix='workspace_',dir=out) as scratch:
-        work=Path(scratch);materialize(work,mapping)
-        # The package contains no original author approval documents or credentials.
-        # Only saved-data statistical and plotting code is imported here.
-        rows=None
-        if args.part in ('descriptive','all'):rows=descriptive(work,out,comparisons)
-        if args.part in ('statistics','all'):
-            if rows is None:rows=read(work/'reports/full_analysis_v2_prelim/tables/session_metrics.csv')
-            statistics(work,out,rows,comparisons)
-        if args.part in ('statistics','exact','all'):
-            exact(work,out,comparisons);reporting(work,out,comparisons)
-        if args.part in ('conflicts','all'):conflicts(work,out,comparisons)
-        if args.part in ('figures','all'):figures(work,out,comparisons)
+    if args.part in ('descriptive','statistics','exact','conflicts','all'):
+        with tempfile.TemporaryDirectory(prefix='workspace_',dir=out) as scratch:
+            work=Path(scratch)
+            materialize(work,mapping)
+            if args.part in ('descriptive','all'):
+                rows=descriptive(work,out,comparisons)
+            else:
+                rows=read(work/'reports/full_analysis_v2_prelim/tables/session_metrics.csv')
+            if args.part in ('statistics','exact','conflicts','all'):
+                statistics(work,out,rows,comparisons)
+                exact(work,out,comparisons)
+                reporting(work,out,comparisons)
+            if args.part in ('conflicts','all'):
+                conflicts(work,out,comparisons)
+    if args.part in ('figures','all'):
+        figures(out, comparisons)
+    if args.part in ('supplement','all'):
+        script=ROOT/'analysis/supplement/scripts/verify.py'
+        subprocess.run([sys.executable,str(script),'--output',str(out/'supplement')],check=True)
+        for name in ('joint_success', 'recovery', 'count_audit'):
+            compare(out/'supplement'/name, 'analysis/supplement/'+name, comparisons)
+    if args.part in ('manual','all'):
+        manual(out,comparisons)
     result={'status':'PASS','part':args.part,'seconds':time.monotonic()-started,'compared_tables':comparisons,
             'model_calls':0,'candidate_execution':0,'saved_grades':432,'main_programs':69,'alternative_programs':62}
     (out/'REPRODUCTION.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('Reproduction PASS:',len(comparisons),'tables matched saved bytes;',out,flush=True)
+    print('Reproduction complete:',out,flush=True)
 
 if __name__=='__main__':main()
